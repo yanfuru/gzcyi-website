@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="了解广州创益信息技术有限公司 - 专业的弱电智能化系统与影音系统集成服务商，公司简介、发展历程、企业文化与团队优势。">
+  <title>关于我们 - 广州创益信息技术有限公司</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .about-page { padding: 80px 0; }
+
+    .about-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .about-intro-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-intro-image .placeholder {
+      width: 100%;
+      height: 420px;
+      background: linear-gradient(135deg, #e8edf2, #c8d4e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-intro-image .placeholder svg {
+      opacity: 0.3;
+    }
+
+    .about-intro-text h2 {
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .about-intro-text p {
+      color: var(--color-gray-700);
+      margin-bottom: 14px;
+      line-height: 1.9;
+      font-size: 0.98rem;
+    }
+
+    /* Timeline */
+    .timeline-section {
+      padding: 80px 0;
+      background: var(--color-gray-50);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--color-gray-300);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      background: var(--color-accent);
+      border: 3px solid var(--color-white);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 0 4px rgba(196, 154, 43, 0.2);
+      z-index: 1;
+    }
+
+    .timeline-content {
+      width: 45%;
+      background: var(--color-white);
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-year {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.05rem;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+      line-height: 1.7;
+    }
+
+    /* PPT Download */
+    .ppt-download {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg, rgba(26,60,94,0.04), rgba(196,154,43,0.06));
+      border: 1px solid rgba(196,154,43,0.2);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      transition: var(--transition);
+    }
+
+    .ppt-download:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 4px 20px rgba(196,154,43,0.1);
+    }
+
+    .ppt-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #d04423, #e85d3a);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .ppt-info {
+      flex: 1;
+    }
+
+    .ppt-info h4 {
+      font-size: 1rem;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .ppt-info p {
+      font-size: 0.85rem;
+      color: var(--color-gray-500);
+      margin: 0;
+    }
+
+    .ppt-download .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      background: var(--color-accent);
+      color: var(--color-white);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .ppt-download .btn-download:hover {
+      background: var(--color-accent-light);
+      transform: translateY(-2px);
+    }
+
+    /* Culture */
+    .culture-section {
+      padding: 80px 0;
+    }
+
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .culture-card {
+      text-align: center;
+      padding: 36px 20px;
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .culture-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .culture-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, rgba(26,60,94,0.08), rgba(44,95,138,0.12));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    .culture-card h3 {
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    .culture-card p {
+      font-size: 0.88rem;
+      color: var(--color-gray-500);
+      line-height: 1.6;
+    }
+
+    /* Team */
+    .team-section {
+      padding: 80px 0;
+      background: var(--color-gray-50);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .team-card {
+      text-align: center;
+    }
+
+    .team-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .team-card h4 {
+      font-size: 1.05rem;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .team-card .role {
+      font-size: 0.85rem;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+    }
+
+    .team-card p {
+      font-size: 0.85rem;
+      color: var(--color-gray-500);
+    }
+
+    @media (max-width: 768px) {
+      .about-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-dot {
+        left: 20px;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(odd) {
+        flex-direction: row;
+        padding-left: 50px;
+      }
+
+      .timeline-content {
+        width: 100%;
+      }
+
+      .culture-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">创</div>
+      <span>广州创益信息技术有限公司</span>
+    </a>
+    <button class="mobile-toggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
+      <a href="../index.html" class="nav-link">首页</a>
+      <a href="about.html" class="nav-link active">关于我们</a>
+      <a href="qualifications.html" class="nav-link">资质荣誉</a>
+      <a href="cases.html" class="nav-link">工程案例</a>
+      <a href="services.html" class="nav-link">服务介绍</a>
+      <a href="contact.html" class="nav-link">联系我们</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1>关于我们</h1>
+    <p>专业弱电智能化系统与影音系统集成服务商</p>
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a>
+      <span>/</span>
+      <span>关于我们</span>
+    </div>
+  </div>
+</section>
+
+<!-- Company Intro -->
+<section class="about-page">
+  <div class="container">
+    <div class="about-intro">
+      <div class="about-intro-image fade-in">
+        <div class="placeholder">
+          <svg width="160" height="160" viewBox="0 0 160 160" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="10" y="40" width="140" height="100" rx="8"/>
+            <rect x="20" y="55" width="40" height="25" rx="4"/>
+            <rect x="70" y="55" width="70" height="25" rx="4"/>
+            <rect x="20" y="90" width="40" height="25" rx="4"/>
+            <rect x="70" y="90" width="70" height="25" rx="4"/>
+            <circle cx="80" cy="25" r="18"/>
+            <path d="M80 12v5M80 33v5M67 25h5M88 25h5" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="about-intro-text fade-in">
+        <h2>公司简介</h2>
+        <p>
+          广州创益信息技术有限公司成立于2014年，是一家专注于弱电智能化系统工程与影音系统集成服务的高新技术企业。公司总部位于广州市天河区，服务网络覆盖整个华南地区。
+        </p>
+        <p>
+          经过十余年的深耕发展，公司已建立起一支由资深技术专家、项目经理和专业施工团队组成的精英队伍，具备从需求调研、方案设计、设备采购、施工安装到系统调试、运维管理的全流程交付能力。
+        </p>
+        <p>
+          我们始终坚持"技术创新、品质为本、服务至上"的经营理念，以客户需求为导向，以专业能力为支撑，致力于为各类商业建筑、产业园区、教育机构、政府单位及高端住宅提供安全、高效、智能的系统集成解决方案。
+        </p>
+
+        <!-- PPT下载入口 -->
+        <div class="ppt-download">
+          <div class="ppt-icon">📊</div>
+          <div class="ppt-info">
+            <h4>公司宣传PPT</h4>
+            <p>下载了解我们的业务体系与核心优势（PDF格式）</p>
+          </div>
+          <!-- ★ 替换为你的PPT文件：把PPT转成PDF放到 docs/ 目录下，修改下方 href 路径 ★ -->
+          <a href="docs/company-profile.pdf" class="btn-download" download>
+            <span>📥</span> 下载
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="timeline-section">
+  <div class="container">
+    <h2 class="section-title fade-in">发展历程</h2>
+    <div class="section-title-line"></div>
+    <p class="section-subtitle fade-in">十年深耕，砥砺前行</p>
+
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2014</div>
+          <h3>公司成立</h3>
+          <p>广州创益信息技术有限公司在广州正式注册成立，以弱电工程为核心业务起步。</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2016</div>
+          <h3>业务拓展</h3>
+          <p>业务范围扩展至影音系统集成领域，完成首个大型多功能厅影音系统项目交付。</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2018</div>
+          <h3>资质升级</h3>
+          <p>获得电子与智能化工程专业承包资质，团队规模突破30人，年项目交付量超过50个。</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2020</div>
+          <h3>技术升级</h3>
+          <p>引入AI智能安防与物联网技术方案，成功落地多个智慧园区标杆项目。</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2023</div>
+          <h3>品牌升级</h3>
+          <p>完成品牌战略升级，确立"弱电智能化+影音集成"双轮驱动发展模式，累计服务客户超过50家。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Culture -->
+<section class="culture-section">
+  <div class="container">
+    <h2 class="section-title fade-in">企业文化</h2>
+    <div class="section-title-line"></div>
+    <p class="section-subtitle fade-in">核心价值观驱动，凝聚团队力量</p>
+
+    <div class="culture-grid">
+      <div class="culture-card fade-in">
+        <div class="culture-icon">💡</div>
+        <h3>创新驱动</h3>
+        <p>持续关注行业前沿技术，以创新思维为客户提供更优解决方案。</p>
+      </div>
+      <div class="culture-card fade-in">
+        <div class="culture-icon">🏆</div>
+        <h3>品质为本</h3>
+        <p>严格把控每个项目环节，以卓越品质赢得客户信赖与行业口碑。</p>
+      </div>
+      <div class="culture-card fade-in">
+        <div class="culture-icon">🤝</div>
+        <h3>客户至上</h3>
+        <p>深度理解客户需求，提供超越期望的全生命周期服务体验。</p>
+      </div>
+      <div class="culture-card fade-in">
+        <div class="culture-icon">🌱</div>
+        <h3>共同成长</h3>
+        <p>打造学习型组织，与员工、合作伙伴携手共进，共享发展成果。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="team-section">
+  <div class="container">
+    <h2 class="section-title fade-in">核心团队</h2>
+    <div class="section-title-line"></div>
+    <p class="section-subtitle fade-in">汇聚行业精英，打造专业力量</p>
+
+    <div class="team-grid">
+      <div class="team-card fade-in">
+        <div class="team-avatar">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="24" cy="16" r="8"/>
+            <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
+          </svg>
+        </div>
+        <h4>张建国</h4>
+        <div class="role">总经理 / 创始人</div>
+        <p>20年弱电行业经验，高级工程师</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="24" cy="16" r="8"/>
+            <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
+          </svg>
+        </div>
+        <h4>李明辉</h4>
+        <div class="role">技术总监</div>
+        <p>15年系统集成经验，PMP认证</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="24" cy="16" r="8"/>
+            <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
+          </svg>
+        </div>
+        <h4>王芳</h4>
+        <div class="role">项目经理</div>
+        <p>10年项目管理经验，一级建造师</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="24" cy="16" r="8"/>
+            <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
+          </svg>
+        </div>
+        <h4>陈伟强</h4>
+        <div class="role">工程部经理</div>
+        <p>12年施工管理经验，注册电气工程师</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container fade-in">
+    <h2>选择创益，选择专业与放心</h2>
+    <p>我们期待与您携手，共创智慧空间的美好未来。</p>
+    <a href="contact.html" class="btn btn-white">与我们取得联系</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>广州创益信息技术有限公司</h4>
+        <p>专注弱电智能化系统与影音系统集成服务，以专业技术为客户创造智慧、安全、高效的建筑空间环境。</p>
+      </div>
+      <div class="footer-links">
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="about.html">关于我们</a></li>
+          <li><a href="services.html">服务介绍</a></li>
+          <li><a href="cases.html">工程案例</a></li>
+          <li><a href="qualifications.html">资质荣誉</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>服务项目</h4>
+        <ul>
+          <li><a href="services.html">综合布线系统</a></li>
+          <li><a href="services.html">视频监控系统</a></li>
+          <li><a href="services.html">智能会议系统</a></li>
+          <li><a href="services.html">影音系统集成</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>联系方式</h4>
+        <ul>
+          <li><span class="icon">📍</span><span>广州市天河区</span></li>
+          <li><span class="icon">📞</span><span>020-8888 6666</span></li>
+          <li><span class="icon">📧</span><span>info@chuangyi-it.com</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 广州创益信息技术有限公司 版权所有 | 粤ICP备XXXXXXXX号</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="回到顶部">↑</button>
+<script src="../js/main.js"></script>
+</body>
+</html>

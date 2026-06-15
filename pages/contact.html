@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="联系广州创益信息技术有限公司 - 地址、电话、邮箱、在线留言，期待您的垂询与合作。">
+  <title>联系我们 - 广州创益信息技术有限公司</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .contact-page { padding: 80px 0; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+    }
+
+    .contact-info h2 {
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .contact-info > p {
+      color: var(--color-gray-500);
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 28px;
+      align-items: flex-start;
+    }
+
+    .contact-item-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(26,60,94,0.08), rgba(44,95,138,0.12));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-text h4 {
+      font-size: 1rem;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .contact-item-text p {
+      font-size: 0.95rem;
+      color: var(--color-gray-700);
+    }
+
+    /* Form */
+    .contact-form-wrapper {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-form-wrapper h3 {
+      font-size: 1.3rem;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .contact-form-wrapper .form-subtitle {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-gray-700);
+      margin-bottom: 6px;
+    }
+
+    .form-group label .required {
+      color: #e74c3c;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-gray-300);
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      color: var(--color-gray-900);
+      transition: var(--transition);
+      background: var(--color-gray-50);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-primary-light);
+      background: var(--color-white);
+      box-shadow: 0 0 0 3px rgba(26,60,94,0.08);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--color-gray-500);
+      margin-top: 16px;
+    }
+
+    /* Map */
+    .map-section {
+      padding: 0 0 80px;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, #e8edf2, #d0d9e0);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gray-400);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .map-placeholder .pin {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .map-placeholder p {
+      font-size: 0.95rem;
+    }
+
+    .map-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form-wrapper {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <div class="logo-icon">创</div>
+      <span>广州创益信息技术有限公司</span>
+    </a>
+    <button class="mobile-toggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
+      <a href="../index.html" class="nav-link">首页</a>
+      <a href="about.html" class="nav-link">关于我们</a>
+      <a href="qualifications.html" class="nav-link">资质荣誉</a>
+      <a href="cases.html" class="nav-link">工程案例</a>
+      <a href="services.html" class="nav-link">服务介绍</a>
+      <a href="contact.html" class="nav-link active">联系我们</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <h1>联系我们</h1>
+    <p>期待与您携手，共创智慧未来</p>
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a><span>/</span><span>联系我们</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact-page">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info fade-in">
+        <h2>联系方式</h2>
+        <p>无论您有任何疑问或项目需求，我们都将竭诚为您服务。欢迎通过以下方式与我们取得联系。</p>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <h4>公司地址</h4>
+            <p>广州市天河区珠江新城华夏路XX号<br>XX大厦XX层</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <h4>联系电话</h4>
+            <p>020-8888 6666</p>
+            <p style="font-size:0.85rem;color:var(--color-gray-500);">周一至周五 9:00-18:00</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-text">
+            <h4>电子邮箱</h4>
+            <p>info@chuangyi-it.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">💬</div>
+          <div class="contact-item-text">
+            <h4>商务合作</h4>
+            <p>sales@chuangyi-it.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">🔧</div>
+          <div class="contact-item-text">
+            <h4>技术支持</h4>
+            <p>support@chuangyi-it.com</p>
+            <p style="font-size:0.85rem;color:var(--color-gray-500);">7×24小时售后服务热线</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper fade-in">
+        <h3>在线留言</h3>
+        <p class="form-subtitle">请填写以下信息，我们将在24小时内与您联系</p>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label><span class="required">*</span> 您的姓名</label>
+              <input type="text" placeholder="请输入您的姓名" required>
+            </div>
+            <div class="form-group">
+              <label><span class="required">*</span> 联系电话</label>
+              <input type="tel" placeholder="请输入您的手机号码" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>电子邮箱</label>
+              <input type="email" placeholder="请输入您的邮箱地址">
+            </div>
+            <div class="form-group">
+              <label>公司名称</label>
+              <input type="text" placeholder="请输入您的公司名称">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>服务需求</label>
+            <select>
+              <option value="">请选择您感兴趣的服务</option>
+              <option value="cabling">综合布线系统</option>
+              <option value="surveillance">视频监控系统</option>
+              <option value="broadcast">公共广播系统</option>
+              <option value="conference">智能会议系统</option>
+              <option value="datacenter">机房建设工程</option>
+              <option value="av">影音系统集成</option>
+              <option value="other">其他 / 综合咨询</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label><span class="required">*</span> 留言内容</label>
+            <textarea placeholder="请描述您的项目需求、规模、预算等关键信息，以便我们更好地为您服务..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">提交留言</button>
+
+          <p class="form-note">提交即表示您同意我们通过您提供的联系方式与您沟通</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section">
+  <div class="container">
+    <h2 class="section-title fade-in">公司位置</h2>
+    <div class="section-title-line"></div>
+    <p class="section-subtitle fade-in">欢迎莅临参观指导</p>
+
+    <div class="map-placeholder fade-in">
+      <div class="map-grid-bg"></div>
+      <span class="pin">📍</span>
+      <p>广州市天河区珠江新城</p>
+      <p style="font-size:0.82rem;margin-top:4px;opacity:0.7;">地铁3号线 / 5号线 珠江新城站</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container fade-in">
+    <h2>开启合作之旅</h2>
+    <p>一个电话，一次沟通，或许就是一次改变的开始。</p>
+    <a href="tel:020-88886666" class="btn btn-white">立即致电</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>广州创益信息技术有限公司</h4>
+        <p>专注弱电智能化系统与影音系统集成服务，以专业技术为客户创造智慧、安全、高效的建筑空间环境。</p>
+      </div>
+      <div class="footer-links">
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="about.html">关于我们</a></li>
+          <li><a href="services.html">服务介绍</a></li>
+          <li><a href="cases.html">工程案例</a></li>
+          <li><a href="qualifications.html">资质荣誉</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>服务项目</h4>
+        <ul>
+          <li><a href="services.html">综合布线系统</a></li>
+          <li><a href="services.html">视频监控系统</a></li>
+          <li><a href="services.html">智能会议系统</a></li>
+          <li><a href="services.html">影音系统集成</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>联系方式</h4>
+        <ul>
+          <li><span class="icon">📍</span><span>广州市天河区</span></li>
+          <li><span class="icon">📞</span><span>020-8888 6666</span></li>
+          <li><span class="icon">📧</span><span>info@chuangyi-it.com</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 广州创益信息技术有限公司 版权所有 | 粤ICP备XXXXXXXX号</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="回到顶部">↑</button>
+
+<script>
+function handleSubmit(event) {
+  event.preventDefault();
+  var btn = event.target.querySelector('button[type="submit"]');
+  var originalText = btn.textContent;
+  btn.textContent = '提交中...';
+  btn.disabled = true;
+
+  // 模拟提交
+  setTimeout(function() {
+    btn.textContent = '✓ 提交成功！';
+    btn.style.background = '#27ae60';
+    setTimeout(function() {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.disabled = false;
+      event.target.reset();
+    }, 2000);
+  }, 800);
+}
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

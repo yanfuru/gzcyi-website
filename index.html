@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="广州创益信息技术有限公司 - 专业的弱电智能化系统与影音系统集成服务商，提供安防监控、综合布线、会议系统、公共广播、智能家居等一站式解决方案。">
+  <meta name="keywords" content="广州创益信息,弱电智能化,影音系统集成,安防监控,综合布线,会议系统,公共广播,智能家居">
+  <title>广州创益信息技术有限公司 - 弱电智能化系统 · 影音系统集成服务商</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== Hero Banner ===== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0d2538 0%, #1a3c5e 40%, #2c5f8a 100%);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(196,154,43,0.15) 0%, transparent 50%);
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(30deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%),
+        linear-gradient(150deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%),
+        linear-gradient(30deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%),
+        linear-gradient(150deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%),
+        linear-gradient(60deg, rgba(255,255,255,0.02) 25%, transparent 25.5%, transparent 75%, rgba(255,255,255,0.02) 75%);
+      background-size: 80px 140px;
+      background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      color: var(--color-white);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--color-accent-light);
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      opacity: 0.85;
+      margin-bottom: 36px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-10px); }
+    }
+
+    .hero-scroll span {
+      display: block;
+      width: 1px;
+      height: 30px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* ===== Video Section ===== */
+    .video-section {
+      padding: 100px 0;
+      background: var(--color-white);
+    }
+
+    .video-wrapper {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: #000;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #1a3c5e 0%, #0d2538 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      gap: 16px;
+    }
+
+    .video-placeholder .play-icon {
+      width: 80px;
+      height: 80px;
+      border: 3px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: rgba(255,255,255,0.8);
+      transition: var(--transition);
+    }
+
+    .video-placeholder:hover .play-icon {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      transform: scale(1.1);
+    }
+
+    .video-placeholder p {
+      font-size: 0.95rem;
+    }
+
+    .video-placeholder .hint {
+      font-size: 0.82rem;
+      opacity: 0.5;
+    }
+
+    /* ===== About Section ===== */
+    .about-section {
+      padding: 100px 0;
+      background: var(--color-white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image-wrapper {
+      position: relative;
+    }
+
+    .about-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-image-placeholder {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.3);
+      font-size: 3rem;
+    }
+
+    .about-experience {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--color-accent);
+      color: var(--color-white);
+      padding: 24px 28px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-experience .years {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .about-experience .text {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+
+    .about-content h2 {
+      font-size: 2rem;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .about-content p {
+      color: var(--color-gray-700);
+      margin-bottom: 16px;
+      line-height: 1.9;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--color-gray-900);
+    }
+
+    .about-feature .check {
+      width: 24px;
+      height: 24px;
+      background: rgba(196, 154, 43, 0.15);
+      color: var(--color-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== Services Section ===== */
+    .services-section {
+      padding: 100px 0;
+      background: var(--color-gray-50);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-6px);
+      border-color: var(--color-primary-light);
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, rgba(26,60,94,0.08), rgba(44,95,138,0.12));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.8rem;
+      color: var(--color-primary);
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--color-gray-500);
+      line-height: 1.7;
+    }
+
+    /* ===== Cases Section ===== */
+    .cases-section {
+      padding: 100px 0;
+      background: var(--color-white);
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .case-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .case-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .case-image {
+      height: 220px;
+      background: linear-gradient(135deg, #e8edf2, #d0d9e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gray-300);
+      font-size: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,60,94,0.6), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .case-card:hover .case-image::after {
+      opacity: 1;
+    }
+
+    .case-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--color-accent);
+      color: var(--color-white);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      z-index: 1;
+    }
+
+    .case-info {
+      padding: 20px;
+    }
+
+    .case-info h3 {
+      font-size: 1.05rem;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .case-info p {
+      font-size: 0.88rem;
+      color: var(--color-gray-500);
+    }
+
+    /* ===== Clients Section ===== */
+    .clients-section {
+      padding: 80px 0;
+      background: var(--color-gray-50);
+    }
+
+    .clients-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .client-item {
+      width: 140px;
+      height: 60px;
+      background: var(--color-white);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gray-300);
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .client-item:hover {
+      box-shadow: var(--shadow-md);
+      color: var(--color-gray-500);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .services-grid,
+      .cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-desc {
+        font-size: 1rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-experience {
+        bottom: -10px;
+        right: 10px;
+        padding: 16px 20px;
+      }
+
+      .about-experience .years {
+        font-size: 2rem;
+      }
+
+      .services-grid,
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-section,
+      .services-section,
+      .cases-section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">创</div>
+      <span>广州创益信息技术有限公司</span>
+    </a>
+    <button class="mobile-toggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
+      <a href="index.html" class="nav-link active">首页</a>
+      <a href="pages/about.html" class="nav-link">关于我们</a>
+      <a href="pages/qualifications.html" class="nav-link">资质荣誉</a>
+      <a href="pages/cases.html" class="nav-link">工程案例</a>
+      <a href="pages/services.html" class="nav-link">服务介绍</a>
+      <a href="pages/contact.html" class="nav-link">联系我们</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Banner -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="container">
+    <div class="hero-content fade-in">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        弱电智能化系统 · 影音系统集成服务商
+      </div>
+      <h1>以<span class="highlight">专业</span>技术<br>打造<span class="highlight">智慧</span>空间新体验</h1>
+      <p class="hero-desc">
+        广州创益信息技术有限公司专注于弱电智能化系统与影音系统集成领域，为商业建筑、产业园区、教育机构、政府单位等提供从规划设计到施工交付的一站式解决方案。
+      </p>
+      <div class="hero-buttons">
+        <a href="pages/services.html" class="btn btn-accent">了解我们的服务</a>
+        <a href="pages/contact.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #fff;">立即咨询</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span></span>
+    向下滚动
+  </div>
+</section>
+
+<!-- Video Section -->
+<section class="video-section" id="video">
+  <div class="container">
+    <h2 class="section-title fade-in">公司宣传视频</h2>
+    <div class="section-title-line"></div>
+    <p class="section-subtitle fade-in">3分钟了解广州创益</p>
+
+    <div class="video-wrapper fade-in">
+      <!-- ★ 替换为你的视频文件：把视频放到 videos/ 目录下，修改下方 src 路径 ★ -->
+      <div class="video-placeholder" id="videoPlaceholder" onclick="loadVideo()">
+        <div class="play-icon">▶</div>
+        <p>点击播放公司宣传片</p>
+        <p class="hint">请将宣传视频文件放到 videos/ 目录下并命名为 company-intro.mp4</p>
+      </div>
+      <video id="companyVideo" controls style="display:none;" preload="none">
+        <source src="videos/company-intro.mp4" type="video/mp4">
+        您的浏览器不支持视频播放
+      </video>
+    </div>
+  </div>
+</section>
+
+<script>
+function loadVideo() {
+  var placeholder = document.getElementById('videoPlaceholder');
+  var video = document.getElementById('companyVideo');
+  placeholder.style.display = 'none';
+  video.style.display = 'block';
+  video.play();
+}
+</script>
+
+<!-- Stats -->
+<section class="container stats fade-in">
+  <div class="stat-item">
+    <div class="stat-number" data-count="200">0</div>
+    <div class="stat-label">+ 完成项目</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-count="50">0</div>
+    <div class="stat-label">+ 服务客户</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-count="10">0</div>
+    <div class="stat-label">年行业经验</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-count="98">0</div>
+    <div class="stat-label">% 客户满意度</div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrapper fade-in">
+        <div class="about-image">
+          <div class="about-image-placeholder">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+              <rect x="10" y="30" width="100" height="75" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+              <rect x="25" y="45" width="30" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              <rect x="65" y="45" width="30" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              <rect x="25" y="72" width="70" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              <circle cx="60" cy="20" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M60 8v6M60 26v6M48 20h6M66 20h6" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        <div class="about-experience">
+          <div class="years">10+</div>
+          <div class="text">年行业深耕</div>
+        </div>
+      </div>
+      <div class="about-content fade-in">
+        <h2>广州创益信息技术有限公司</h2>
+        <p>
+          广州创益信息技术有限公司是一家集弱电智能化系统设计与影音系统集成服务于一体的高新技术企业。公司总部位于广州，业务辐射华南地区，致力于为客户提供从方案设计、设备选型、施工安装到售后维护的全生命周期服务。
+        </p>
+        <p>
+          我们汇聚了一批经验丰富的技术工程师和项目管理团队，拥有多项行业资质认证，在智慧楼宇、智能会议、安防监控、公共广播等领域积累了丰富的项目实践经验。
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <span class="check">✓</span> 专业技术团队
+          </div>
+          <div class="about-feature">
+            <span class="check">✓</span> 一站式解决方案
+          </div>
+          <div class="about-feature">
+            <span class="check">✓</span> 丰富项目经验
+          </div>
+          <div class="about-feature">
+            <span class="check">✓</span> 完善售后服务
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section" id="services">
+  <div class="container">
+    <h2 class="section-title fade-in">核心业务领域</h2>
+    <div class="section-title-line"></div>
+    <p class="section-subtitle fade-in">覆盖弱电智能化全场景，提供端到端的专业服务</p>
+
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3>综合布线系统</h3>
+        <p>结构化布线设计与施工，涵盖光纤、铜缆、机柜等全系列产品，保障网络传输的高速稳定。</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h3>视频监控系统</h3>
+        <p>高清视频监控方案，支持AI智能分析、人脸识别、车牌识别，构建全方位安全防护体系。</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 010 7.07"/>
+            <path d="M19.07 4.93a10 10 0 010 14.14"/>
+          </svg>
+        </div>
+        <h3>公共广播系统</h3>
+        <p>背景音乐与紧急广播系统，满足商场、学校、园区等多场景音频播放与应急联动需求。</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="6" width="20" height="12" rx="2"/>
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M6 3v3M18 3v3"/>
+          </svg>
+        </div>
+        <h3>智能会议系统</h3>
+        <p>专业会议室整体解决方案，包括显示系统、扩声系统、无纸化会议、远程视频会议等。</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>机房建设工程</h3>
+        <p>数据中心与弱电机房设计施工，涵盖供配电、精密空调、环境监控、防雷接地等子系统。</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="3"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M21 15l-5-5L5 21"/>
+          </svg>
+        </div>
+        <h3>影音系统集成</h3>
+        <p>家庭影院、多功能厅、报告厅等影音系统整体设计集成，提供沉浸式视听体验。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cases Section -->
+<section class="cases-section" id="cases">
+  <div class="container">
+    <h2 class="section-title fade-in">精选工程案例</h2>
+    <div class="section-title-line"></div>
+    <p class="section-subtitle fade-in">每一个项目都是我们对品质的承诺</p>
+
+    <div class="cases-grid">
+      <div class="case-card fade-in">
+        <div class="case-image">
+          <span class="case-tag">智慧园区</span>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">
+            <rect x="8" y="16" width="48" height="40" rx="3"/>
+            <rect x="16" y="24" width="12" height="10" rx="2"/>
+            <rect x="36" y="24" width="12" height="10" rx="2"/>
+            <rect x="16" y="38" width="12" height="10" rx="2"/>
+            <rect x="36" y="38" width="12" height="10" rx="2"/>
+          </svg>
+        </div>
+        <div class="case-info">
+          <h3>某科技产业园区智能化工程</h3>
+          <p>综合布线 · 安防监控 · 停车场管理</p>
+        </div>
+      </div>
+      <div class="case-card fade-in">
+        <div class="case-image">
+          <span class="case-tag">商业办公</span>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">
+            <rect x="4" y="8" width="56" height="48" rx="4"/>
+            <line x1="4" y1="28" x2="60" y2="28"/>
+            <line x1="32" y1="8" x2="32" y2="56"/>
+            <rect x="10" y="14" width="16" height="10" rx="2"/>
+            <rect x="38" y="14" width="16" height="10" rx="2"/>
+          </svg>
+        </div>
+        <div class="case-info">
+          <h3>某集团总部办公楼弱电工程</h3>
+          <p>智能会议 · 综合布线 · 门禁系统</p>
+        </div>
+      </div>
+      <div class="case-card fade-in">
+        <div class="case-image">
+          <span class="case-tag">教育机构</span>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">
+            <path d="M32 8L4 20l28 12 28-12L32 8z"/>
+            <path d="M4 20v16l28 12 28-12V20"/>
+            <path d="M18 30v8l14 6 14-6v-8"/>
+          </svg>
+        </div>
+        <div class="case-info">
+          <h3>某高等院校多媒体教室建设</h3>
+          <p>多媒体教学 · 公共广播 · 校园安防</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="pages/cases.html" class="btn btn-outline fade-in">查看全部案例 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Clients Section -->
+<section class="clients-section">
+  <div class="container">
+    <h2 class="section-title fade-in">合作伙伴</h2>
+    <div class="section-title-line"></div>
+    <p class="section-subtitle fade-in">携手行业领先品牌，为客户提供高品质产品与服务</p>
+
+    <div class="clients-grid fade-in">
+      <div class="client-item">HIKVISION</div>
+      <div class="client-item">DAHUA</div>
+      <div class="client-item">H3C</div>
+      <div class="client-item">Huawei</div>
+      <div class="client-item">BOSCH</div>
+      <div class="client-item">CISCO</div>
+      <div class="client-item">DSPPA</div>
+      <div class="client-item">ITC</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container fade-in">
+    <h2>准备好开启您的智能化升级了吗？</h2>
+    <p>无论项目规模大小，我们都将为您提供专业、可靠的弱电智能化与影音系统集成解决方案。</p>
+    <a href="pages/contact.html" class="btn btn-white">立即联系我们</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>广州创益信息技术有限公司</h4>
+        <p>专注弱电智能化系统与影音系统集成服务，以专业技术为客户创造智慧、安全、高效的建筑空间环境。</p>
+      </div>
+      <div class="footer-links">
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="pages/about.html">关于我们</a></li>
+          <li><a href="pages/services.html">服务介绍</a></li>
+          <li><a href="pages/cases.html">工程案例</a></li>
+          <li><a href="pages/qualifications.html">资质荣誉</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>服务项目</h4>
+        <ul>
+          <li><a href="pages/services.html">综合布线系统</a></li>
+          <li><a href="pages/services.html">视频监控系统</a></li>
+          <li><a href="pages/services.html">智能会议系统</a></li>
+          <li><a href="pages/services.html">影音系统集成</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>联系方式</h4>
+        <ul>
+          <li>
+            <span class="icon">📍</span>
+            <span>广州市天河区</span>
+          </li>
+          <li>
+            <span class="icon">📞</span>
+            <span>020-8888 6666</span>
+          </li>
+          <li>
+            <span class="icon">📧</span>
+            <span>info@chuangyi-it.com</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 广州创益信息技术有限公司 版权所有 | 粤ICP备XXXXXXXX号</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" aria-label="回到顶部">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
