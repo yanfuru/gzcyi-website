@@ -134,14 +134,16 @@ img {
 .logo-icon {
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-white);
-  font-size: 1.3rem;
+  overflow: hidden;
   flex-shrink: 0;
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .nav {
