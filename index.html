@@ -547,9 +547,8 @@
       <div class="video-placeholder" id="videoPlaceholder" onclick="loadVideo()">
         <div class="play-icon">▶</div>
         <p>点击播放公司宣传片</p>
-        <p class="hint">请将宣传视频文件放到 videos/ 目录下并命名为 company-intro.mp4</p>
       </div>
-      <video id="companyVideo" controls style="display:none;" preload="none">
+      <video id="companyVideo" controls style="display:none;width:100%;border-radius:var(--radius-lg);" preload="metadata">
         <source src="videos/company-intro.mp4" type="video/mp4">
         您的浏览器不支持视频播放
       </video>
