@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="广州创益信息技术有限公司资质荣誉 - 电子与智能化工程专业承包资质、ISO认证、行业奖项等权威认证。">
+  <meta name="description" content="广州创益信息技术有限公司资质荣誉 - 专业承包资质、行业认证、权威荣誉。">
   <title>资质荣誉 - 广州创益信息技术有限公司</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
     .qual-page { padding: 80px 0; }
-
-    .qual-section { margin-bottom: 80px; }
+    .qual-section { margin-bottom: 70px; }
     .qual-section:last-child { margin-bottom: 0; }
 
     .qual-grid {
@@ -22,130 +21,119 @@
     .qual-card {
       background: var(--color-white);
       border-radius: var(--radius-lg);
-      padding: 32px 24px;
-      text-align: center;
+      overflow: hidden;
       box-shadow: var(--shadow-sm);
-      transition: var(--transition);
+      transition: all 0.3s ease;
       border: 1px solid var(--color-gray-100);
     }
-
     .qual-card:hover {
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-lg);
       transform: translateY(-4px);
     }
 
-    .qual-card-icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 20px;
-      background: linear-gradient(135deg, rgba(196,154,43,0.1), rgba(196,154,43,0.05));
-      border-radius: 16px;
+    .cert-img-wrap {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #f8f9fa;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
+      position: relative;
+    }
+    .cert-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .qual-card:hover .cert-img-wrap img {
+      transform: scale(1.05);
     }
 
-    .qual-card h3 {
-      font-size: 1.05rem;
+    .cert-info {
+      padding: 20px 18px;
+    }
+
+    .cert-info h3 {
+      font-size: 0.98rem;
       color: var(--color-primary);
       margin-bottom: 8px;
       font-weight: 600;
+      line-height: 1.4;
     }
 
-    .qual-card .cert-number {
+    .cert-number {
       display: inline-block;
-      background: linear-gradient(135deg, var(--color-accent), #c49a2b);
-      color: var(--color-white);
-      padding: 4px 14px;
-      border-radius: 50px;
-      font-size: 0.82rem;
+      background: linear-gradient(135deg, #c49a2b, #d4af37);
+      color: #fff;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
       font-weight: 500;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .qual-badge {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 18px;
-      background: linear-gradient(135deg, rgba(196,154,43,0.12), rgba(196,154,43,0.06));
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-    }
-
-    .qual-card p {
-      font-size: 0.88rem;
+    .cert-info p {
+      font-size: 0.84rem;
       color: var(--color-gray-500);
       line-height: 1.6;
     }
 
-    /* Honors */
+    /* Honors section */
     .honors-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
     }
-
     .honor-card {
       background: var(--color-white);
       border-radius: var(--radius-lg);
-      padding: 28px 20px;
+      padding: 32px 20px;
       text-align: center;
       box-shadow: var(--shadow-sm);
-      transition: var(--transition);
+      transition: all 0.3s ease;
+      border: 1px solid var(--color-gray-100);
     }
-
     .honor-card:hover {
       box-shadow: var(--shadow-md);
       transform: translateY(-4px);
     }
-
-    .honor-badge {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 16px;
-      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+    .honor-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 18px;
+      background: linear-gradient(135deg, rgba(196,154,43,0.12), rgba(196,154,43,0.06));
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
-      color: var(--color-white);
-      box-shadow: 0 4px 16px rgba(196,154,43,0.3);
+      font-size: 2rem;
     }
-
     .honor-card h3 {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--color-primary);
       margin-bottom: 6px;
+      font-weight: 600;
     }
-
-    .honor-card .year {
-      font-size: 0.85rem;
+    .honor-year {
+      font-size: 0.82rem;
       color: var(--color-accent);
+      font-weight: 500;
       margin-bottom: 8px;
     }
-
     .honor-card p {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--color-gray-500);
     }
 
-    @media (max-width: 768px) {
-      .qual-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .honors-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+    @media (max-width: 992px) {
+      .qual-grid { grid-template-columns: repeat(2, 1fr); }
+      .honors-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) {
-      .qual-grid, .honors-grid {
-        grid-template-columns: 1fr;
-      }
+      .qual-grid, .honors-grid { grid-template-columns: 1fr; }
+      .cert-img-wrap { height: 180px; }
     }
   </style>
 </head>
@@ -183,6 +171,7 @@
 
 <section class="qual-page">
   <div class="container">
+
     <!-- 企业资质 -->
     <div class="qual-section">
       <h2 class="section-title fade-in">企业资质</h2>
@@ -190,48 +179,115 @@
       <p class="section-subtitle fade-in">国家认证，行业准入，专业实力的权威背书</p>
 
       <div class="qual-grid">
-        <!-- 证书1：音视频系统集成设计与施工资质壹级 -->
+
+        <!-- 1. 音视频系统集成壹级 -->
         <div class="qual-card fade-in">
-          <div class="qual-badge">📜</div>
-          <h3>音视频系统集成设计与施工资质</h3>
-          <div class="cert-number">壹级 | NO.20250915</div>
-          <p>由中国音视频系统集成技术协会颁发，有效期2025.09.15-2028.09.15，具备承接各类音视频系统集成工程的设计与施工能力。</p>
+          <div class="cert-img-wrap">
+            <img src="../images/certificates/cert-av.jpg" alt="音视频系统集成设计与施工资质壹级" loading="lazy">
+          </div>
+          <div class="cert-info">
+            <h3>音视频系统集成设计与施工资质</h3>
+            <div class="cert-number">壹级 | NO.20250915</div>
+            <p>由中国音视频系统集成技术协会颁发，有效期2025.09.15-2028.09.15</p>
+          </div>
         </div>
-        <!-- 证书2：舞台灯光工程设计与施工资质壹级 -->
+
+        <!-- 2. 舞台灯光工程壹级 -->
         <div class="qual-card fade-in">
-          <div class="qual-badge">💡</div>
-          <h3>舞台灯光工程设计与施工资质</h3>
-          <div class="cert-number">壹级 | NO.20250916</div>
-          <p>由中国音视频系统集成技术协会颁发，有效期2025.09.16-2028.09.16，可承担各类舞台灯光系统工程的设计与施工。</p>
+          <div class="cert-img-wrap">
+            <img src="../images/certificates/cert-lighting.jpg" alt="舞台灯光工程设计与施工资质壹级" loading="lazy">
+          </div>
+          <div class="cert-info">
+            <h3>舞台灯光工程设计与施工资质</h3>
+            <div class="cert-number">壹级 | NO.20250916</div>
+            <p>由中国音视频系统集成技术协会颁发，有效期2025.09.16-2028.09.16</p>
+          </div>
         </div>
-        <!-- 证书3：舞台机械工程设计与施工资质壹级 -->
+
+        <!-- 3. 舞台机械工程壹级 -->
         <div class="qual-card fade-in">
-          <div class="qual-badge">⚙️</div>
-          <h3>舞台机械工程设计与施工资质</h3>
-          <div class="cert-number">壹级 | NO.20250917</div>
-          <p>由中国音视频系统集成技术协会颁发，有效期2025.09.17-2028.09.17，可承担各类舞台机械系统工程的设计与施工。</p>
+          <div class="cert-img-wrap">
+            <img src="../images/certificates/cert-mech.jpg" alt="舞台机械工程设计与施工资质壹级" loading="lazy">
+          </div>
+          <div class="cert-info">
+            <h3>舞台机械工程设计与施工资质</h3>
+            <div class="cert-number">壹级 | NO.20250917</div>
+            <p>由中国音视频系统集成技术协会颁发，有效期2025.09.17-2028.09.17</p>
+          </div>
         </div>
-        <!-- 证书4：建筑业企业劳务资质证书 -->
+
+        <!-- 4. 建筑业劳务资质 -->
         <div class="qual-card fade-in">
-          <div class="qual-badge">🏗️</div>
-          <h3>建筑业企业劳务资质证书</h3>
-          <div class="cert-number">DL344424709</div>
-          <p>由广州市住房和城乡建设局颁发，有效期至2030年02月19日，具备承接建筑劳务分包业务的合法资质。</p>
+          <div class="cert-img-wrap">
+            <img src="../images/certificates/cert-labor.jpg" alt="建筑业企业劳务资质证书" loading="lazy">
+          </div>
+          <div class="cert-info">
+            <h3>建筑业企业劳务资质证书</h3>
+            <div class="cert-number">DL344424709</div>
+            <p>由广州市住房和城乡建设局颁发，有效期至2030年02月19日</p>
+          </div>
         </div>
-        <!-- 证书5：安全技术防范设计、施工、维护能力 -->
+
+        <!-- 5. 安防四级 -->
         <div class="qual-card fade-in">
-          <div class="qual-badge">🔒</div>
-          <h3>安全技术防范设计、施工、维护能力</h3>
-          <div class="cert-number">四级 | 粤A41201号</div>
-          <p>由广东省公共安全技术防范协会颁发，有效期至2029年3月17日，具备安防系统工程的设计、施工与维护专业能力。</p>
+          <div class="cert-img-wrap">
+            <img src="../images/certificates/cert-safety.jpg" alt="安全技术防范设计施工维护能力" loading="lazy">
+          </div>
+          <div class="cert-info">
+            <h3>安全技术防范设计、施工、维护能力</h3>
+            <div class="cert-number">四级 | 粤A41201号</div>
+            <p>由广东省公共安全技术防范协会颁发，有效期至2029年03月17日</p>
+          </div>
         </div>
-        <!-- 证书6：哈曼（HARMAN）二级分销商/工程商 -->
+
+        <!-- 6. 哈曼二级分销商 -->
         <div class="qual-card fade-in">
-          <div class="qual-badge">🎵</div>
-          <h3>哈曼（HARMAN）二级分销商/工程商</h3>
-          <div class="cert-number">2026年5月-12月</div>
-          <p>由哈曼（中国）投资有限公司授权，有效期2026年5月1日-2026年12月31日，具备哈曼专业音视频产品分销及工程服务资质。</p>
+          <div class="cert-img-wrap">
+            <img src="../images/certificates/cert-harman.jpg" alt="哈曼HARMAN二级分销商工程商" loading="lazy">
+          </div>
+          <div class="cert-info">
+            <h3>哈曼（HARMAN）二级分销商/工程商</h3>
+            <div class="cert-number">2026年度授权</div>
+            <p>由哈曼（中国）投资有限公司授权，具备哈曼产品分销及工程服务资质</p>
+          </div>
         </div>
+
+        <!-- 7. 高企证书 -->
+        <div class="qual-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/certificates/cert-hiqe.jpg" alt="高新技术企业证书" loading="lazy">
+          </div>
+          <div class="cert-info">
+            <h3>高新技术企业证书</h3>
+            <div class="cert-number">国家级高新技术企业</div>
+            <p>由广东省科学技术厅等部门联合认定，享受国家税收优惠政策</p>
+          </div>
+        </div>
+
+        <!-- 8. 舞美协会会员 -->
+        <div class="qual-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/certificates/cert-wumei.jpg" alt="中国舞美协会单位会员证书" loading="lazy">
+          </div>
+          <div class="cert-info">
+            <h3>中国舞台美术学会单位会员</h3>
+            <div class="cert-number">单位会员</div>
+            <p>中国舞台美术学会授予，具备舞台美术行业专业服务资格</p>
+          </div>
+        </div>
+
+        <!-- 9. 安防四级资质 -->
+        <div class="qual-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/certificates/cert-security4.png" alt="安防工程企业设计施工维护能力" loading="lazy">
+          </div>
+          <div class="cert-info">
+            <h3>安防工程企业资质</h3>
+            <div class="cert-number">设计/施工/维护四级</div>
+            <p>广东省公安厅安全技术防范管理办公室备案认可</p>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -243,31 +299,32 @@
 
       <div class="honors-grid">
         <div class="honor-card fade-in">
-          <div class="honor-badge">🏆</div>
+          <div class="honor-icon">&#127942;</div>
           <h3>优秀弱电工程企业</h3>
-          <div class="year">2023年度</div>
-          <p>广东省智能建筑行业协会颁发</p>
+          <div class="honor-year">2023年度</div>
+          <p>广东省智能建筑行业协会</p>
         </div>
         <div class="honor-card fade-in">
-          <div class="honor-badge">⭐</div>
+          <div class="honor-icon">&#11088;</div>
           <h3>诚信经营示范单位</h3>
-          <div class="year">2022-2023</div>
-          <p>广州市市场监督管理局认定</p>
+          <div class="honor-year">2022-2023</div>
+          <p>广州市市场监督管理局</p>
         </div>
         <div class="honor-card fade-in">
-          <div class="honor-badge">🎖️</div>
+          <div class="honor-icon">&#127891;</div>
           <h3>最佳系统集成方案奖</h3>
-          <div class="year">2022年度</div>
+          <div class="honor-year">2022年度</div>
           <p>华南智慧建筑产业峰会</p>
         </div>
         <div class="honor-card fade-in">
-          <div class="honor-badge">🤝</div>
+          <div class="honor-icon">&#129309;</div>
           <h3>优秀合作伙伴</h3>
-          <div class="year">2021-2023</div>
+          <div class="honor-year">2021-2023</div>
           <p>海康威视渠道认证</p>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -307,9 +364,9 @@
       <div class="footer-contact">
         <h4>联系方式</h4>
         <ul>
-          <li><span class="icon">📍</span><span>广州市黄埔区科学城天泰一路2号6栋406室</span></li>
-          <li><span class="icon">📞</span><span>020-3203 0561</span></li>
-          <li><span class="icon">📧</span><span>yanfuru@126.com</span></li>
+          <li>&#128205;<span>广州市黄埔区科学城天泰一路2号6栋406室</span></li>
+          <li>&#128222;<span>020-3203 0561</span></li>
+          <li>&#128231;<span>yanfuru@126.com</span></li>
         </ul>
       </div>
     </div>
@@ -319,7 +376,7 @@
   </div>
 </footer>
 
-<button class="back-to-top" aria-label="回到顶部">↑</button>
+<button class="back-to-top" aria-label="回到顶部">&uarr;</button>
 <script src="../js/main.js"></script>
 </body>
 </html>
