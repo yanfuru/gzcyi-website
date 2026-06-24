@@ -1,7 +1,0 @@
-127.0.0.1 - - [12/Jun/2026 20:28:08] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 20:52:11] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 20:52:11] "GET /pages/about.html HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 20:52:11] "GET /pages/qualifications.html HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 20:52:11] "GET /pages/cases.html HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 20:52:11] "GET /pages/services.html HTTP/1.1" 200 -
-127.0.0.1 - - [12/Jun/2026 20:52:11] "GET /pages/contact.html HTTP/1.1" 200 -

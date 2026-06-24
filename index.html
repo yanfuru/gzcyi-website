@@ -423,31 +423,29 @@
       align-items: center;
     }
 
-    .client-item {
-      width: 140px;
-      height: 60px;
-      background: var(--color-white);
-      border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-gray-300);
-      font-size: 0.9rem;
-      font-weight: 500;
-      box-shadow: var(--shadow-sm);
+    .client-logo {
+      max-height: 50px;
+      max-width: 110px;
+      object-fit: contain;
+      opacity: 0.7;
+      filter: grayscale(80%);
       transition: var(--transition);
+      border-radius: var(--radius);
     }
 
-    .client-item:hover {
-      box-shadow: var(--shadow-md);
-      color: var(--color-gray-500);
+    .client-logo:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+      transform: scale(1.08);
     }
 
     /* ===== Responsive ===== */
     @media (max-width: 1024px) {
-      .services-grid,
-      .cases-grid {
+      .services-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      [style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
       }
     }
 
@@ -477,6 +475,9 @@
       .services-grid,
       .cases-grid {
         grid-template-columns: 1fr;
+      }
+      [style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: 1fr !important;
       }
 
       .about-section,
@@ -638,76 +639,54 @@ function loadVideo() {
 <!-- Services Section -->
 <section class="services-section" id="services">
   <div class="container">
-    <h2 class="section-title fade-in">核心业务领域</h2>
+    <h2 class="section-title fade-in">业务范围</h2>
     <div class="section-title-line"></div>
-    <p class="section-subtitle fade-in">覆盖弱电智能化全场景，提供端到端的专业服务</p>
+    <p class="section-subtitle fade-in">覆盖弱电智能化与影音集成全场景，提供端到端专业服务</p>
 
-    <div class="services-grid">
+    <div class="services-grid" style="grid-template-columns: repeat(4, 1fr);">
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="3" width="20" height="14" rx="2"/>
-            <line x1="8" y1="21" x2="16" y2="21"/>
-            <line x1="12" y1="17" x2="12" y2="21"/>
-          </svg>
-        </div>
-        <h3>综合布线系统</h3>
-        <p>结构化布线设计与施工，涵盖光纤、铜缆、机柜等全系列产品，保障网络传输的高速稳定。</p>
+        <div class="service-icon">🎬</div>
+        <h3>影音 AV 系统</h3>
+        <p>影音悬挂 · 舞台灯光 · 视频显示<br>摄像录播 · 会议发言 · 矩阵切换</p>
       </div>
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-            <circle cx="12" cy="12" r="3"/>
-          </svg>
-        </div>
-        <h3>视频监控系统</h3>
-        <p>高清视频监控方案，支持AI智能分析、人脸识别、车牌识别，构建全方位安全防护体系。</p>
+        <div class="service-icon">🎤</div>
+        <h3>卡拉OK系统</h3>
+        <p>专业KTV音响设备设计与安装<br>高端娱乐空间音频解决方案</p>
       </div>
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-            <path d="M15.54 8.46a5 5 0 010 7.07"/>
-            <path d="M19.07 4.93a10 10 0 010 14.14"/>
-          </svg>
-        </div>
-        <h3>公共广播系统</h3>
-        <p>背景音乐与紧急广播系统，满足商场、学校、园区等多场景音频播放与应急联动需求。</p>
+        <div class="service-icon">🔊</div>
+        <h3>背景音乐 & 扩声</h3>
+        <p>公共广播 · 背景音乐<br>专业音频扩声系统</p>
       </div>
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="6" width="20" height="12" rx="2"/>
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M6 3v3M18 3v3"/>
-          </svg>
-        </div>
-        <h3>智能会议系统</h3>
-        <p>专业会议室整体解决方案，包括显示系统、扩声系统、无纸化会议、远程视频会议等。</p>
+        <div class="service-icon">🎛️</div>
+        <h3>中控 & 同传</h3>
+        <p>中央控制系统 · 同声传译<br>智能集中管控平台</p>
       </div>
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-            <path d="M2 17l10 5 10-5"/>
-            <path d="M2 12l10 5 10-5"/>
-          </svg>
-        </div>
-        <h3>机房建设工程</h3>
-        <p>数据中心与弱电机房设计施工，涵盖供配电、精密空调、环境监控、防雷接地等子系统。</p>
+        <div class="service-icon">📡</div>
+        <h3>综合布线 & 网络</h3>
+        <p>结构化布线 · 计算机网络<br>程控交换 · 有线电视</p>
       </div>
       <div class="service-card fade-in">
-        <div class="service-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="3"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-        </div>
-        <h3>影音系统集成</h3>
-        <p>家庭影院、多功能厅、报告厅等影音系统整体设计集成，提供沉浸式视听体验。</p>
+        <div class="service-icon">👁️</div>
+        <h3>安防监控</h3>
+        <p>视频监控 · 防盗报警<br>电子巡更 · 无线对讲</p>
       </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">🏠</div>
+        <h3>智能化系统</h3>
+        <p>智能家居 · 楼宇自控 · 智能照明<br>客房控制 · 一卡通管理</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">🅿️</div>
+        <h3>停车 & 门禁</h3>
+        <p>停车场系统 · 门禁系统<br>访客管理 · 考勤消费 · 车位引导</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="pages/services.html" class="btn btn-outline fade-in">查看完整服务介绍 →</a>
     </div>
   </div>
 </section>
@@ -721,49 +700,62 @@ function loadVideo() {
 
     <div class="cases-grid">
       <div class="case-card fade-in">
-        <div class="case-image">
-          <span class="case-tag">智慧园区</span>
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">
-            <rect x="8" y="16" width="48" height="40" rx="3"/>
-            <rect x="16" y="24" width="12" height="10" rx="2"/>
-            <rect x="36" y="24" width="12" height="10" rx="2"/>
-            <rect x="16" y="38" width="12" height="10" rx="2"/>
-            <rect x="36" y="38" width="12" height="10" rx="2"/>
-          </svg>
+        <div class="case-image" style="background:linear-gradient(135deg,#1a3c5e,#0d2538),url('images/cases/case-four-seasons.jpg') center/cover no-repeat;">
+          <span class="case-tag">高端酒店</span>
         </div>
         <div class="case-info">
-          <h3>某科技产业园区智能化工程</h3>
-          <p>综合布线 · 安防监控 · 停车场管理</p>
+          <h3>广州四季酒店 AV 系统</h3>
+          <p>广州天河 · 2014-2022</p>
         </div>
       </div>
       <div class="case-card fade-in">
-        <div class="case-image">
-          <span class="case-tag">商业办公</span>
+        <div class="case-image" style="background:linear-gradient(135deg,#1a3c5e,#0d2538),url('images/cases/case-iff.jpg') center/cover no-repeat;">
+          <span class="case-tag">高端会所</span>
+        </div>
+        <div class="case-info">
+          <h3>南沙国际金融论坛（IFF）永久会址</h3>
+          <p>广州南沙 · 2023</p>
+        </div>
+      </div>
+      <div class="case-card fade-in">
+        <div class="case-image" style="background:linear-gradient(135deg,#1a3c5e,#0d2538),url('images/cases/case-sheraton.jpg') center/cover no-repeat;">
+          <span class="case-tag">高端酒店</span>
+        </div>
+        <div class="case-info">
+          <h3>云南弥勒喜来登 & 源宿酒店</h3>
+          <p>云南弥勒 · 2020</p>
+        </div>
+      </div>
+      <div class="case-card fade-in">
+        <div class="case-image" style="background:linear-gradient(135deg,#1a3c5e,#0d2538),url('images/cases/case-tanyue.jpg') center/cover no-repeat;">
+          <span class="case-tag">高端酒店</span>
+        </div>
+        <div class="case-info">
+          <h3>惠州双月湾檀悦豪生度假酒店</h3>
+          <p>惠州惠东 · 2014</p>
+        </div>
+      </div>
+      <div class="case-card fade-in">
+        <div class="case-image" style="background:linear-gradient(135deg,#1a3c5e,#0d2538),url('images/cases/case-hubei.jpg') center/cover no-repeat;">
+          <span class="case-tag">高端酒店</span>
+        </div>
+        <div class="case-info">
+          <h3>湖北监利恒福星际酒店</h3>
+          <p>湖北监利 · 2018</p>
+        </div>
+      </div>
+      <div class="case-card fade-in">
+        <div class="case-image" style="background:linear-gradient(135deg,#1a3c5e,#0d2538);">
+          <span class="case-tag">总部大厦</span>
           <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">
             <rect x="4" y="8" width="56" height="48" rx="4"/>
             <line x1="4" y1="28" x2="60" y2="28"/>
             <line x1="32" y1="8" x2="32" y2="56"/>
-            <rect x="10" y="14" width="16" height="10" rx="2"/>
-            <rect x="38" y="14" width="16" height="10" rx="2"/>
           </svg>
         </div>
         <div class="case-info">
-          <h3>某集团总部办公楼弱电工程</h3>
-          <p>智能会议 · 综合布线 · 门禁系统</p>
-        </div>
-      </div>
-      <div class="case-card fade-in">
-        <div class="case-image">
-          <span class="case-tag">教育机构</span>
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">
-            <path d="M32 8L4 20l28 12 28-12L32 8z"/>
-            <path d="M4 20v16l28 12 28-12V20"/>
-            <path d="M18 30v8l14 6 14-6v-8"/>
-          </svg>
-        </div>
-        <div class="case-info">
-          <h3>某高等院校多媒体教室建设</h3>
-          <p>多媒体教学 · 公共广播 · 校园安防</p>
+          <h3>广州长隆大厦 AV 系统</h3>
+          <p>广州番禺 · 2018</p>
         </div>
       </div>
     </div>
@@ -781,15 +773,23 @@ function loadVideo() {
     <div class="section-title-line"></div>
     <p class="section-subtitle fade-in">携手行业领先品牌，为客户提供高品质产品与服务</p>
 
-    <div class="clients-grid fade-in">
-      <div class="client-item">HIKVISION</div>
-      <div class="client-item">DAHUA</div>
-      <div class="client-item">H3C</div>
-      <div class="client-item">Huawei</div>
-      <div class="client-item">BOSCH</div>
-      <div class="client-item">CISCO</div>
-      <div class="client-item">DSPPA</div>
-      <div class="client-item">ITC</div>
+    <div class="clients-grid fade-in" style="gap:24px;">
+      <img src="images/partners/partner_149.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_150.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_151.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_152.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_153.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_154.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_155.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_156.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_157.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_158.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_159.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_160.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_161.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_162.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_163.png" alt="Partner" class="client-logo">
+      <img src="images/partners/partner_164.png" alt="Partner" class="client-logo">
     </div>
   </div>
 </section>

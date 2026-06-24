@@ -132,45 +132,51 @@
       background: var(--color-gray-50);
     }
 
-    .core-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    /* Scope Groups - 业务范围 */
+    .scope-group {
       margin-top: 40px;
-    }
-
-    .core-item {
+      padding: 28px 32px;
       background: var(--color-white);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      text-align: center;
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
-      border: 1px solid var(--color-gray-100);
+      border-left: 4px solid var(--color-primary);
     }
 
-    .core-item:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--color-primary-light);
-    }
-
-    .core-item .core-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .core-item h4 {
-      font-size: 1rem;
+    .scope-title {
+      font-size: 1.2rem;
       color: var(--color-primary);
-      font-weight: 600;
-      margin-bottom: 6px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .core-item p {
-      font-size: 0.83rem;
-      color: var(--color-gray-500);
-      line-height: 1.6;
+    .scope-icon { font-size: 1.4rem; }
+
+    .scope-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .scope-item {
+      display: inline-block;
+      padding: 7px 16px;
+      background: linear-gradient(135deg, #f0f4f8, #e8eef4);
+      border-radius: 20px;
+      font-size: 0.88rem;
+      color: var(--color-gray-700);
+      font-weight: 500;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .scope-item:hover {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(26,60,94,0.15);
     }
 
     /* Process */
@@ -441,43 +447,75 @@
   </div>
 </section>
 
-<!-- 核心业务领域 -->
+<!-- 业务范围 -->
 <section class="core-business">
   <div class="container">
-    <h2 class="section-title fade-in">核心业务领域</h2>
+    <h2 class="section-title fade-in">业务范围</h2>
     <div class="section-title-line"></div>
-    <p class="section-subtitle fade-in">以上十大服务覆盖以下六大核心业务板块</p>
+    <p class="section-subtitle fade-in">以上十大服务覆盖弱电智能化与影音集成全场景</p>
 
-    <div class="core-grid fade-in">
-      <div class="core-item">
-        <div class="core-icon">🔌</div>
-        <h4>综合布线系统</h4>
-        <p>结构化布线 · 光纤铜缆 · 机柜桥架</p>
+    <!-- 影音 AV 系统 -->
+    <div class="scope-group fade-in" style="margin-top:48px;">
+      <h3 class="scope-title"><span class="scope-icon">🎬</span> 影音（AV）系统</h3>
+      <div class="scope-grid">
+        <div class="scope-item">影音悬挂系统</div>
+        <div class="scope-item">舞台灯光系统</div>
+        <div class="scope-item">信息发布系统</div>
+        <div class="scope-item">摄像录播系统</div>
+        <div class="scope-item">会议发言系统</div>
+        <div class="scope-item">矩阵切换系统</div>
+        <div class="scope-item">视频显示系统</div>
+        <div class="scope-item">卡拉OK系统</div>
+        <div class="scope-item">背景音乐系统</div>
+        <div class="scope-item">音频扩声系统</div>
+        <div class="scope-item">同声传译系统</div>
+        <div class="scope-item">中央控制系统</div>
       </div>
-      <div class="core-item">
-        <div class="core-icon">📹</div>
-        <h4>视频监控系统</h4>
-        <p>高清摄像 · AI智能分析 · 集中管理</p>
+    </div>
+
+    <!-- 安防 & 布线 -->
+    <div class="scope-group fade-in">
+      <h3 class="scope-title"><span class="scope-icon">🛡️</span> 安防监控 & 综合布线</h3>
+      <div class="scope-grid">
+        <div class="scope-item">视频监控系统</div>
+        <div class="scope-item">防盗报警系统</div>
+        <div class="scope-item">电子巡更系统</div>
+        <div class="scope-item">无线对讲系统</div>
+        <div class="scope-item">可视对讲系统</div>
+        <div class="scope-item">有线电视系统</div>
+        <div class="scope-item">综合布线系统</div>
+        <div class="scope-item">程控交换系统</div>
+        <div class="scope-item">UPS不间断电源</div>
       </div>
-      <div class="core-item">
-        <div class="core-icon">🔊</div>
-        <h4>公共广播系统</h4>
-        <p>背景音乐 · 消防联动 · IP网络广播</p>
+    </div>
+
+    <!-- 智能化系统 -->
+    <div class="scope-group fade-in">
+      <h3 class="scope-title"><span class="scope-icon">🏠</span> 智能化系统</h3>
+      <div class="scope-grid">
+        <div class="scope-item">智能家居</div>
+        <div class="scope-item">机房装修</div>
+        <div class="scope-item">电梯五方通话系统</div>
+        <div class="scope-item">节能监测系统</div>
+        <div class="scope-item">客房控制系统</div>
+        <div class="scope-item">智能照明系统</div>
+        <div class="scope-item">一卡通管理系统</div>
+        <div class="scope-item">公共广播系统</div>
+        <div class="scope-item">楼宇自控系统</div>
+        <div class="scope-item">计算机网络系统</div>
       </div>
-      <div class="core-item">
-        <div class="core-icon">🖥️</div>
-        <h4>智能会议系统</h4>
-        <p>大屏显示 · 专业扩声 · 中控系统</p>
-      </div>
-      <div class="core-item">
-        <div class="core-icon">🏢</div>
-        <h4>机房建设工程</h4>
-        <p>模块化机房 · 供配电 · 精密空调</p>
-      </div>
-      <div class="core-item">
-        <div class="core-icon">🎬</div>
-        <h4>影音系统集成</h4>
-        <p>杜比全景声 · 4K显示 · 舞台机械</p>
+    </div>
+
+    <!-- 出入口管理 -->
+    <div class="scope-group fade-in">
+      <h3 class="scope-title"><span class="scope-icon">🅿️</span> 出入口 & 一卡通管理</h3>
+      <div class="scope-grid">
+        <div class="scope-item">门禁系统</div>
+        <div class="scope-item">停车场管理系统</div>
+        <div class="scope-item">访客系统</div>
+        <div class="scope-item">考勤系统</div>
+        <div class="scope-item">消费系统</div>
+        <div class="scope-item">车位引导系统</div>
       </div>
     </div>
   </div>
