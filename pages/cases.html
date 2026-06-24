@@ -3,30 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="广州创益信息技术有限公司工程案例 - 智慧园区、商业办公、教育机构、政府单位等弱电智能化与影音系统集成项目案例展示。">
+  <meta name="description" content="广州创益信息技术有限公司工程案例 - 高端酒店、总部大厦、商业办公、政府单位、高端会所等弱电智能化与影音系统集成项目案例展示。">
   <title>工程案例 - 广州创益信息技术有限公司</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    .cases-page { padding: 80px 0; }
+    .cases-page { padding: 80px 0 60px; }
 
     .filter-bar {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 12px;
       margin-bottom: 48px;
-      flex-wrap: wrap;
     }
 
     .filter-btn {
       padding: 10px 24px;
-      border: 1px solid var(--color-gray-300);
+      border: 1.5px solid var(--color-gray-300);
+      border-radius: 30px;
       background: var(--color-white);
-      border-radius: 50px;
+      color: var(--color-gray-600);
+      font-size: 0.92rem;
       cursor: pointer;
-      font-size: 0.9rem;
-      color: var(--color-gray-700);
-      transition: var(--transition);
+      transition: all 0.3s ease;
       font-family: var(--font-body);
     }
 
@@ -40,130 +40,143 @@
     .cases-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 32px;
     }
 
     .case-card {
+      background: var(--color-white);
       border-radius: var(--radius-lg);
       overflow: hidden;
       box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      background: var(--color-white);
-      cursor: pointer;
+      transition: all 0.35s ease;
+      border: 1px solid var(--color-gray-100);
     }
 
     .case-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(26,60,94,0.15);
     }
 
     .case-image {
-      height: 220px;
       position: relative;
+      height: 220px;
       overflow: hidden;
-      background: linear-gradient(135deg, #e8edf2, #d0d9e0);
       display: flex;
       align-items: center;
       justify-content: center;
+      background: linear-gradient(135deg, #e8edf2, #c8d4e0);
     }
 
-    .case-image svg {
-      opacity: 0.25;
+    .case-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
     }
 
-    .case-image .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(26,60,94,0.7), transparent);
-      opacity: 0;
-      transition: var(--transition);
-      display: flex;
-      align-items: flex-end;
-      padding: 20px;
-    }
-
-    .case-card:hover .overlay {
-      opacity: 1;
-    }
-
-    .overlay .view-detail {
-      color: var(--color-white);
-      font-size: 0.9rem;
-      font-weight: 500;
-      border: 1px solid rgba(255,255,255,0.5);
-      padding: 6px 16px;
-      border-radius: 4px;
+    .case-card:hover .case-image img {
+      transform: scale(1.06);
     }
 
     .case-tag {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      background: var(--color-accent);
+      top: 16px;
+      left: 16px;
+      background: rgba(26,60,94,0.85);
       color: var(--color-white);
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-size: 0.8rem;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
       font-weight: 500;
+      backdrop-filter: blur(6px);
+      z-index: 2;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26,60,94,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.35s ease;
       z-index: 1;
     }
 
-    .case-info {
-      padding: 20px;
+    .case-card:hover .overlay { opacity: 1; }
+
+    .view-detail {
+      color: var(--color-white);
+      font-size: 0.92rem;
+      font-weight: 500;
+      border: 1.5px solid rgba(255,255,255,0.7);
+      padding: 8px 20px;
+      border-radius: 24px;
+      transition: all 0.3s ease;
     }
 
-    .case-info h3 {
-      font-size: 1.05rem;
+    .view-detail:hover {
+      background: var(--color-white);
       color: var(--color-primary);
-      margin-bottom: 8px;
-      font-weight: 600;
+    }
+
+    .case-info { padding: 22px 24px 26px; }
+
+    .case-info h3 {
+      font-size: 1.08rem;
+      color: var(--color-primary);
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.4;
     }
 
     .case-meta {
       display: flex;
-      gap: 16px;
-      font-size: 0.83rem;
-      color: var(--color-gray-500);
-      margin-bottom: 10px;
       flex-wrap: wrap;
-    }
-
-    .case-meta span {
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 0.82rem;
+      color: var(--color-gray-500);
     }
 
     .case-info .desc {
       font-size: 0.88rem;
-      color: var(--color-gray-700);
-      line-height: 1.6;
+      color: var(--color-gray-600);
+      line-height: 1.75;
+      margin-bottom: 14px;
     }
 
     .case-tags {
       display: flex;
-      gap: 8px;
-      margin-top: 12px;
       flex-wrap: wrap;
+      gap: 8px;
     }
 
     .case-tags .tag {
+      background: rgba(26,60,94,0.06);
+      color: var(--color-primary);
+      padding: 4px 12px;
+      border-radius: 16px;
       font-size: 0.78rem;
-      background: var(--color-gray-50);
-      color: var(--color-gray-500);
-      padding: 3px 10px;
-      border-radius: 4px;
+      font-weight: 500;
     }
 
-    @media (max-width: 1024px) {
-      .cases-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    /* cases-grid hidden state */
+    .case-card.hidden {
+      display: none !important;
     }
-    @media (max-width: 768px) {
-      .cases-grid {
-        grid-template-columns: 1fr;
-      }
+
+    @media (max-width: 992px) {
+      .cases-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .cases-grid { grid-template-columns: 1fr; gap: 24px; }
+      .filter-bar { gap: 8px; }
+      .filter-btn { padding: 8px 16px; font-size: 0.85rem; }
+      .case-image { height: 180px; }
     }
   </style>
 </head>
@@ -192,7 +205,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>工程案例</h1>
-    <p>每一个项目都是我们对品质的承诺</p>
+    <p>真实项目，见证实力</p>
     <div class="breadcrumb">
       <a href="../index.html">首页</a><span>/</span><span>工程案例</span>
     </div>
@@ -211,251 +224,187 @@
     </div>
 
     <div class="cases-grid">
-      <!-- Case 1 -->
+
+      <!-- Case 1: 广州四季酒店 -->
       <div class="case-card fade-in" data-category="hotel">
         <div class="case-image">
           <span class="case-tag">高端酒店</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="8" y="16" width="64" height="56" rx="4"/>
-            <rect x="18" y="28" width="18" height="14" rx="2"/>
-            <rect x="44" y="28" width="18" height="14" rx="2"/>
-            <rect x="18" y="48" width="18" height="14" rx="2"/>
-            <rect x="44" y="48" width="18" height="14" rx="2"/>
-          </svg>
+          <img src="../images/cases/case-four-seasons.jpg" alt="广州四季酒店" onerror="this.style.display='none'">
           <div class="overlay"><span class="view-detail">查看详情</span></div>
         </div>
         <div class="case-info">
-          <h3>某科技创新产业园区智能化工程</h3>
+          <h3>广州四季酒店AV系统项目</h3>
           <div class="case-meta">
-            <span>📅 2023年</span>
-            <span>📐 12万㎡</span>
-            <span>📍 广州黄埔</span>
+            <span>📅 2014-2022年</span>
+            <span>📍 广州天河珠江新城</span>
           </div>
-          <p class="desc">涵盖综合布线、安防监控、停车场管理、楼宇自控等子系统，实现园区智能化统一管理。</p>
+          <p class="desc">四季酒店区域AV系统，含主塔楼及群楼74-93层共332间客房影音、视频系统，提供设备定期维护服务。</p>
           <div class="case-tags">
-            <span class="tag">综合布线</span><span class="tag">安防监控</span><span class="tag">楼宇自控</span>
+            <span class="tag">影音系统</span><span class="tag">视频系统</span><span class="tag">定期维保</span>
           </div>
         </div>
       </div>
 
-      <!-- Case 2 -->
+      <!-- Case 2: 南沙国际金融论坛（IFF）永久会址 -->
+      <div class="case-card fade-in" data-category="club">
+        <div class="case-image">
+          <span class="case-tag">高端会所</span>
+          <img src="../images/cases/case-iff.jpg" alt="南沙国际金融论坛永久会址" onerror="this.style.display='none'">
+          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        </div>
+        <div class="case-info">
+          <h3>南沙国际金融论坛（IFF）永久会址项目</h3>
+          <div class="case-meta">
+            <span>📅 2023年</span>
+            <span>📍 广州南沙</span>
+          </div>
+          <p class="desc">国际金融论坛永久会址智能化系统建设，涵盖会议发言、视频显示、影音集成等多个子系统。</p>
+          <div class="case-tags">
+            <span class="tag">会议系统</span><span class="tag">影音集成</span><span class="tag">智能中控</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3: 广州长隆大厦AV系统 -->
       <div class="case-card fade-in" data-category="hq">
         <div class="case-image">
           <span class="case-tag">总部大厦</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="4" y="8" width="72" height="64" rx="6"/>
-            <line x1="4" y1="36" x2="76" y2="36"/>
-            <line x1="40" y1="8" x2="40" y2="72"/>
-            <rect x="14" y="18" width="18" height="12" rx="2"/>
-            <rect x="48" y="18" width="18" height="12" rx="2"/>
-          </svg>
+          <img src="../images/cases/case-chimelong.jpg" alt="广州长隆大厦" onerror="this.style.display='none'">
           <div class="overlay"><span class="view-detail">查看详情</span></div>
         </div>
         <div class="case-info">
-          <h3>某集团总部办公大楼弱电工程</h3>
+          <h3>广州长隆大厦AV系统工程项目</h3>
           <div class="case-meta">
-            <span>📅 2023年</span>
-            <span>📐 3.5万㎡</span>
-            <span>📍 广州天河</span>
-          </div>
-          <p class="desc">包含智能会议系统、综合布线、门禁一卡通、信息发布系统等，打造现代化智慧办公空间。</p>
-          <div class="case-tags">
-            <span class="tag">智能会议</span><span class="tag">门禁系统</span><span class="tag">信息发布</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Case 3 -->
-      <div class="case-card fade-in" data-category="office">
-        <div class="case-image">
-          <span class="case-tag">商业办公</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M40 8L8 22l32 14 32-14L40 8z"/>
-            <path d="M8 22v18l32 14 32-14V22"/>
-            <rect x="20" y="44" width="40" height="28" rx="3"/>
-            <line x1="32" y1="44" x2="32" y2="72"/>
-            <line x1="48" y1="44" x2="48" y2="72"/>
-          </svg>
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
-        </div>
-        <div class="case-info">
-          <h3>某高等院校智慧校园建设项目</h3>
-          <div class="case-meta">
-            <span>📅 2022年</span>
-            <span>📐 8万㎡</span>
+            <span>📅 2018年</span>
             <span>📍 广州番禺</span>
           </div>
-          <p class="desc">多媒体教室、学术报告厅、校园安防监控、公共广播等系统的整体设计与实施。</p>
+          <p class="desc">国际报告厅、办公会议室、董事长会议室及会所AV系统，长隆集团物联网集成平台建设。</p>
           <div class="case-tags">
-            <span class="tag">多媒体教学</span><span class="tag">校园安防</span><span class="tag">公共广播</span>
+            <span class="tag">AV系统</span><span class="tag">物联网平台</span><span class="tag">会议系统</span>
           </div>
         </div>
       </div>
 
-      <!-- Case 4 -->
+      <!-- Case 4: 绿景集团总部 -->
+      <div class="case-card fade-in" data-category="hq">
+        <div class="case-image">
+          <span class="case-tag">总部大厦</span>
+          <img src="../images/cases/case-nanshan.jpg" alt="绿景集团总部" onerror="this.style.display='none'">
+          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        </div>
+        <div class="case-info">
+          <h3>绿景集团总部影音系统项目</h3>
+          <div class="case-meta">
+            <span>📅 2012-2016年</span>
+            <span>📍 深圳福田NEO大厦</span>
+          </div>
+          <p class="desc">涵盖总部会议室、报告厅、接待中心、国际会议展览中心、KTV、电影院等区域影音系统一体化建设。</p>
+          <div class="case-tags">
+            <span class="tag">会议系统</span><span class="tag">影音集成</span><span class="tag">弱电智能化</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 5: 天河机关大院 -->
       <div class="case-card fade-in" data-category="government">
         <div class="case-image">
           <span class="case-tag">政府单位</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="20" y="10" width="40" height="14" rx="2"/>
-            <rect x="12" y="24" width="56" height="46" rx="3"/>
-            <rect x="22" y="36" width="16" height="10" rx="2"/>
-            <rect x="42" y="36" width="16" height="10" rx="2"/>
-            <rect x="22" y="52" width="16" height="10" rx="2"/>
-            <rect x="42" y="52" width="16" height="10" rx="2"/>
-          </svg>
+          <img src="../images/cases/case-tianhe.jpg" alt="天河机关大院" onerror="this.style.display='none'">
           <div class="overlay"><span class="view-detail">查看详情</span></div>
         </div>
         <div class="case-info">
-          <h3>某区政务服务中心智能化改造</h3>
+          <h3>天河区机关大院节能改造工程</h3>
           <div class="case-meta">
-            <span>📅 2022年</span>
-            <span>📐 1.2万㎡</span>
-            <span>📍 广州白云</span>
+            <span>📅 2015-2016年</span>
+            <span>📍 广州天河</span>
           </div>
-          <p class="desc">排队叫号系统、信息发布、安防监控、综合布线等全面智能化升级，提升政务服务效率。</p>
+          <p class="desc">新建能耗监测系统，9006会议室智能系统改造，实现电动窗帘、照明、空调、会议系统设备智能控制。</p>
           <div class="case-tags">
-            <span class="tag">排队叫号</span><span class="tag">安防监控</span><span class="tag">信息发布</span>
+            <span class="tag">智能控制</span><span class="tag">能耗监测</span><span class="tag">会议室改造</span>
           </div>
         </div>
       </div>
 
-      <!-- Case 5 -->
-      <div class="case-card fade-in" data-category="club">
-        <div class="case-image">
-          <span class="case-tag">高端会所</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="8" y="10" width="64" height="44" rx="4"/>
-            <rect x="24" y="14" width="32" height="36" rx="2"/>
-            <circle cx="56" cy="54" r="10"/>
-            <circle cx="24" cy="54" r="10"/>
-            <rect x="14" y="58" width="52" height="8" rx="2"/>
-          </svg>
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
-        </div>
-        <div class="case-info">
-          <h3>某企业多功能报告厅影音系统</h3>
-          <div class="case-meta">
-            <span>📅 2023年</span>
-            <span>📐 800㎡</span>
-            <span>📍 深圳南山</span>
-          </div>
-          <p class="desc">专业级扩声系统、高清LED显示、智能灯光控制、舞台机械等影音系统整体集成。</p>
-          <div class="case-tags">
-            <span class="tag">扩声系统</span><span class="tag">LED显示</span><span class="tag">灯光控制</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Case 6 -->
-      <div class="case-card fade-in" data-category="hq">
-        <div class="case-image">
-          <span class="case-tag">总部大厦</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="8" y="14" width="28" height="52" rx="3"/>
-            <rect x="44" y="22" width="28" height="44" rx="3"/>
-            <rect x="14" y="22" width="16" height="10" rx="1"/>
-            <rect x="14" y="38" width="16" height="10" rx="1"/>
-            <rect x="14" y="54" width="16" height="6" rx="1"/>
-            <rect x="50" y="30" width="16" height="10" rx="1"/>
-            <rect x="50" y="46" width="16" height="10" rx="1"/>
-          </svg>
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
-        </div>
-        <div class="case-info">
-          <h3>某金融企业数据中心机房建设</h3>
-          <div class="case-meta">
-            <span>📅 2022年</span>
-            <span>📐 500㎡</span>
-            <span>📍 广州珠江新城</span>
-          </div>
-          <p class="desc">T3+标准数据中心建设，涵盖供配电、精密空调、环境监控、消防联动等系统。</p>
-          <div class="case-tags">
-            <span class="tag">机房建设</span><span class="tag">环境监控</span><span class="tag">供配电</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Case 7 -->
+      <!-- Case 6: 云南弥勒喜来登酒店 -->
       <div class="case-card fade-in" data-category="hotel">
         <div class="case-image">
           <span class="case-tag">高端酒店</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="40" cy="40" r="28"/>
-            <circle cx="40" cy="40" r="16"/>
-            <line x1="40" y1="12" x2="40" y2="24"/>
-            <line x1="40" y1="56" x2="40" y2="68"/>
-            <line x1="12" y1="40" x2="24" y2="40"/>
-            <line x1="56" y1="40" x2="68" y2="40"/>
-          </svg>
+          <img src="../images/cases/case-sheraton.jpg" alt="云南弥勒喜来登酒店" onerror="this.style.display='none'">
           <div class="overlay"><span class="view-detail">查看详情</span></div>
         </div>
         <div class="case-info">
-          <h3>某大型物流园区智能化系统</h3>
+          <h3>云南弥勒喜来登 & 源宿酒店AV系统</h3>
           <div class="case-meta">
-            <span>📅 2021年</span>
-            <span>📐 20万㎡</span>
-            <span>📍 佛山南海</span>
+            <span>📅 2020年</span>
+            <span>📍 云南弥勒</span>
           </div>
-          <p class="desc">视频监控、周界防范、车辆管理、无线对讲等系统，实现园区全天候智能化管理。</p>
+          <p class="desc">宴会厅、多功能报告厅音视频系统，舞台灯光系统，会议室会讨系统、远程视频会议室，背景音乐及信息发布系统。</p>
           <div class="case-tags">
-            <span class="tag">视频监控</span><span class="tag">周界防范</span><span class="tag">车辆管理</span>
+            <span class="tag">音视频系统</span><span class="tag">舞台灯光</span><span class="tag">会议系统</span>
           </div>
         </div>
       </div>
 
-      <!-- Case 8 -->
+      <!-- Case 7: 双月湾檀悦豪生度假酒店 -->
+      <div class="case-card fade-in" data-category="hotel">
+        <div class="case-image">
+          <span class="case-tag">高端酒店</span>
+          <img src="../images/cases/case-tanyue.jpg" alt="双月湾檀悦豪生度假酒店" onerror="this.style.display='none'">
+          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        </div>
+        <div class="case-info">
+          <h3>惠州双月湾檀悦豪生度假酒店</h3>
+          <div class="case-meta">
+            <span>📅 2014年</span>
+            <span>📍 惠州惠东</span>
+          </div>
+          <p class="desc">宴会厅、会议室、电影院、KTV、流动音响等设计施工一体化，涵盖视频显示、音响扩音、会议发言、舞台灯光、智能中控、VOD点播、信息发布等系统。</p>
+          <div class="case-tags">
+            <span class="tag">影音集成</span><span class="tag">舞台灯光</span><span class="tag">智能中控</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 8: 龙门富力南昆山温泉养生谷 -->
       <div class="case-card fade-in" data-category="club">
         <div class="case-image">
           <span class="case-tag">高端会所</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M16 16h48v36H16z" stroke-width="2"/>
-            <rect x="24" y="24" width="32" height="20" rx="2"/>
-            <circle cx="32" cy="58" r="4"/>
-            <circle cx="48" cy="58" r="4"/>
-            <rect x="20" y="62" width="40" height="6" rx="2"/>
-          </svg>
+          <img src="../images/cases/case-fuli.jpg" alt="龙门富力南昆山温泉养生谷" onerror="this.style.display='none'">
           <div class="overlay"><span class="view-detail">查看详情</span></div>
         </div>
         <div class="case-info">
-          <h3>某高端住宅家庭影院系统</h3>
+          <h3>龙门富力南昆山温泉养生谷</h3>
           <div class="case-meta">
-            <span>📅 2023年</span>
-            <span>📐 60㎡</span>
-            <span>📍 广州天河</span>
+            <span>📅 2013年</span>
+            <span>📍 惠州龙门</span>
           </div>
-          <p class="desc">7.2.4杜比全景声影院系统、4K激光投影、智能中控系统，打造私人沉浸式观影体验。</p>
+          <p class="desc">温泉中心KTV影音设备安装工程，售楼中心LED显示屏工程。项目位于国家4A级风景区内，总占地3000亩。</p>
           <div class="case-tags">
-            <span class="tag">家庭影院</span><span class="tag">智能中控</span><span class="tag">杜比全景声</span>
+            <span class="tag">KTV系统</span><span class="tag">LED显示</span><span class="tag">影音集成</span>
           </div>
         </div>
       </div>
 
-      <!-- Case 9 -->
-      <div class="case-card fade-in" data-category="office">
+      <!-- Case 9: 湖北监利恒福星际酒店 -->
+      <div class="case-card fade-in" data-category="hotel">
         <div class="case-image">
-          <span class="case-tag">商业办公</span>
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="10" y="16" width="28" height="20" rx="3"/>
-            <rect x="42" y="16" width="28" height="20" rx="3"/>
-            <rect x="10" y="44" width="28" height="20" rx="3"/>
-            <rect x="42" y="44" width="28" height="20" rx="3"/>
-          </svg>
+          <span class="case-tag">高端酒店</span>
+          <img src="../images/cases/case-hubei.jpg" alt="湖北监利恒福星际酒店" onerror="this.style.display='none'">
           <div class="overlay"><span class="view-detail">查看详情</span></div>
         </div>
         <div class="case-info">
-          <h3>某实验中学多媒体教学系统</h3>
+          <h3>湖北监利恒福星际酒店AV系统</h3>
           <div class="case-meta">
-            <span>📅 2021年</span>
-            <span>📐 3万㎡</span>
-            <span>📍 广州越秀</span>
+            <span>📅 2018年</span>
+            <span>📍 湖北荆州监利</span>
           </div>
-          <p class="desc">60间多媒体教室建设，含互动白板、扩声系统、校园电视台、录播教室等。</p>
+          <p class="desc">监利县首家五星级标准酒店，多功能厅、宴会厅、三楼会议室及贵宾室AV系统工程建设。</p>
           <div class="case-tags">
-            <span class="tag">多媒体教室</span><span class="tag">录播系统</span><span class="tag">校园电视</span>
+            <span class="tag">AV系统</span><span class="tag">宴会厅</span><span class="tag">会议室</span>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -463,8 +412,8 @@
 <section class="cta-section">
   <div class="container fade-in">
     <h2>有类似项目需求？</h2>
-    <p>联系我们，获取专属解决方案与报价。</p>
-    <a href="contact.html" class="btn btn-white">立即咨询</a>
+    <p>以上仅为部分代表案例，还有更多项目经验等待与您分享。</p>
+    <a href="contact.html" class="btn btn-white">联系咨询</a>
   </div>
 </section>
 
@@ -487,10 +436,10 @@
       <div class="footer-links">
         <h4>服务项目</h4>
         <ul>
-          <li><a href="services.html">综合布线系统</a></li>
-          <li><a href="services.html">视频监控系统</a></li>
-          <li><a href="services.html">智能会议系统</a></li>
-          <li><a href="services.html">影音系统集成</a></li>
+          <li><a href="services.html">租赁服务</a></li>
+          <li><a href="services.html">实施服务</a></li>
+          <li><a href="services.html">维保服务</a></li>
+          <li><a href="services.html">技术管家</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -509,31 +458,6 @@
 </footer>
 
 <button class="back-to-top" aria-label="回到顶部">↑</button>
-
-<script>
-// 案例筛选功能
-document.addEventListener('DOMContentLoaded', function() {
-  var filterBtns = document.querySelectorAll('.filter-btn');
-  var caseCards = document.querySelectorAll('.case-card');
-
-  filterBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      filterBtns.forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
-
-      var filter = this.getAttribute('data-filter');
-
-      caseCards.forEach(function(card) {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-});
-</script>
 <script src="../js/main.js"></script>
 </body>
 </html>
