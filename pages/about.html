@@ -51,81 +51,153 @@
     }
 
     /* Timeline */
+    /* ===== Horizontal Timeline ===== */
     .timeline-section {
-      padding: 80px 0;
+      padding: 80px 0 60px;
       background: var(--color-gray-50);
+      overflow: hidden;
     }
 
-    .timeline {
+    .timeline-h-scroll {
+      overflow-x: auto;
+      overflow-y: visible;
+      padding: 20px 0 40px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-gray-300) transparent;
+    }
+
+    .timeline-h-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .timeline-h-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .timeline-h-scroll::-webkit-scrollbar-thumb {
+      background: var(--color-gray-300);
+      border-radius: 3px;
+    }
+
+    .timeline-h {
+      display: flex;
+      align-items: flex-end;
+      min-width: max-content;
+      padding: 0 40px;
       position: relative;
-      max-width: 800px;
-      margin: 0 auto;
+      height: 420px;
     }
 
-    .timeline::before {
+    /* Horizontal connecting line */
+    .timeline-h::before {
       content: '';
       position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: var(--color-gray-300);
-      transform: translateX(-50%);
+      left: 40px;
+      right: 40px;
+      top: 50%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-gray-300), var(--color-accent), var(--color-gray-300));
+      transform: translateY(-50%);
     }
 
-    .timeline-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 48px;
+    .timeline-h-item {
       position: relative;
+      width: 220px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .timeline-item:nth-child(odd) {
-      flex-direction: row-reverse;
+    /* Alternate above/below the line */
+    .timeline-h-item:nth-child(odd) {
+      align-self: flex-end;
+      padding-bottom: 60px;
     }
 
-    .timeline-dot {
+    .timeline-h-item:nth-child(even) {
+      align-self: flex-start;
+      padding-top: 60px;
+    }
+
+    .timeline-h-dot {
       position: absolute;
       left: 50%;
-      top: 8px;
-      width: 16px;
-      height: 16px;
+      top: 50%;
+      width: 18px;
+      height: 18px;
       background: var(--color-accent);
       border: 3px solid var(--color-white);
       border-radius: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 0 0 4px rgba(196, 154, 43, 0.2);
-      z-index: 1;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0 4px rgba(196,154,43,0.25);
+      z-index: 2;
     }
 
-    .timeline-content {
-      width: 45%;
+    .timeline-h-card {
+      width: 200px;
       background: var(--color-white);
-      padding: 24px;
+      padding: 20px 18px;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      text-align: center;
     }
 
-    .timeline-year {
-      font-size: 1.4rem;
-      font-weight: 700;
+    .timeline-h-item:nth-child(odd) .timeline-h-card {
+      margin-bottom: 16px;
+    }
+
+    .timeline-h-item:nth-child(even) .timeline-h-card {
+      margin-top: 16px;
+    }
+
+    .timeline-h-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .timeline-h-year {
+      font-size: 1.5rem;
+      font-weight: 800;
       color: var(--color-accent);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
-    .timeline-content h3 {
-      font-size: 1.05rem;
+    .timeline-h-card h3 {
+      font-size: 0.95rem;
       color: var(--color-primary);
       margin-bottom: 8px;
+      font-weight: 600;
     }
 
-    .timeline-content p {
-      font-size: 0.9rem;
+    .timeline-h-card p {
+      font-size: 0.82rem;
       color: var(--color-gray-500);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
-    /* PPT Download */
+    /* Scroll hint */
+    .scroll-hint {
+      text-align: center;
+      padding: 8px 0 0;
+      font-size: 0.82rem;
+      color: var(--color-gray-400);
+      display: none;
+    }
+
+    .scroll-hint span {
+      display: inline-block;
+      animation: scrollBounce 1.5s ease infinite;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(8px); }
+    }
+
+    /* PPT Download */    /* PPT Download */
     .ppt-download {
       margin-top: 28px;
       display: flex;
@@ -476,22 +548,40 @@
         grid-template-columns: 1fr;
       }
 
-      .timeline::before {
-        left: 20px;
+      .timeline-h-scroll {
+        padding: 10px 0 20px;
       }
 
-      .timeline-dot {
-        left: 20px;
+      .timeline-h {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        min-width: unset;
+        padding: 0 16px;
       }
 
-      .timeline-item,
-      .timeline-item:nth-child(odd) {
-        flex-direction: row;
-        padding-left: 50px;
+      .timeline-h::before {
+        display: none;
       }
 
-      .timeline-content {
+      .timeline-h-item {
+        width: calc(50% - 16px);
+        align-self: stretch !important;
+        padding: 0 !important;
+      }
+
+      .timeline-h-card {
         width: 100%;
+        margin: 0 !important;
+      }
+
+      .timeline-h-dot {
+        display: none;
+      }
+
+      .scroll-hint {
+        display: none !important;
       }
 
       .culture-grid {
@@ -577,122 +667,127 @@
     <div class="section-title-line"></div>
     <p class="section-subtitle fade-in">立足专业智能化系统、影音系统集成服务商</p>
 
-    <div class="timeline">
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2013</div>
-          <h3>公司成立</h3>
-          <p>广州创益信息技术有限公司正式注册成立，立足于专业智能化系统、影音系统集成服务。</p>
+    <div class="timeline-h-scroll" id="timelineHScroll">
+      <div class="timeline-h">
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2013</div>
+            <h3>公司成立</h3>
+            <p>广州创益信息技术有限公司正式注册成立，立足于专业智能化系统、影音系统集成服务。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2014</div>
-          <h3>首个五星酒店影音工程</h3>
-          <p>承接第一个设计施工一体的高端五星级影音系统集成工程——双月湾檀悦豪生度假酒店；同年承接广州四季酒店影音系统年度维保服务。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2014</div>
+            <h3>首个五星酒店影音工程</h3>
+            <p>承接第一个设计施工一体的高端五星级影音系统集成工程——双月湾檀悦豪生度假酒店；同年承接广州四季酒店影音系统年度维保服务。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2016</div>
-          <h3>首个总部大厦项目</h3>
-          <p>承接第一个集团总部大厦项目——深圳绿景集团NEO大厦智能化系统集成。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2016</div>
+            <h3>首个总部大厦项目</h3>
+            <p>承接第一个集团总部大厦项目——深圳绿景集团NEO大厦智能化系统集成。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2017</div>
-          <h3>国家高新技术企业</h3>
-          <p>被评选为国家高新技术企业，技术实力获得国家级认可。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2017</div>
+            <h3>国家高新技术企业</h3>
+            <p>被评选为国家高新技术企业，技术实力获得国家级认可。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2017</div>
-          <h3>G20峰会会议保障</h3>
-          <p>参加G20峰会会议保障工作，为国际级会议提供专业音视频技术服务。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2017</div>
+            <h3>G20峰会会议保障</h3>
+            <p>参加G20峰会会议保障工作，为国际级会议提供专业音视频技术服务。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2018</div>
-          <h3>全物联网集成标杆项目</h3>
-          <p>承接第一个实现无人值守的全物联网集成总部大厦项目——广州长隆大厦，并被亚洲视听杂志报道。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2018</div>
+            <h3>全物联网集成标杆项目</h3>
+            <p>承接第一个实现无人值守的全物联网集成总部大厦项目——广州长隆大厦，并被亚洲视听杂志报道。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2019</div>
-          <h3>全球财富论坛会议保障</h3>
-          <p>参与全球财富论坛会议保障工作，为国际级会议论坛提供音视频系统保障服务。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2019</div>
+            <h3>全球财富论坛会议保障</h3>
+            <p>参与全球财富论坛会议保障工作，为国际级会议论坛提供音视频系统保障服务。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2020</div>
-          <h3>跨地域业务拓展</h3>
-          <p>跨过黄河，承接陕西渭南温德姆至尊酒店影音系统设计与集成。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2020</div>
+            <h3>跨地域业务拓展</h3>
+            <p>跨过黄河，承接陕西渭南温德姆至尊酒店影音系统设计与集成。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2021</div>
-          <h3>地标项目参与</h3>
-          <p>参与南沙国际金融论坛永久会址项目，为国际级会议中心提供专业影音系统集成服务。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2021</div>
+            <h3>地标项目参与</h3>
+            <p>参与南沙国际金融论坛永久会址项目，为国际级会议中心提供专业影音系统集成服务。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2022</div>
-          <h3>黄埔区方舱医院援建</h3>
-          <p>参与黄埔区方舱医院援建工作，在特殊时期履行企业社会责任。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2022</div>
+            <h3>黄埔区方舱医院援建</h3>
+            <p>参与黄埔区方舱医院援建工作，在特殊时期履行企业社会责任。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2023</div>
-          <h3>展厅音视频集成</h3>
-          <p>参与白云新储能展厅音视频集成项目，为新能源企业提供专业视听解决方案。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2023</div>
+            <h3>展厅音视频集成</h3>
+            <p>参与白云新储能展厅音视频集成项目，为新能源企业提供专业视听解决方案。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2023</div>
-          <h3>亚洲青年领袖论坛会议保障</h3>
-          <p>参与亚洲青年领袖论坛会议保障工作，为国际级论坛提供音视频系统保障服务。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2023</div>
+            <h3>亚洲青年领袖论坛会议保障</h3>
+            <p>参与亚洲青年领袖论坛会议保障工作，为国际级论坛提供音视频系统保障服务。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2025</div>
-          <h3>科研级项目参与</h3>
-          <p>参与中科院高能物理研究所散裂中子源二期机电工程，为国家级大科学装置提供智能化系统集成服务。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2025</div>
+            <h3>科研级项目参与</h3>
+            <p>参与中科院高能物理研究所散裂中子源二期机电工程，为国家级大科学装置提供智能化系统集成服务。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2026</div>
-          <h3>国家最高领导人会议保障</h3>
-          <p>参与国家最高领导人会议保障工作，以专业可靠的音视频技术服务保障重大国事活动。</p>
+        <div class="timeline-h-item fade-in">
+          <div class="timeline-h-card">
+            <div class="timeline-h-year">2026</div>
+            <h3>国家最高领导人会议保障</h3>
+            <p>参与国家最高领导人会议保障工作，以专业可靠的音视频技术服务保障重大国事活动。</p>
+          </div>
+          <div class="timeline-h-dot"></div>
         </div>
       </div>
     </div>
+    <div class="scroll-hint"><span>← 左右滑动查看更多 →</span></div>
   </div>
 </section>
+
+<!-- Culture -->
 
 <!-- Culture -->
 <section class="culture-section">
