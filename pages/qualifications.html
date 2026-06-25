@@ -9,12 +9,18 @@
   <link rel="stylesheet" href="../css/style.css">
   <style>
     .qual-page { padding: 80px 0; }
-    .qual-section { margin-bottom: 70px; }
+    .qual-section { margin-bottom: 80px; }
     .qual-section:last-child { margin-bottom: 0; }
 
     .qual-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .qual-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
     }
 
@@ -35,105 +41,142 @@
       width: 100%;
       height: 220px;
       overflow: hidden;
-      background: #f8f9fa;
+      background: #f5f7f9;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
     }
     .cert-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: contain;
       transition: transform 0.4s ease;
-      padding: 10px;
+      padding: 12px;
     }
-    .qual-card:hover .cert-img-wrap img {
-      transform: scale(1.05);
-    }
+    .qual-card:hover .cert-img-wrap img { transform: scale(1.04); }
 
     .cert-info {
-      padding: 20px 18px;
+      padding: 18px 16px;
     }
-
     .cert-info h3 {
-      font-size: 0.98rem;
+      font-size: 0.93rem;
       color: var(--color-primary);
       margin-bottom: 8px;
       font-weight: 600;
       line-height: 1.4;
     }
-
     .cert-number {
       display: inline-block;
       background: linear-gradient(135deg, #c49a2b, #d4af37);
       color: #fff;
       padding: 3px 12px;
       border-radius: 20px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 500;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-
     .cert-info p {
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       color: var(--color-gray-500);
       line-height: 1.6;
     }
 
-    /* Honors section */
-    .honors-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
+    /* 荣誉卡片 */
     .honor-card {
       background: var(--color-white);
       border-radius: var(--radius-lg);
-      padding: 32px 20px;
-      text-align: center;
+      overflow: hidden;
       box-shadow: var(--shadow-sm);
       transition: all 0.3s ease;
       border: 1px solid var(--color-gray-100);
     }
     .honor-card:hover {
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-lg);
       transform: translateY(-4px);
     }
-    .honor-icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 18px;
-      background: linear-gradient(135deg, rgba(196,154,43,0.12), rgba(196,154,43,0.06));
-      border-radius: 50%;
+    .honor-img-wrap {
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      background: #f5f7f9;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
     }
-    .honor-card h3 {
-      font-size: 0.95rem;
+    .honor-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+      transition: transform 0.4s ease;
+    }
+    .honor-card:hover .honor-img-wrap img { transform: scale(1.04); }
+    .honor-info {
+      padding: 16px;
+    }
+    .honor-info h3 {
+      font-size: 0.88rem;
       color: var(--color-primary);
-      margin-bottom: 6px;
       font-weight: 600;
-    }
-    .honor-year {
-      font-size: 0.82rem;
-      color: var(--color-accent);
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .honor-card p {
-      font-size: 0.82rem;
-      color: var(--color-gray-500);
+      line-height: 1.4;
+      margin: 0;
     }
 
-    @media (max-width: 992px) {
-      .qual-grid { grid-template-columns: repeat(2, 1fr); }
-      .honors-grid { grid-template-columns: repeat(2, 1fr); }
+    /* 软著卡片 */
+    .copyright-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
     }
-    @media (max-width: 480px) {
-      .qual-grid, .honors-grid { grid-template-columns: 1fr; }
+    .copyright-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      border: 1px solid var(--color-gray-100);
+    }
+    .copyright-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .copyright-img-wrap {
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      background: #f5f7f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .copyright-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 8px;
+      transition: transform 0.4s ease;
+    }
+    .copyright-card:hover .copyright-img-wrap img { transform: scale(1.04); }
+    .copyright-info {
+      padding: 12px;
+      text-align: center;
+    }
+    .copyright-info h4 {
+      font-size: 0.78rem;
+      color: var(--color-primary);
+      font-weight: 600;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    @media (max-width: 1100px) {
+      .qual-grid { grid-template-columns: repeat(2, 1fr); }
+      .qual-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .copyright-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .qual-grid, .qual-grid-4 { grid-template-columns: 1fr; }
+      .copyright-grid { grid-template-columns: repeat(2, 1fr); }
       .cert-img-wrap { height: 180px; }
     }
   </style>
@@ -173,75 +216,75 @@
 <section class="qual-page">
   <div class="container">
 
-    <!-- 企业资质 -->
+    <!-- ① 企业资质 -->
     <div class="qual-section">
       <h2 class="section-title fade-in">企业资质</h2>
       <div class="section-title-line"></div>
-      <p class="section-subtitle fade-in">国家认证，行业准入，专业实力的权威背书</p>
+      <p class="section-subtitle fade-in">国家及行业权威机构认证，专业实力的有力背书</p>
 
       <div class="qual-grid">
 
-        <!-- 1. 音视频系统集成设计与施工资质壹级 -->
+        <!-- 音视频系统集成设计与施工资质壹级 -->
         <div class="qual-card fade-in">
           <div class="cert-img-wrap">
-            <img src="../images/certificates/cert-av.jpg" alt="音视频系统集成设计与施工资质壹级" loading="lazy">
+            <img src="../images/certificates/cert-av-integration.jpg" alt="音视频系统集成设计与施工资质壹级" loading="lazy">
           </div>
           <div class="cert-info">
             <h3>音视频系统集成设计与施工资质</h3>
             <div class="cert-number">壹级 | NO.20250915</div>
-            <p>由中国音视频系统集成技术协会颁发，有效期 2025.09.15–2028.09.15</p>
+            <p>中国音视频系统集成技术协会颁发，有效期 2025.09.15–2028.09.15</p>
           </div>
         </div>
 
-        <!-- 2. 舞台灯光工程设计与施工资质壹级 -->
+        <!-- 舞台灯光工程设计与施工资质壹级 -->
         <div class="qual-card fade-in">
           <div class="cert-img-wrap">
-            <img src="../images/certificates/cert-lighting.jpg" alt="舞台灯光工程设计与施工资质壹级" loading="lazy">
+            <img src="../images/certificates/cert-stage-lighting.jpg" alt="舞台灯光工程设计与施工资质壹级" loading="lazy">
           </div>
           <div class="cert-info">
-            <h3>舞台灯光工程设计施工资质</h3>
+            <h3>舞台灯光工程设计与施工资质</h3>
             <div class="cert-number">壹级 | NO.20250916</div>
-            <p>由中国音视频系统集成技术协会颁发，有效期 2025.09.16–2028.09.16</p>
+            <p>中国音视频系统集成技术协会颁发，有效期 2025.09.16–2028.09.16</p>
           </div>
         </div>
 
-        <!-- 3. 舞台机械工程设计与施工资质壹级 -->
+        <!-- 舞台机械工程设计与施工资质壹级 -->
         <div class="qual-card fade-in">
           <div class="cert-img-wrap">
-            <img src="../images/certificates/cert-machinery.jpg" alt="舞台机械工程设计与施工资质壹级" loading="lazy">
+            <img src="../images/certificates/cert-stage-machinery.jpg" alt="舞台机械工程设计与施工资质壹级" loading="lazy">
           </div>
           <div class="cert-info">
-            <h3>舞台机械工程设计施工资质</h3>
+            <h3>舞台机械工程设计与施工资质</h3>
             <div class="cert-number">壹级 | NO.20250917</div>
-            <p>由中国音视频系统集成技术协会颁发，有效期 2025.09.17–2028.09.17</p>
+            <p>中国音视频系统集成技术协会颁发，有效期 2025.09.17–2028.09.17</p>
           </div>
         </div>
 
-        <!-- 4. 高新技术企业证书 -->
+        <!-- 安全生产许可证 -->
         <div class="qual-card fade-in">
           <div class="cert-img-wrap">
-            <img src="../images/certificates/cert-hiqe.jpg" alt="高新技术企业证书" loading="lazy">
+            <img src="../images/certificates/cert-safety-permit.jpg" alt="安全生产许可证" loading="lazy">
           </div>
           <div class="cert-info">
-            <h3>高新技术企业证书</h3>
-            <div class="cert-number">国家级认定</div>
-            <p>由广东省科学技术厅、财政厅、税务局联合认定，享受国家税收优惠政策</p>
+            <h3>安全生产许可证</h3>
+            <div class="cert-number">有效期至 2028年</div>
+            <p>由广州市应急管理局颁发，有效期 2025–2028年</p>
           </div>
         </div>
 
-        <!-- 5. 安防四级资质 -->
+        <!-- 安全技术防范四级 -->
         <div class="qual-card fade-in">
           <div class="cert-img-wrap">
-            <img src="../images/certificates/cert-security.png" alt="安全技术防范设计施工维护能力" loading="lazy">
+            <img src="../images/certificates/cert-security-level4.png" alt="安全技术防范设计施工维护能力四级" loading="lazy">
           </div>
           <div class="cert-info">
             <h3>安全技术防范设计、施工、维护能力</h3>
             <div class="cert-number">四级 | 粤A41201号</div>
-            <p>由广东省公共安全技术防范协会颁发，有效期至2029年</p>
+            <p>广东省公共安全技术防范协会颁发，有效期至2029年</p>
           </div>
         </div>
 
-        <!-- 6. 建筑业劳务资质 -->
+        <!-- 建筑业劳务资质 -->
         <div class="qual-card fade-in">
           <div class="cert-img-wrap">
             <img src="../images/certificates/cert-labor.png" alt="建筑业企业劳务资质证书" loading="lazy">
@@ -249,56 +292,158 @@
           <div class="cert-info">
             <h3>建筑业企业劳务资质证书</h3>
             <div class="cert-number">DL344424709</div>
-            <p>由广州市住房和城乡建设局颁发，有效期2025年至2030年</p>
+            <p>广州市住房和城乡建设局颁发，有效期 2025–2030年</p>
           </div>
         </div>
 
-        <!-- 7. 哈曼二级分销商 -->
+        <!-- 哈曼二级分销商 -->
         <div class="qual-card fade-in">
           <div class="cert-img-wrap">
-            <img src="../images/certificates/cert-harman.jpg" alt="哈曼HARMAN二级分销商工程商" loading="lazy">
+            <img src="../images/certificates/cert-harman.jpg" alt="哈曼HARMAN二级分销商工程商授权" loading="lazy">
           </div>
           <div class="cert-info">
             <h3>哈曼（HARMAN）二级分销商/工程商</h3>
             <div class="cert-number">2026年度授权</div>
-            <p>由哈曼（中国）投资有限公司授权，具备哈曼产品分销及工程服务资质</p>
+            <p>哈曼（中国）投资有限公司授权，具备哈曼产品分销及工程服务资质</p>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- 荣誉奖项 -->
+    <!-- ② 企业荣誉 -->
     <div class="qual-section">
-      <h2 class="section-title fade-in">荣誉奖项</h2>
+      <h2 class="section-title fade-in">企业荣誉</h2>
       <div class="section-title-line"></div>
-      <p class="section-subtitle fade-in">行业认可，品质见证</p>
+      <p class="section-subtitle fade-in">行业认可，用实力赢得信赖</p>
 
-      <div class="honors-grid">
+      <div class="qual-grid-4">
+
+        <!-- 高新技术企业 -->
         <div class="honor-card fade-in">
-          <div class="honor-icon">🏆</div>
-          <h3>优秀弱电工程企业</h3>
-          <div class="honor-year">2023年度</div>
-          <p>广东省智能建筑行业协会</p>
+          <div class="honor-img-wrap">
+            <img src="../images/honors/honor-hiqe.jpg" alt="高新技术企业证书" loading="lazy">
+          </div>
+          <div class="honor-info">
+            <h3>高新技术企业证书</h3>
+          </div>
         </div>
+
+        <!-- 重合同守信用 -->
         <div class="honor-card fade-in">
-          <div class="honor-icon">⭐</div>
-          <h3>诚信经营示范单位</h3>
-          <div class="honor-year">2022-2023</div>
-          <p>广州市市场监督管理局</p>
+          <div class="honor-img-wrap">
+            <img src="../images/honors/honor-credit.jpeg" alt="重合同守信用认定" loading="lazy">
+          </div>
+          <div class="honor-info">
+            <h3>重合同守信用企业认定</h3>
+          </div>
         </div>
+
+        <!-- 大中华最佳合作伙伴 -->
         <div class="honor-card fade-in">
-          <div class="honor-icon">🎓</div>
-          <h3>最佳系统集成方案奖</h3>
-          <div class="honor-year">2022年度</div>
-          <p>华南智慧建筑产业峰会</p>
+          <div class="honor-img-wrap">
+            <img src="../images/honors/honor-gchea-partner.jpg" alt="大中华酒店工程师协会最佳合作伙伴" loading="lazy">
+          </div>
+          <div class="honor-info">
+            <h3>大中华酒店工程师协会最佳合作伙伴</h3>
+          </div>
         </div>
+
+        <!-- 大中华粤东 -->
         <div class="honor-card fade-in">
-          <div class="honor-icon">🤝</div>
-          <h3>优秀合作伙伴</h3>
-          <div class="honor-year">2021-2023</div>
-          <p>海康威视渠道认证</p>
+          <div class="honor-img-wrap">
+            <img src="../images/honors/honor-gchea-east.jpeg" alt="大中华酒店工程师协会粤东分会荣誉" loading="lazy">
+          </div>
+          <div class="honor-info">
+            <h3>大中华酒店工程师协会粤东分会荣誉</h3>
+          </div>
         </div>
+
+        <!-- 十年优秀合作伙伴牌匾 -->
+        <div class="honor-card fade-in">
+          <div class="honor-img-wrap">
+            <img src="../images/honors/honor-gchea-plaque.jpg" alt="大中华酒店工程师协会十年优秀合作伙伴牌匾" loading="lazy">
+          </div>
+          <div class="honor-info">
+            <h3>大中华协会十年优秀合作伙伴牌匾</h3>
+          </div>
+        </div>
+
+        <!-- 十年优秀合作伙伴证书 -->
+        <div class="honor-card fade-in">
+          <div class="honor-img-wrap">
+            <img src="../images/honors/honor-gchea-cert.jpg" alt="大中华酒店工程师协会十年优秀合作伙伴证书" loading="lazy">
+          </div>
+          <div class="honor-info">
+            <h3>大中华协会十年优秀合作伙伴证书</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ③ 软件著作权 -->
+    <div class="qual-section">
+      <h2 class="section-title fade-in">软件著作权</h2>
+      <div class="section-title-line"></div>
+      <p class="section-subtitle fade-in">自主研发，技术领先，持续推动智能化创新</p>
+
+      <div class="copyright-grid">
+
+        <div class="copyright-card fade-in">
+          <div class="copyright-img-wrap">
+            <img src="../images/copyrights/AV%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6.jpg" alt="AV系统方案平台软件" loading="lazy">
+          </div>
+          <div class="copyright-info">
+            <h4>AV系统方案平台软件</h4>
+          </div>
+        </div>
+
+        <div class="copyright-card fade-in">
+          <div class="copyright-img-wrap">
+            <img src="../images/copyrights/%E4%BF%A1%E6%81%AF%E5%8F%91%E5%B8%83%E8%BD%AF%E4%BB%B6.jpg" alt="信息发布软件" loading="lazy">
+          </div>
+          <div class="copyright-info">
+            <h4>信息发布软件</h4>
+          </div>
+        </div>
+
+        <div class="copyright-card fade-in">
+          <div class="copyright-img-wrap">
+            <img src="../images/copyrights/%E6%99%BA%E8%83%BD%E5%8A%9E%E5%85%AC%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6.jpg" alt="智能办公系统软件" loading="lazy">
+          </div>
+          <div class="copyright-info">
+            <h4>智能办公系统软件</h4>
+          </div>
+        </div>
+
+        <div class="copyright-card fade-in">
+          <div class="copyright-img-wrap">
+            <img src="../images/copyrights/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6.jpg" alt="智能家居控制软件" loading="lazy">
+          </div>
+          <div class="copyright-info">
+            <h4>智能家居控制软件</h4>
+          </div>
+        </div>
+
+        <div class="copyright-card fade-in">
+          <div class="copyright-img-wrap">
+            <img src="../images/copyrights/%E6%99%BA%E8%83%BD%E5%BD%B1%E9%9F%B3%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6.jpg" alt="智能影音控制软件" loading="lazy">
+          </div>
+          <div class="copyright-info">
+            <h4>智能影音控制软件</h4>
+          </div>
+        </div>
+
+        <div class="copyright-card fade-in">
+          <div class="copyright-img-wrap">
+            <img src="../images/copyrights/%E6%99%BA%E8%83%BD%E7%85%A7%E6%98%8E%E6%8E%A7%E5%88%B6%E8%BD%AF%E4%BB%B6.jpg" alt="智能照明控制软件" loading="lazy">
+          </div>
+          <div class="copyright-info">
+            <h4>智能照明控制软件</h4>
+          </div>
+        </div>
+
       </div>
     </div>
 

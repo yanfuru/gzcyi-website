@@ -256,6 +256,99 @@
       .process-step p { max-width: 100%; }
       .service-card { padding: 24px; }
     }
+
+    /* Craft Section - 施工工艺 */
+    .craft-section {
+      padding: 80px 0;
+      background: var(--color-gray-50);
+    }
+
+    .craft-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .craft-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: var(--color-white);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .craft-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .craft-card .craft-img-wrap {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: #eef1f4;
+    }
+
+    .craft-card .craft-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .craft-card:hover .craft-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .craft-card .craft-label {
+      padding: 10px 12px;
+      font-size: 0.83rem;
+      color: var(--color-gray-600);
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      color: #fff;
+      font-size: 2.4rem;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    @media (max-width: 992px) {
+      .craft-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .craft-grid { grid-template-columns: repeat(2, 1fr); }
+    }
   </style>
 </head>
 <body>
@@ -558,6 +651,92 @@
   </div>
 </section>
 
+<!-- 施工工艺展示 -->
+<section class="craft-section">
+  <div class="container">
+    <h2 class="section-title fade-in">施工工艺展示</h2>
+    <div class="section-title-line"></div>
+    <p class="section-subtitle fade-in">每一道工序，皆是品质承诺</p>
+
+    <div class="craft-grid">
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-01.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-01.jpg" alt="施工工艺01" loading="lazy"></div>
+        <div class="craft-label">施工工艺 01</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-02.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-02.jpg" alt="施工工艺02" loading="lazy"></div>
+        <div class="craft-label">施工工艺 02</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-03.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-03.jpg" alt="施工工艺03" loading="lazy"></div>
+        <div class="craft-label">施工工艺 03</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-04.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-04.jpg" alt="施工工艺04" loading="lazy"></div>
+        <div class="craft-label">施工工艺 04</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-05.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-05.jpg" alt="施工工艺05" loading="lazy"></div>
+        <div class="craft-label">施工工艺 05</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-06.png')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-06.png" alt="施工工艺06" loading="lazy"></div>
+        <div class="craft-label">施工工艺 06</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-07.png')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-07.png" alt="施工工艺07" loading="lazy"></div>
+        <div class="craft-label">施工工艺 07</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-08.png')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-08.png" alt="施工工艺08" loading="lazy"></div>
+        <div class="craft-label">施工工艺 08</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-09.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-09.jpg" alt="施工工艺09" loading="lazy"></div>
+        <div class="craft-label">施工工艺 09</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-10.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-10.jpg" alt="施工工艺10" loading="lazy"></div>
+        <div class="craft-label">施工工艺 10</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-11.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-11.jpg" alt="施工工艺11" loading="lazy"></div>
+        <div class="craft-label">施工工艺 11</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-12.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-12.jpg" alt="施工工艺12" loading="lazy"></div>
+        <div class="craft-label">施工工艺 12</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-13.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-13.jpg" alt="施工工艺13" loading="lazy"></div>
+        <div class="craft-label">施工工艺 13</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-14.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-14.jpg" alt="施工工艺14" loading="lazy"></div>
+        <div class="craft-label">施工工艺 14</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-15.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-15.jpg" alt="施工工艺15" loading="lazy"></div>
+        <div class="craft-label">施工工艺 15</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-16.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-16.jpg" alt="施工工艺16" loading="lazy"></div>
+        <div class="craft-label">施工工艺 16</div>
+      </div>
+      <div class="craft-card fade-in" onclick="openLightbox('../images/craft/craft-17.jpg')">
+        <div class="craft-img-wrap"><img src="../images/craft/craft-17.jpg" alt="施工工艺17" loading="lazy"></div>
+        <div class="craft-label">施工工艺 17</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
 <section class="cta-section">
   <div class="container fade-in">
     <h2>需要定制化服务方案？</h2>
@@ -608,5 +787,20 @@
 
 <button class="back-to-top" aria-label="回到顶部">↑</button>
 <script src="../js/main.js"></script>
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightbox-img').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 </body>
 </html>

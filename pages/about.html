@@ -288,6 +288,182 @@
       color: var(--color-gray-500);
     }
 
+    /* Founder Section */
+    .founder-section {
+      padding: 80px 0;
+      background: var(--color-gray-50);
+    }
+
+    .founder-profile {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 60px;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+
+    .founder-photo-wrap {
+      text-align: center;
+    }
+
+    .founder-photo-wrap .founder-name-badge {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .founder-photo-wrap .founder-title {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .founder-photo-wrap img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 4px solid var(--color-accent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .founder-info h3 {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .founder-info p {
+      font-size: 0.96rem;
+      color: var(--color-gray-700);
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+
+    .founder-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .founder-tag {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(26,60,94,0.07);
+      border: 1px solid rgba(26,60,94,0.15);
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    /* Certificates Grid */
+    .certs-title {
+      font-size: 1.2rem;
+      color: var(--color-primary);
+      font-weight: 700;
+      margin-bottom: 24px;
+      padding-left: 12px;
+      border-left: 4px solid var(--color-accent);
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .cert-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .cert-card .cert-img-wrap {
+      width: 100%;
+      height: 200px;
+      background: #f4f6f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .cert-card .cert-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+    }
+
+    .cert-card .cert-label {
+      padding: 12px 14px;
+      font-size: 0.85rem;
+      color: var(--color-gray-700);
+      font-weight: 500;
+      text-align: center;
+      border-top: 1px solid var(--color-gray-100);
+    }
+
+    /* Company Moments */
+    .moments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .moment-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      aspect-ratio: 4/3;
+    }
+
+    .moment-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .moment-card:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .founder-profile {
+        grid-template-columns: 1fr;
+      }
+      .founder-photo-wrap img {
+        width: 160px;
+        height: 160px;
+      }
+      .certs-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .moments-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
       .about-intro {
         grid-template-columns: 1fr;
@@ -471,59 +647,129 @@
   </div>
 </section>
 
-<!-- Team -->
-<section class="team-section">
+<!-- Founder -->
+<section class="founder-section">
   <div class="container">
-    <h2 class="section-title fade-in">核心团队</h2>
+    <h2 class="section-title fade-in">创始人介绍</h2>
     <div class="section-title-line"></div>
-    <p class="section-subtitle fade-in">汇聚行业精英，打造专业力量</p>
+    <p class="section-subtitle fade-in">专注弱电智能化与影音系统集成二十余年</p>
 
-    <div class="team-grid">
-      <div class="team-card fade-in">
-        <div class="team-avatar">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="24" cy="16" r="8"/>
-            <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
-          </svg>
-        </div>
-        <h4>张建国</h4>
-        <div class="role">总经理 / 创始人</div>
-        <p>20年弱电行业经验，高级工程师</p>
+    <!-- 个人简介 -->
+    <div class="founder-profile fade-in">
+      <div class="founder-photo-wrap">
+        <img src="../images/team/yan-sysu-grad.jpg" alt="颜福如">
+        <div class="founder-name-badge">颜福如</div>
+        <div class="founder-title">总经理 / 创始人</div>
       </div>
-      <div class="team-card fade-in">
-        <div class="team-avatar">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="24" cy="16" r="8"/>
-            <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
-          </svg>
+      <div class="founder-info">
+        <h3>颜福如先生</h3>
+        <p>
+          广州创益信息技术有限公司创始人，从事弱电智能化系统与专业影音集成行业二十余年，精通系统顾问设计、施工管理及全流程项目交付，在高星级酒店、高端会所、政府机关、大型商业综合体等领域积累了丰富的实战经验。
+        </p>
+        <p>
+          颜总拥有多项国家级行业资质认证，涵盖电气工程、弱电系统、专业影音等领域，并取得中山大学、武汉大学相关学历，具备扎实的工程理论基础与持续学习的专业精神。
+        </p>
+        <p>
+          多年来，颜总带领创益团队完成了广州四季酒店、广州瑰丽酒店、广州文华东方酒店等逾百个高端标杆项目，以"服务无限，价值至上"的经营理念赢得客户广泛信赖，并担任广州株洲商会监事职务，积极参与社会公益与行业建设。
+        </p>
+        <div class="founder-tags">
+          <span class="founder-tag">电气工程师</span>
+          <span class="founder-tag">弱电智能化专家</span>
+          <span class="founder-tag">专业影音工程师</span>
+          <span class="founder-tag">影音系统项目经理</span>
+          <span class="founder-tag">中山大学</span>
+          <span class="founder-tag">武汉大学</span>
+          <span class="founder-tag">株洲商会监事</span>
         </div>
-        <h4>李明辉</h4>
-        <div class="role">技术总监</div>
-        <p>15年系统集成经验，PMP认证</p>
-      </div>
-      <div class="team-card fade-in">
-        <div class="team-avatar">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="24" cy="16" r="8"/>
-            <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
-          </svg>
-        </div>
-        <h4>王芳</h4>
-        <div class="role">项目经理</div>
-        <p>10年项目管理经验，一级建造师</p>
-      </div>
-      <div class="team-card fade-in">
-        <div class="team-avatar">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="24" cy="16" r="8"/>
-            <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
-          </svg>
-        </div>
-        <h4>陈伟强</h4>
-        <div class="role">工程部经理</div>
-        <p>12年施工管理经验，注册电气工程师</p>
       </div>
     </div>
+
+    <!-- 个人证书 -->
+    <div class="fade-in">
+      <div class="certs-title">专业资质证书</div>
+      <div class="certs-grid">
+        <div class="cert-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/team/yan-ee-engineer.png" alt="电气工程师证书" loading="lazy">
+          </div>
+          <div class="cert-label">电气工程师证书</div>
+        </div>
+        <div class="cert-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/team/yan-weak-current.jpg" alt="弱电系统资质证书" loading="lazy">
+          </div>
+          <div class="cert-label">弱电系统资质证书</div>
+        </div>
+        <div class="cert-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/team/yan-audio-engineer.png" alt="专业影音工程师证书" loading="lazy">
+          </div>
+          <div class="cert-label">专业影音工程师证书</div>
+        </div>
+        <div class="cert-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/team/yan-audio-tech.jpg" alt="影音技术资质证书" loading="lazy">
+          </div>
+          <div class="cert-label">影音技术资质证书</div>
+        </div>
+        <div class="cert-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/team/yan-av-pm.jpg" alt="影音系统项目经理证书" loading="lazy">
+          </div>
+          <div class="cert-label">影音系统项目经理证书</div>
+        </div>
+        <div class="cert-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/team/yan-sysu-grad.jpg" alt="中山大学结业证书" loading="lazy">
+          </div>
+          <div class="cert-label">中山大学结业证书</div>
+        </div>
+        <div class="cert-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/team/yan-sysu-honor.jpg" alt="中山大学荣誉证书" loading="lazy">
+          </div>
+          <div class="cert-label">中山大学荣誉证书</div>
+        </div>
+        <div class="cert-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/team/yan-whu-grad.jpg" alt="武汉大学结业证书" loading="lazy">
+          </div>
+          <div class="cert-label">武汉大学结业证书</div>
+        </div>
+        <div class="cert-card fade-in">
+          <div class="cert-img-wrap">
+            <img src="../images/team/yan-chamber-supervisor.jpg" alt="株洲商会监事证书" loading="lazy">
+          </div>
+          <div class="cert-label">株洲商会监事证书</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 企业活动剪影 -->
+    <div class="fade-in" style="margin-top:56px;">
+      <div class="certs-title">企业活动剪影</div>
+      <div class="moments-grid">
+        <div class="moment-card">
+          <img src="../images/team/chamber-ceremony.jpg" alt="商会活动" loading="lazy">
+        </div>
+        <div class="moment-card">
+          <img src="../images/team/gchea-annual.jpg" alt="行业年会" loading="lazy">
+        </div>
+        <div class="moment-card">
+          <img src="../images/team/visit-general.jpg" alt="参观交流" loading="lazy">
+        </div>
+        <div class="moment-card">
+          <img src="../images/team/meeting-room.png" alt="公司会议" loading="lazy">
+        </div>
+        <div class="moment-card">
+          <img src="../images/team/meeting-room2.png" alt="团队研讨" loading="lazy">
+        </div>
+        <div class="moment-card">
+          <img src="../images/team/motto.jpg" alt="企业精神" loading="lazy">
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 

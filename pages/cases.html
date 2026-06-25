@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="广州创益信息技术有限公司工程案例 - 高端酒店、总部大厦、商业办公、政府单位、高端会所等弱电智能化与影音系统集成项目案例展示。">
+  <meta name="description" content="广州创益信息技术有限公司工程案例 - 高端酒店、政府公共、商业办公、住宅地产等弱电智能化与影音系统集成项目案例展示。">
   <title>工程案例 - 广州创益信息技术有限公司</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
@@ -23,7 +23,7 @@
       border: 1.5px solid var(--color-gray-300);
       border-radius: 30px;
       background: var(--color-white);
-      color: var(--color-gray-600);
+      color: var(--color-gray-700);
       font-size: 0.92rem;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -40,7 +40,7 @@
     .cases-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      gap: 28px;
     }
 
     .case-card {
@@ -60,12 +60,9 @@
 
     .case-image {
       position: relative;
-      height: 220px;
+      height: 210px;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #e8edf2, #c8d4e0);
+      background: #e8edf2;
     }
 
     .case-image img {
@@ -73,22 +70,23 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
+      display: block;
     }
 
     .case-card:hover .case-image img { transform: scale(1.06); }
 
     .case-tag {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(26,60,94,0.85);
-      color: var(--color-white);
-      padding: 5px 14px;
+      top: 14px;
+      left: 14px;
+      background: rgba(26,60,94,0.82);
+      color: #fff;
+      padding: 4px 12px;
       border-radius: 20px;
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 500;
-      backdrop-filter: blur(6px);
       z-index: 2;
+      backdrop-filter: blur(4px);
     }
 
     .overlay {
@@ -99,69 +97,51 @@
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: opacity 0.35s ease;
-      z-index: 1;
+      transition: opacity 0.3s ease;
+      z-index: 3;
     }
+
     .case-card:hover .overlay { opacity: 1; }
 
     .view-detail {
-      color: var(--color-white);
-      font-size: 0.92rem;
+      color: #fff;
+      font-size: 0.88rem;
       font-weight: 500;
-      border: 1.5px solid rgba(255,255,255,0.7);
+      border: 1.5px solid rgba(255,255,255,0.8);
       padding: 8px 20px;
-      border-radius: 24px;
-      transition: all 0.3s ease;
+      border-radius: 25px;
+      letter-spacing: 0.04em;
     }
-    .view-detail:hover { background: var(--color-white); color: var(--color-primary); }
 
-    .case-info { padding: 22px 24px 26px; }
+    .case-info {
+      padding: 18px 20px;
+    }
 
     .case-info h3 {
-      font-size: 1.08rem;
+      font-size: 0.94rem;
       color: var(--color-primary);
-      font-weight: 700;
-      margin-bottom: 10px;
-      line-height: 1.4;
+      font-weight: 600;
+      line-height: 1.45;
+      margin: 0;
     }
 
-    .case-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 12px;
-      font-size: 0.82rem;
+    .cases-count {
+      text-align: center;
       color: var(--color-gray-500);
-    }
-
-    .case-info .desc {
       font-size: 0.88rem;
-      color: var(--color-gray-600);
-      line-height: 1.75;
-      margin-bottom: 14px;
+      margin-bottom: 36px;
     }
 
-    .case-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-
-    .case-tags .tag {
-      background: rgba(26,60,94,0.06);
-      color: var(--color-primary);
-      padding: 4px 12px;
-      border-radius: 16px;
-      font-size: 0.78rem;
-      font-weight: 500;
+    .cases-count strong {
+      color: var(--color-accent);
+      font-size: 1.1rem;
     }
-
-    .case-card.hidden { display: none !important; }
 
     @media (max-width: 992px) {
       .cases-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
-    @media (max-width: 640px) {
-      .cases-grid { grid-template-columns: 1fr; gap: 24px; }
-      .filter-bar { gap: 8px; }
-      .filter-btn { padding: 8px 16px; font-size: 0.85rem; }
+    @media (max-width: 560px) {
+      .cases-grid { grid-template-columns: 1fr; gap: 20px; }
       .case-image { height: 180px; }
     }
   </style>
@@ -171,7 +151,7 @@
 <header class="header">
   <div class="container header-inner">
     <a href="../index.html" class="logo">
-      <div class="logo-icon"><img src="../images/logo-lion.png" alt="广州创益"></div>
+      <div class="logo-icon"><img src="../images/logo.png" alt="广州创益"></div>
       <span>广州创益信息技术有限公司</span>
     </a>
     <button class="mobile-toggle" aria-label="菜单">
@@ -191,331 +171,867 @@
 <section class="page-banner">
   <div class="container">
     <h1>工程案例</h1>
-    <p>真实项目，见证实力 — 累计完成200+项目</p>
-    <div class="breadcrumb"><a href="../index.html">首页</a><span>/</span><span>工程案例</span></div>
+    <p>深耕行业十余年 · 精品工程遍布全国</p>
+    <div class="breadcrumb">
+      <a href="../index.html">首页</a><span>/</span><span>工程案例</span>
+    </div>
   </div>
 </section>
 
 <section class="cases-page">
   <div class="container">
-    <div class="filter-bar fade-in">
+
+    <!-- 统计信息 -->
+    <p class="cases-count fade-in">已完成优质工程案例超过 <strong>69+</strong> 个，覆盖高端酒店、政府公共、商业办公、住宅地产等多个领域</p>
+
+    <!-- 筛选按钮 -->
+    <div class="filter-bar">
       <button class="filter-btn active" data-filter="all">全部案例</button>
       <button class="filter-btn" data-filter="hotel">高端酒店</button>
-      <button class="filter-btn" data-filter="hq">总部大厦</button>
-      <button class="filter-btn" data-filter="office">商业办公</button>
-      <button class="filter-btn" data-filter="government">政府单位</button>
-      <button class="filter-btn" data-filter="club">高端会所</button>
+      <button class="filter-btn" data-filter="government">政府公共</button>
+      <button class="filter-btn" data-filter="commercial">商业办公</button>
+      <button class="filter-btn" data-filter="residential">住宅地产</button>
     </div>
 
-    <div class="cases-grid">
+    <!-- 案例网格 -->
+    <div class="cases-grid" id="casesGrid">
 
-      <!-- ===== 以下案例严格按画册PPT（Slide 30-52）排序 ===== -->
-      <!-- 只有确实拥有真实项目照片的案例才配图，其余使用渐变占位背景 -->
+        <!-- 万润温德姆至尊豪廷酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E4%B8%87%E6%B6%A6%E6%B8%A9%E5%BE%B7%E5%A7%86%E8%87%B3%E5%B0%8A%E8%B1%AA%E5%BB%B7%E9%85%92%E5%BA%97.jpg" alt="万润温德姆至尊豪廷酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>万润温德姆至尊豪廷酒店</h3>
+          </div>
+        </div>
 
-      <!-- ========== 高端酒店 ========== -->
+        <!-- 中国国际中小企业博览会事务局 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E4%B8%AD%E5%9B%BD%E5%9B%BD%E9%99%85%E4%B8%AD%E5%B0%8F%E4%BC%81%E4%B8%9A%E5%8D%9A%E8%A7%88%E4%BC%9A%E4%BA%8B%E5%8A%A1%E5%B1%80.jpg" alt="中国国际中小企业博览会事务局" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>中国国际中小企业博览会事务局</h3>
+          </div>
+        </div>
 
-      <!-- Slide 30: 广州四季酒店 -->
-      <div class="case-card fade-in" data-category="hotel">
-        <div class="case-image">
-          <span class="case-tag">高端酒店</span>
-          <img src="../images/cases/case-four-seasons.jpg" alt="广州四季酒店 AV 系统">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 中国瑶族博物馆 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E4%B8%AD%E5%9B%BD%E7%91%B6%E6%97%8F%E5%8D%9A%E7%89%A9%E9%A6%86.jpg" alt="中国瑶族博物馆" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>中国瑶族博物馆</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>广州四季酒店 AV 系统</h3>
-          <div class="case-meta"><span>2014-2022年</span><span>广州天河珠江新城IFC 103层</span></div>
-          <p class="desc">坐落于广州金融中心珠江新城103层的广州国际金融中心顶端。含主塔楼及群楼74-93层共332间客房影音视频系统，提供设备定期维护服务。</p>
-          <div class="case-tags"><span class="tag">AV系统</span><span class="tag">客房影音</span><span class="tag">定期维保</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 34: 云南弥勒喜来登 & 源宿酒店 -->
-      <div class="case-card fade-in" data-category="hotel">
-        <div class="case-image">
-          <span class="case-tag">高端酒店</span>
-          <img src="../images/cases/case-sheraton.jpg" alt="云南弥勒喜来登 & 源宿酒店 AV 系统">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 中国邮政 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E4%B8%AD%E5%9B%BD%E9%82%AE%E6%94%BF.png" alt="中国邮政" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>中国邮政</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>云南弥勒喜来登 &amp; 源宿酒店 AV 系统</h3>
-          <div class="case-meta"><span>2020年5月签约</span><span>云南弥勒红河水乡</span></div>
-          <p class="desc">宴会厅、多功能报告厅音视频系统，舞台灯光系统，会议室会讨系统、远程视频会议室，背景音乐及信息发布系统。</p>
-          <div class="case-tags"><span class="tag">音视频系统</span><span class="tag">舞台灯光</span><span class="tag">会议系统</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 35: 双月湾檀悦豪生度假酒店 -->
-      <div class="case-card fade-in" data-category="hotel">
-        <div class="case-image">
-          <span class="case-tag">高端酒店</span>
-          <img src="../images/cases/case-tanyue.jpg" alt="双月湾檀悦豪生度假酒店">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 中山大学南方学院 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%E5%8D%97%E6%96%B9%E5%AD%A6%E9%99%A2.jpg" alt="中山大学南方学院" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>中山大学南方学院</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>双月湾檀悦豪生度假酒店</h3>
-          <div class="case-meta"><span>2014年</span><span>惠州惠东双月湾</span></div>
-          <p class="desc">美国温德姆豪生集团旗下奢华型海滨度假酒店。迪拜大师Jason设计，417间海景客房。宴会厅/会议室/电影院/KTV设计施工一体化，全AV子系统覆盖。</p>
-          <div class="case-tags"><span class="tag">影音集成</span><span class="tag">舞台灯光</span><span class="tag">智能中控</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 36: 双月湾温德姆至尊豪廷度假酒店 ★ 有真实图片 -->
-      <div class="case-card fade-in" data-category="hotel">
-        <div class="case-image">
-          <span class="case-tag">高端酒店</span>
-          <img src="../images/cases/case-wendhem.jpg" alt="双月湾温德姆至尊豪廷度假酒店">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 中山大学附属肿瘤医院 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%E9%99%84%E5%B1%9E%E8%82%BF%E7%98%A4%E5%8C%BB%E9%99%A2.jpg" alt="中山大学附属肿瘤医院" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>中山大学附属肿瘤医院</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>双月湾温德姆至尊豪廷度假酒店</h3>
-          <div class="case-meta"><span>2018年8月签约</span><span>惠州惠东双月湾</span></div>
-          <p class="desc">万润控股打造，南中国首家超五星级海景沙滩度假酒店。视频显示/音频扩声/会议发言/背景音乐/信息发布/舞台灯光/影音悬挂/智能中控全系统。</p>
-          <div class="case-tags"><span class="tag">AV全系统</span><span class="tag">智能中控</span><span class="tag">信息发布</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 38: 湖北监利恒福星际酒店 ★ 有真实图片 -->
-      <div class="case-card fade-in" data-category="hotel">
-        <div class="case-image">
-          <span class="case-tag">高端酒店</span>
-          <img src="../images/cases/case-hubei.jpg" alt="湖北监利恒福星际酒店">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 云南弥勒喜来登酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E4%BA%91%E5%8D%97%E5%BC%A5%E5%8B%92%E5%96%9C%E6%9D%A5%E7%99%BB%E9%85%92%E5%BA%97.jpg" alt="云南弥勒喜来登酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>云南弥勒喜来登酒店</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>湖北监利恒福星际酒店 AV 系统</h3>
-          <div class="case-meta"><span>2018年</span><span>湖北荆州监利县</span></div>
-          <p class="desc">监利县目前唯一的五星级标准酒店，总建筑面38819㎡。多功能厅、宴会厅、三楼会议室及贵宾室AV系统工程设计与实施。</p>
-          <div class="case-tags"><span class="tag">AV系统</span><span class="tag">宴会厅</span><span class="tag">会议室</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 39: 广西钦州天骄国际酒店 -->
-      <div class="case-card fade-in" data-category="hotel">
-        <div class="case-image">
-          <span class="case-tag">高端酒店</span>
-          <img src="../images/cases/case-tianjiao.jpg" alt="广西钦州天骄国际酒店">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 享海1777温泉度假酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E4%BA%AB%E6%B5%B71777%E6%B8%A9%E6%B3%89%E5%BA%A6%E5%81%87%E9%85%92%E5%BA%97.jpg" alt="享海1777温泉度假酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>享海1777温泉度假酒店</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>广西钦州天骄国际酒店</h3>
-          <div class="case-meta"><span>2019年6月签约</span><span>广西钦州</span></div>
-          <p class="desc">广东光大地产集团投资。国际宴会厅/小包厅音视频及舞台灯光系统，办公会讨/视频显示/音频扩声系统。</p>
-          <div class="case-tags"><span class="tag">宴会厅</span><span class="tag">舞台灯光</span><span class="tag">会议系统</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 40: 长沙湘江豪生酒店 -->
-      <div class="case-card fade-in" data-category="hotel">
-        <div class="case-image">
-          <span class="case-tag">高端酒店</span>
-          <img src="../images/cases/case-changsha.jpg" alt="长沙湘江豪生酒店智能化工程">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 从化国际城 -->
+        <div class="case-card fade-in" data-category="residential">
+          <div class="case-image">
+            <span class="case-tag">住宅地产</span>
+            <img src="../images/cases/%E4%BB%8E%E5%8C%96%E5%9B%BD%E9%99%85%E5%9F%8E.jpg" alt="从化国际城" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>从化国际城</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>长沙湘江豪生酒店智能化工程</h3>
-          <div class="case-meta"><span>2017年4月签约</span><span>湖南长沙</span></div>
-          <p class="desc">长沙先导投资控股集团。综合布线/计算机网络/UPS/监控/报警/对讲/门禁/停车场/背景音乐/信息发布/客控/有线电视/楼宇自控/智能照明/AV全套。</p>
-          <div class="case-tags"><span class="tag">全套智能化</span><span class="tag">楼宇自控</span><span class="tag">安防监控</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 41: 知名五星级酒店项目集群 ★ 有真实图片 -->
-      <div class="case-card fade-in" data-category="hotel">
-        <div class="case-image">
-          <span class="case-tag">高端酒店</span>
-          <img src="../images/cases/case-xinghewan.jpg" alt="星河湾酒店">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 佛山卓景花园 -->
+        <div class="case-card fade-in" data-category="residential">
+          <div class="case-image">
+            <span class="case-tag">住宅地产</span>
+            <img src="../images/cases/%E4%BD%9B%E5%B1%B1%E5%8D%93%E6%99%AF%E8%8A%B1%E5%9B%AD.jpg" alt="佛山卓景花园" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>佛山卓景花园</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>知名五星级/高品质酒店项目集群</h3>
-          <div class="case-meta"><span>多年度持续合作</span><span>全国多地</span></div>
-          <p class="desc">星河湾酒店 / 广州海怡半岛 / 顺德美的万豪酒店 / 深圳金茂JW万豪 / 白云机场铂尔曼 / 海航威斯汀 / 广州W酒店 / 惠州万丽 / 壬丰希尔顿 / 南丰朗豪 / 勤天熹乐谷 / 方圆雅乐轩等十余家高端酒店。</p>
-          <div class="case-tags"><span class="tag">五星酒店</span><span class="tag">AV系统</span><span class="tag">长期维保</span></div>
-        </div>
-      </div>
 
-      <!-- ========== 高端会所 ========== -->
+        <!-- 佛山大良美的万豪酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E4%BD%9B%E5%B1%B1%E5%A4%A7%E8%89%AF%E7%BE%8E%E7%9A%84%E4%B8%87%E8%B1%AA%E9%85%92%E5%BA%97.jpg" alt="佛山大良美的万豪酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>佛山大良美的万豪酒店</h3>
+          </div>
+        </div>
 
-      <!-- Slide 31: 南沙国际金融论坛(IFF)永久会址 ★ 有真实图片 -->
-      <div class="case-card fade-in" data-category="club">
-        <div class="case-image">
-          <span class="case-tag">高端会所</span>
-          <img src="../images/cases/case-iff.jpg" alt="南沙国际金融论坛IFF永久会址">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 佛山美的总部大厦 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E4%BD%9B%E5%B1%B1%E7%BE%8E%E7%9A%84%E6%80%BB%E9%83%A8%E5%A4%A7%E5%8E%A6.jpg" alt="佛山美的总部大厦" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>佛山美的总部大厦</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>南沙国际金融论坛（IFF）永久会址</h3>
-          <div class="case-meta"><span>2023年</span><span>广州南沙</span></div>
-          <p class="desc">国际金融论坛永久会址核心项目。会议发言/视频显示/同声传译/影音集成/智能中控等高端一体化解决方案。</p>
-          <div class="case-tags"><span class="tag">会议系统</span><span class="tag">同传系统</span><span class="tag">智能中控</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 32: 南沙花园南沙酒店二期会展中心 -->
-      <div class="case-card fade-in" data-category="club">
-        <div class="case-image">
-          <span class="case-tag">高端会所</span>
-          <img src="../images/cases/case-nansha.jpg" alt="南沙花园南沙酒店二期会展中心">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 华发尚座花园 -->
+        <div class="case-card fade-in" data-category="residential">
+          <div class="case-image">
+            <span class="case-tag">住宅地产</span>
+            <img src="../images/cases/%E5%8D%8E%E5%8F%91%E5%B0%9A%E5%BA%A7%E8%8A%B1%E5%9B%AD.jpg" alt="华发尚座花园" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>华发尚座花园</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>南沙花园南沙酒店二期会展中心</h3>
-          <div class="case-meta"><span>近年</span><span>广州南沙</span></div>
-          <p class="desc">南沙花园南沙酒店二期会展中心音视频系统集成项目。</p>
-          <div class="case-tags"><span class="tag">会展中心</span><span class="tag">音视频</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 37: 双月湾享海君廷 ★ 有真实图片 -->
-      <div class="case-card fade-in" data-category="club">
-        <div class="case-image">
-          <span class="case-tag">高端会所</span>
-          <img src="../images/cases/case-xianghai.jpg" alt="双月湾享海君廷温泉度假酒店">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 南沙国际金融论坛永久会址 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%8D%97%E6%B2%99%E5%9B%BD%E9%99%85%E9%87%91%E8%9E%8D%E8%AE%BA%E5%9D%9B%E6%B0%B8%E4%B9%85%E4%BC%9A%E5%9D%80.png" alt="南沙国际金融论坛永久会址" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>南沙国际金融论坛永久会址</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>双月湾享海君廷 &amp; 温泉度假酒店</h3>
-          <div class="case-meta"><span>2018年7月签约</span><span>惠州惠东双月湾</span></div>
-          <p class="desc">1#楼、8#楼音视频系统（包括8#楼宴会厅、会议室、KTV等区域，1#楼宴会厅、会议室等区域）供货、深化设计及安装一体化服务。</p>
-          <div class="case-tags"><span class="tag">音视频</span><span class="tag">KTV娱乐</span><span class="tag">宴会厅</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 45-46: 龙门富力南昆山温泉养生谷 -->
-      <div class="case-card fade-in" data-category="club">
-        <div class="case-image">
-          <span class="case-tag">高端会所</span>
-          <img src="../images/cases/case-fuli.jpg" alt="龙门富力南昆山温泉养生谷">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 南沙天珀雅苑 -->
+        <div class="case-card fade-in" data-category="residential">
+          <div class="case-image">
+            <span class="case-tag">住宅地产</span>
+            <img src="../images/cases/%E5%8D%97%E6%B2%99%E5%A4%A9%E7%8F%80%E9%9B%85%E8%8B%91.jpg" alt="南沙天珀雅苑" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>南沙天珀雅苑</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>龙门富力南昆山温泉养生谷</h3>
-          <div class="case-meta"><span>2013-2017年</span><span>惠州龙门（国家4A级风景区）</span></div>
-          <p class="desc">总占地3000亩，国家级风景区度假屋。温泉中心KTV影音设备安装、售楼中心LED显示屏、古村落视频&舞台灯光机械、国医馆LED屏、富力湾KTV/戏台/歌舞厅/歌剧院音视频&灯光。</p>
-          <div class="case-tags"><span class="tag">KTV</span><span class="tag">LED显示</span><span class="tag">舞台灯光</span></div>
-        </div>
-      </div>
 
-      <!-- ========== 总部大厦 ========== -->
+        <!-- 南沙滨海湾国际会议中心 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%8D%97%E6%B2%99%E6%BB%A8%E6%B5%B7%E6%B9%BE%E5%9B%BD%E9%99%85%E4%BC%9A%E8%AE%AE%E4%B8%AD%E5%BF%83.jpg" alt="南沙滨海湾国际会议中心" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>南沙滨海湾国际会议中心</h3>
+          </div>
+        </div>
 
-      <!-- Slide 43: 广州长隆大厦 AV 系统 -->
-      <div class="case-card fade-in" data-category="hq">
-        <div class="case-image">
-          <span class="case-tag">总部大厦</span>
-          <img src="../images/cases/case-boss.jpg" alt="广州长隆大厦 AV 系统工程项目">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 城市之星物流公司 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E5%9F%8E%E5%B8%82%E4%B9%8B%E6%98%9F%E7%89%A9%E6%B5%81%E5%85%AC%E5%8F%B8.jpg" alt="城市之星物流公司" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>城市之星物流公司</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>广州长隆大厦 AV 系统工程项目</h3>
-          <div class="case-meta"><span>2018年4月签约</span><span>广州番禺</span></div>
-          <p class="desc">国际报告厅/办公会议室/董事长会议室/董事长生活会所/集团展厅AV系统工程 + 长隆集团物联网集成平台建设。</p>
-          <div class="case-tags"><span class="tag">AV系统</span><span class="tag">物联网平台</span><span class="tag">报告厅</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 44: 绿景集团总部（NEO大厦）多项目群 -->
-      <div class="case-card fade-in" data-category="hq">
-        <div class="case-image">
-          <span class="case-tag">总部大厦</span>
-          <img src="../images/cases/case-rongchuang.jpg" alt="绿景集团总部（NEO大厦）多项目群">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 宝马4S店 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E5%AE%9D%E9%A9%AC4S%E5%BA%97.jpg" alt="宝马4S店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>宝马4S店</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>绿景集团总部（NEO大厦）多项目群</h3>
-          <div class="case-meta"><span>2012年起持续合作</span><span>深圳福田NEO大厦</span></div>
-          <p class="desc">总部会议室/报告厅/远程视频会议/洽谈室影音 → 接待中心KTV·电影院·宴会厅 → 国际会展中心影音+弱电+机房 → 香颂购物中心小剧场&天幕 → 南溪展示厅 → 虹湾魔幻投影。</p>
-          <div class="case-tags"><span class="tag">会议系统</span><span class="tag">弱电智能化</span><span class="tag">机房工程</span></div>
-        </div>
-      </div>
 
-      <!-- ========== 政府单位 ========== -->
+        <!-- 富力足球学校 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%AF%8C%E5%8A%9B%E8%B6%B3%E7%90%83%E5%AD%A6%E6%A0%A1.jpg" alt="富力足球学校" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>富力足球学校</h3>
+          </div>
+        </div>
 
-      <!-- Slide 42: 天河区机关大院节能改造 -->
-      <div class="case-card fade-in" data-category="government">
-        <div class="case-image">
-          <span class="case-tag">政府单位</span>
-          <img src="../images/cases/case-yihai.jpg" alt="天河区机关大院节能改造工程">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 富力龙门养生谷 -->
+        <div class="case-card fade-in" data-category="residential">
+          <div class="case-image">
+            <span class="case-tag">住宅地产</span>
+            <img src="../images/cases/%E5%AF%8C%E5%8A%9B%E9%BE%99%E9%97%A8%E5%85%BB%E7%94%9F%E8%B0%B7.jpg" alt="富力龙门养生谷" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>富力龙门养生谷</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>天河区机关大院节能改造工程</h3>
-          <div class="case-meta"><span>2015年9月签约</span><span>广州天河</span></div>
-          <p class="desc">天河区行政中心（7栋建筑/96450㎡/550+办公室）。新建能耗监测系统 + 9006号会议室智能改造——电动窗帘/照明/空调/会议系统智能联动控制。</p>
-          <div class="case-tags"><span class="tag">能耗监测</span><span class="tag">智能控制</span><span class="tag">会议室改造</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 48: 省级博物馆项目集群 -->
-      <div class="case-card fade-in" data-category="government">
-        <div class="case-image">
-          <span class="case-tag">政府单位</span>
-          <img src="../images/cases/case-yucheng.jpg" alt="省级博物馆项目集群">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 平乐温德姆酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E5%B9%B3%E4%B9%90%E6%B8%A9%E5%BE%B7%E5%A7%86%E9%85%92%E5%BA%97.jpg" alt="平乐温德姆酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>平乐温德姆酒店</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>省级博物馆项目集群</h3>
-          <div class="case-meta"><span>多年度</span><span>广东各地</span></div>
-          <p class="desc">广东省博物馆 · 韶关市博物馆 · 中国瑶族博物馆 — 文博场馆智能化与影音系统集成项目。</p>
-          <div class="case-tags"><span class="tag">文博场馆</span><span class="tag">展示系统</span><span class="tag">影音集成</span></div>
-        </div>
-      </div>
 
-      <!-- ========== 商业办公 & 其他 ========== -->
+        <!-- 广东中储棉党建中心 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%B9%BF%E4%B8%9C%E4%B8%AD%E5%82%A8%E6%A3%89%E5%85%9A%E5%BB%BA%E4%B8%AD%E5%BF%83.jpg" alt="广东中储棉党建中心" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广东中储棉党建中心</h3>
+          </div>
+        </div>
 
-      <!-- Slide 33: 深圳华强创意产业园会展中心 -->
-      <div class="case-card fade-in" data-category="office">
-        <div class="case-image">
-          <span class="case-tag">商业办公</span>
-          <img src="../images/cases/case-sunac.jpg" alt="深圳华强创意产业园会展中心">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 广东电网云浮供电局 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%B9%BF%E4%B8%9C%E7%94%B5%E7%BD%91%E4%BA%91%E6%B5%AE%E4%BE%9B%E7%94%B5%E5%B1%80.jpg" alt="广东电网云浮供电局" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广东电网云浮供电局</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>深圳华强创意产业园会展中心</h3>
-          <div class="case-meta"><span>近年</span><span>深圳福田</span></div>
-          <p class="desc">华强创意产业园会展中心音视频及智能化系统集成项目。</p>
-          <div class="case-tags"><span class="tag">会展中心</span><span class="tag">音视频</span><span class="tag">园区智能化</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 49: 中山大学南方学院 -->
-      <div class="case-card fade-in" data-category="office">
-        <div class="case-image">
-          <span class="case-tag">商业办公</span>
-          <img src="../images/cases/case-nanshan.jpg" alt="中山大学南方学院建筑智能化">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 广东省博物馆 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%8D%9A%E7%89%A9%E9%A6%86.jpg" alt="广东省博物馆" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广东省博物馆</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>中山大学南方学院建筑智能化</h3>
-          <div class="case-meta"><span>近年</span><span>广州从化</span></div>
-          <p class="desc">八期教工宿舍/办公楼/三个中心/综合楼建筑智能化系统工程。</p>
-          <div class="case-tags"><span class="tag">高校建筑</span><span class="tag">建筑智能化</span><span class="tag">综合布线</span></div>
-        </div>
-      </div>
 
-      <!-- Slide 50-52: 企业与机构精选案例集 -->
-      <div class="case-card fade-in" data-category="office">
-        <div class="case-image">
-          <span class="case-tag">商业办公</span>
-          <img src="../images/cases/case-haiyi.jpg" alt="企业与机构精选案例集">
-          <div class="overlay"><span class="view-detail">查看详情</span></div>
+        <!-- 广东省国土资源局 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%9B%BD%E5%9C%9F%E8%B5%84%E6%BA%90%E5%B1%80.jpg" alt="广东省国土资源局" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广东省国土资源局</h3>
+          </div>
         </div>
-        <div class="case-info">
-          <h3>企业与机构精选案例集</h3>
-          <div class="case-meta"><span>多年度</span><span>全国多地</span></div>
-          <p class="desc">广州市机电高级技工学校 | 宝马4S店 | 广东省国土资源局 | 广东电网云浮供电局 | 佛山美的集团 | 中大肿瘤医院 | 华发尚座中央花园 | 佛山卓景花园 | 从化国际城 | 绿瘦集团VIP会所 | 城市之星物流等。</p>
-          <div class="case-tags"><span class="tag">企业办公</span><span class="tag">教育设施</span><span class="tag">医疗配套</span></div>
-        </div>
-      </div>
 
-    </div>
-  </div>
+        <!-- 广东省应急厅 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%BA%94%E6%80%A5%E5%8E%85.jpg" alt="广东省应急厅" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广东省应急厅</h3>
+          </div>
+        </div>
+
+        <!-- 广东省新一代通信与网络创新研究院 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%96%B0%E4%B8%80%E4%BB%A3%E9%80%9A%E4%BF%A1%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%88%9B%E6%96%B0%E7%A0%94%E7%A9%B6%E9%99%A2.jpg" alt="广东省新一代通信与网络创新研究院" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广东省新一代通信与网络创新研究院</h3>
+          </div>
+        </div>
+
+        <!-- 广州w酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9Ew%E9%85%92%E5%BA%97.jpg" alt="广州w酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州w酒店</h3>
+          </div>
+        </div>
+
+        <!-- 广州南丰朗豪酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9E%E5%8D%97%E4%B8%B0%E6%9C%97%E8%B1%AA%E9%85%92%E5%BA%97.jpg" alt="广州南丰朗豪酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州南丰朗豪酒店</h3>
+          </div>
+        </div>
+
+        <!-- 广州四季酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9E%E5%9B%9B%E5%AD%A3%E9%85%92%E5%BA%97.jpg" alt="广州四季酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州四季酒店</h3>
+          </div>
+        </div>
+
+        <!-- 广州天河区政府 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9E%E5%A4%A9%E6%B2%B3%E5%8C%BA%E6%94%BF%E5%BA%9C.jpg" alt="广州天河区政府" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州天河区政府</h3>
+          </div>
+        </div>
+
+        <!-- 广州富力丽思卡尔顿酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9E%E5%AF%8C%E5%8A%9B%E4%B8%BD%E6%80%9D%E5%8D%A1%E5%B0%94%E9%A1%BF%E9%85%92%E5%BA%97.jpg" alt="广州富力丽思卡尔顿酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州富力丽思卡尔顿酒店</h3>
+          </div>
+        </div>
+
+        <!-- 广州市机电高级技工学校 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9E%E5%B8%82%E6%9C%BA%E7%94%B5%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A5%E5%AD%A6%E6%A0%A1.jpg" alt="广州市机电高级技工学校" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州市机电高级技工学校</h3>
+          </div>
+        </div>
+
+        <!-- 广州星河湾酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9E%E6%98%9F%E6%B2%B3%E6%B9%BE%E9%85%92%E5%BA%97.jpg" alt="广州星河湾酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州星河湾酒店</h3>
+          </div>
+        </div>
+
+        <!-- 广州海怡半岛酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9E%E6%B5%B7%E6%80%A1%E5%8D%8A%E5%B2%9B%E9%85%92%E5%BA%97.jpg" alt="广州海怡半岛酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州海怡半岛酒店</h3>
+          </div>
+        </div>
+
+        <!-- 广州海航威斯汀酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9E%E6%B5%B7%E8%88%AA%E5%A8%81%E6%96%AF%E6%B1%80%E9%85%92%E5%BA%97.jpg" alt="广州海航威斯汀酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州海航威斯汀酒店</h3>
+          </div>
+        </div>
+
+        <!-- 广州白云机场希尔顿酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9E%E7%99%BD%E4%BA%91%E6%9C%BA%E5%9C%BA%E5%B8%8C%E5%B0%94%E9%A1%BF%E9%85%92%E5%BA%97.jpg" alt="广州白云机场希尔顿酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州白云机场希尔顿酒店</h3>
+          </div>
+        </div>
+
+        <!-- 广州白云机场铂尔曼大酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E5%B9%BF%E5%B7%9E%E7%99%BD%E4%BA%91%E6%9C%BA%E5%9C%BA%E9%93%82%E5%B0%94%E6%9B%BC%E5%A4%A7%E9%85%92%E5%BA%97%20.jpg" alt="广州白云机场铂尔曼大酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>广州白云机场铂尔曼大酒店</h3>
+          </div>
+        </div>
+
+        <!-- 恒大海花岛国际会展中心 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E6%81%92%E5%A4%A7%E6%B5%B7%E8%8A%B1%E5%B2%9B%E5%9B%BD%E9%99%85%E4%BC%9A%E5%B1%95%E4%B8%AD%E5%BF%83.png" alt="恒大海花岛国际会展中心" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>恒大海花岛国际会展中心</h3>
+          </div>
+        </div>
+
+        <!-- 惠东富力湾 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E6%83%A0%E4%B8%9C%E5%AF%8C%E5%8A%9B%E6%B9%BE.jpg" alt="惠东富力湾" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>惠东富力湾</h3>
+          </div>
+        </div>
+
+        <!-- 惠州万丽酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E6%83%A0%E5%B7%9E%E4%B8%87%E4%B8%BD%E9%85%92%E5%BA%97.jpg" alt="惠州万丽酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>惠州万丽酒店</h3>
+          </div>
+        </div>
+
+        <!-- 惠州双月湾檀悦豪生度假酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E6%83%A0%E5%B7%9E%E5%8F%8C%E6%9C%88%E6%B9%BE%E6%AA%80%E6%82%A6%E8%B1%AA%E7%94%9F%E5%BA%A6%E5%81%87%E9%85%92%E5%BA%97.jpg" alt="惠州双月湾檀悦豪生度假酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>惠州双月湾檀悦豪生度假酒店</h3>
+          </div>
+        </div>
+
+        <!-- 方圆泉溪月岛酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E6%96%B9%E5%9C%86%E6%B3%89%E6%BA%AA%E6%9C%88%E5%B2%9B%E9%85%92%E5%BA%97.jpg" alt="方圆泉溪月岛酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>方圆泉溪月岛酒店</h3>
+          </div>
+        </div>
+
+        <!-- 方圆雅乐轩 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E6%96%B9%E5%9C%86%E9%9B%85%E4%B9%90%E8%BD%A9.jpg" alt="方圆雅乐轩" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>方圆雅乐轩</h3>
+          </div>
+        </div>
+
+        <!-- 方圆雅乐轩2 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E6%96%B9%E5%9C%86%E9%9B%85%E4%B9%90%E8%BD%A92.jpg" alt="方圆雅乐轩2" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>方圆雅乐轩2</h3>
+          </div>
+        </div>
+
+        <!-- 武汉美的IT研发中心 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E6%AD%A6%E6%B1%89%E7%BE%8E%E7%9A%84IT%E7%A0%94%E5%8F%91%E4%B8%AD%E5%BF%83.png" alt="武汉美的IT研发中心" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>武汉美的IT研发中心</h3>
+          </div>
+        </div>
+
+        <!-- 海大集团总部大厦 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E6%B5%B7%E5%A4%A7%E9%9B%86%E5%9B%A2%E6%80%BB%E9%83%A8%E5%A4%A7%E5%8E%A6.jpg" alt="海大集团总部大厦" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>海大集团总部大厦</h3>
+          </div>
+        </div>
+
+        <!-- 深圳华强产业园 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E6%B7%B1%E5%9C%B3%E5%8D%8E%E5%BC%BA%E4%BA%A7%E4%B8%9A%E5%9B%AD.jpg" alt="深圳华强产业园" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>深圳华强产业园</h3>
+          </div>
+        </div>
+
+        <!-- 深圳绿景NEO大厦 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E6%B7%B1%E5%9C%B3%E7%BB%BF%E6%99%AFNEO%E5%A4%A7%E5%8E%A6.jpg" alt="深圳绿景NEO大厦" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>深圳绿景NEO大厦</h3>
+          </div>
+        </div>
+
+        <!-- 深圳绿景虹湾 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E6%B7%B1%E5%9C%B3%E7%BB%BF%E6%99%AF%E8%99%B9%E6%B9%BE.jpg" alt="深圳绿景虹湾" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>深圳绿景虹湾</h3>
+          </div>
+        </div>
+
+        <!-- 深圳金茂jw万豪酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E6%B7%B1%E5%9C%B3%E9%87%91%E8%8C%82jw%E4%B8%87%E8%B1%AA%E9%85%92%E5%BA%97.jpg" alt="深圳金茂jw万豪酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>深圳金茂jw万豪酒店</h3>
+          </div>
+        </div>
+
+        <!-- 深圳雅乐轩酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E6%B7%B1%E5%9C%B3%E9%9B%85%E4%B9%90%E8%BD%A9%E9%85%92%E5%BA%97.jpg" alt="深圳雅乐轩酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>深圳雅乐轩酒店</h3>
+          </div>
+        </div>
+
+        <!-- 清远大唐总部大厦 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E6%B8%85%E8%BF%9C%E5%A4%A7%E5%94%90%E6%80%BB%E9%83%A8%E5%A4%A7%E5%8E%A6.jpg" alt="清远大唐总部大厦" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>清远大唐总部大厦</h3>
+          </div>
+        </div>
+
+        <!-- 湖北监利恒福星际酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E6%B9%96%E5%8C%97%E7%9B%91%E5%88%A9%E6%81%92%E7%A6%8F%E6%98%9F%E9%99%85%E9%85%92%E5%BA%97.jpg" alt="湖北监利恒福星际酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>湖北监利恒福星际酒店</h3>
+          </div>
+        </div>
+
+        <!-- 熹乐谷温泉度假酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E7%86%B9%E4%B9%90%E8%B0%B7%E6%B8%A9%E6%B3%89%E5%BA%A6%E5%81%87%E9%85%92%E5%BA%97.jpg" alt="熹乐谷温泉度假酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>熹乐谷温泉度假酒店</h3>
+          </div>
+        </div>
+
+        <!-- 益阳安化温德姆至尊豪廷大酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E7%9B%8A%E9%98%B3%E5%AE%89%E5%8C%96%E6%B8%A9%E5%BE%B7%E5%A7%86%E8%87%B3%E5%B0%8A%E8%B1%AA%E5%BB%B7%E5%A4%A7%E9%85%92%E5%BA%97.jpg" alt="益阳安化温德姆至尊豪廷大酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>益阳安化温德姆至尊豪廷大酒店</h3>
+          </div>
+        </div>
+
+        <!-- 粤海仰忠汇 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E7%B2%A4%E6%B5%B7%E4%BB%B0%E5%BF%A0%E6%B1%87.jpg" alt="粤海仰忠汇" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>粤海仰忠汇</h3>
+          </div>
+        </div>
+
+        <!-- 绿瘦会所 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E7%BB%BF%E7%98%A6%E4%BC%9A%E6%89%80.jpg" alt="绿瘦会所" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>绿瘦会所</h3>
+          </div>
+        </div>
+
+        <!-- 肇庆大旺希音物流仓 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E8%82%87%E5%BA%86%E5%A4%A7%E6%97%BA%E5%B8%8C%E9%9F%B3%E7%89%A9%E6%B5%81%E4%BB%93.jpg" alt="肇庆大旺希音物流仓" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>肇庆大旺希音物流仓</h3>
+          </div>
+        </div>
+
+        <!-- 鑫远白天鹅大酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E9%91%AB%E8%BF%9C%E7%99%BD%E5%A4%A9%E9%B9%85%E5%A4%A7%E9%85%92%E5%BA%97.jpg" alt="鑫远白天鹅大酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>鑫远白天鹅大酒店</h3>
+          </div>
+        </div>
+
+        <!-- 钦州天骄国际酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E9%92%A6%E5%B7%9E%E5%A4%A9%E9%AA%84%E5%9B%BD%E9%99%85%E9%85%92%E5%BA%97.jpeg" alt="钦州天骄国际酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>钦州天骄国际酒店</h3>
+          </div>
+        </div>
+
+        <!-- 钦州天骄国际酒店宴会厅 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E9%92%A6%E5%B7%9E%E5%A4%A9%E9%AA%84%E5%9B%BD%E9%99%85%E9%85%92%E5%BA%97%E5%AE%B4%E4%BC%9A%E5%8E%85.jpg" alt="钦州天骄国际酒店宴会厅" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>钦州天骄国际酒店宴会厅</h3>
+          </div>
+        </div>
+
+        <!-- 长沙湘江豪生酒店 2 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E9%95%BF%E6%B2%99%E6%B9%98%E6%B1%9F%E8%B1%AA%E7%94%9F%E9%85%92%E5%BA%97%202.jpg" alt="长沙湘江豪生酒店 2" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>长沙湘江豪生酒店 2</h3>
+          </div>
+        </div>
+
+        <!-- 长沙莫尼拉江景花园酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E9%95%BF%E6%B2%99%E8%8E%AB%E5%B0%BC%E6%8B%89%E6%B1%9F%E6%99%AF%E8%8A%B1%E5%9B%AD%E9%85%92%E5%BA%97.jpeg" alt="长沙莫尼拉江景花园酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>长沙莫尼拉江景花园酒店</h3>
+          </div>
+        </div>
+
+        <!-- 长沙鑫远白天鹅酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E9%95%BF%E6%B2%99%E9%91%AB%E8%BF%9C%E7%99%BD%E5%A4%A9%E9%B9%85%E9%85%92%E5%BA%97.png" alt="长沙鑫远白天鹅酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>长沙鑫远白天鹅酒店</h3>
+          </div>
+        </div>
+
+        <!-- 长隆总部大厦 -->
+        <div class="case-card fade-in" data-category="commercial">
+          <div class="case-image">
+            <span class="case-tag">商业办公</span>
+            <img src="../images/cases/%E9%95%BF%E9%9A%86%E6%80%BB%E9%83%A8%E5%A4%A7%E5%8E%A6.jpg" alt="长隆总部大厦" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>长隆总部大厦</h3>
+          </div>
+        </div>
+
+        <!-- 韶关博物馆改 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E9%9F%B6%E5%85%B3%E5%8D%9A%E7%89%A9%E9%A6%86%E6%94%B9.jpg" alt="韶关博物馆改" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>韶关博物馆改</h3>
+          </div>
+        </div>
+
+        <!-- 韶关新丰生物发电厂 -->
+        <div class="case-card fade-in" data-category="government">
+          <div class="case-image">
+            <span class="case-tag">政府公共</span>
+            <img src="../images/cases/%E9%9F%B6%E5%85%B3%E6%96%B0%E4%B8%B0%E7%94%9F%E7%89%A9%E5%8F%91%E7%94%B5%E5%8E%82.jpg" alt="韶关新丰生物发电厂" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>韶关新丰生物发电厂</h3>
+          </div>
+        </div>
+
+        <!-- 香格里拉大酒店 -->
+        <div class="case-card fade-in" data-category="hotel">
+          <div class="case-image">
+            <span class="case-tag">高端酒店</span>
+            <img src="../images/cases/%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E5%A4%A7%E9%85%92%E5%BA%97.jpg" alt="香格里拉大酒店" loading="lazy">
+            <div class="overlay"><span class="view-detail">查看详情</span></div>
+          </div>
+          <div class="case-info">
+            <h3>香格里拉大酒店</h3>
+          </div>
+        </div>    </div><!-- /.cases-grid -->
+
+  </div><!-- /.container -->
 </section>
 
 <section class="cta-section">
   <div class="container fade-in">
-    <h2>有类似项目需求？</h2>
-    <p>以上仅为部分代表案例，累计完成 200+ 项目，覆盖全国多省市。</p>
-    <a href="contact.html" class="btn btn-white">联系咨询</a>
+    <h2>打造下一个精品工程</h2>
+    <p>专业团队，量身定制，让每个项目都成为经典。</p>
+    <a href="contact.html" class="btn btn-white">咨询合作</a>
   </div>
 </section>
 
@@ -530,52 +1046,47 @@
         <h4>快速导航</h4>
         <ul>
           <li><a href="about.html">关于我们</a></li>
-          <li><a href="services.html">服务介绍</a></li>
-          <li><a href="cases.html">工程案例</a></li>
           <li><a href="qualifications.html">资质荣誉</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>服务项目</h4>
-        <ul>
-          <li><a href="services.html">租赁服务</a></li>
-          <li><a href="services.html">实施服务</a></li>
-          <li><a href="services.html">维保服务</a></li>
-          <li><a href="services.html">技术管家</a></li>
+          <li><a href="cases.html">工程案例</a></li>
+          <li><a href="services.html">服务介绍</a></li>
         </ul>
       </div>
       <div class="footer-contact">
-        <h4>联系方式</h4>
+        <h4>联系我们</h4>
         <ul>
-          <li><span class="icon">📍</span><span>广州市黄埔区科学城天泰一路2号6栋406室</span></li>
-          <li><span class="icon">📞</span><span>020-3203 0561</span></li>
-          <li><span class="icon">📧</span><span>yanfuru@126.com</span></li>
+          <li>电话：020-85550113</li>
+          <li>邮箱：gzcyi@163.com</li>
+          <li>地址：广州市天河区天河北路689号</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 广州创益信息技术有限公司 版权所有 | 粤ICP备XXXXXXXX号</p>
+      <p>&copy; 2024 广州创益信息技术有限公司 版权所有 | <a href="#" style="color:var(--color-gray-400);">粤ICP备XXXXXXXX号</a></p>
     </div>
   </div>
 </footer>
 
-<button class="back-to-top" aria-label="回到顶部">↑</button>
 <script src="../js/main.js"></script>
 <script>
-document.querySelectorAll('.filter-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var filter = this.getAttribute('data-filter');
-    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-    this.classList.add('active');
-    document.querySelectorAll('.case-card').forEach(function(card) {
-      if (filter === 'all' || card.getAttribute('data-category') === filter) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
+  // 案例筛选功能
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const caseCards = document.querySelectorAll('.case-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      caseCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
   });
-});
 </script>
+
 </body>
 </html>
