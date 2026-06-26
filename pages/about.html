@@ -57,73 +57,57 @@
       background: var(--color-gray-50);
     }
 
-    .timeline {
-      position: relative;
-      max-width: 800px;
+    /* Timeline - 横向表格设计 */
+    .timeline-table {
+      max-width: 900px;
       margin: 0 auto;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: var(--color-gray-300);
-      transform: translateX(-50%);
-    }
-
-    .timeline-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 48px;
-      position: relative;
-    }
-
-    .timeline-item:nth-child(odd) {
-      flex-direction: row-reverse;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: 50%;
-      top: 8px;
-      width: 16px;
-      height: 16px;
-      background: var(--color-accent);
-      border: 3px solid var(--color-white);
-      border-radius: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 0 0 4px rgba(196, 154, 43, 0.2);
-      z-index: 1;
-    }
-
-    .timeline-content {
-      width: 45%;
+      border-collapse: collapse;
+      width: 100%;
       background: var(--color-white);
-      padding: 24px;
       border-radius: var(--radius-lg);
+      overflow: hidden;
       box-shadow: var(--shadow-sm);
     }
 
-    .timeline-year {
-      font-size: 1.4rem;
+    .timeline-table thead {
+      background: linear-gradient(135deg, #1a3c5e, #2d5f8a);
+    }
+
+    .timeline-table th {
+      padding: 16px 24px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .timeline-table td {
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--color-gray-100);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      vertical-align: top;
+    }
+
+    .timeline-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .timeline-table tbody tr:hover {
+      background: rgba(26,60,94,0.03);
+    }
+
+    .timeline-table .year-cell {
       font-weight: 700;
       color: var(--color-accent);
-      margin-bottom: 8px;
-    }
-
-    .timeline-content h3 {
       font-size: 1.05rem;
-      color: var(--color-primary);
-      margin-bottom: 8px;
+      white-space: nowrap;
+      width: 80px;
     }
 
-    .timeline-content p {
-      font-size: 0.9rem;
-      color: var(--color-gray-500);
-      line-height: 1.7;
+    .timeline-table .event-new {
+      color: #c4412b;
+      font-weight: 500;
     }
 
     /* PPT Download */
@@ -477,22 +461,11 @@
         grid-template-columns: 1fr;
       }
 
-      .timeline::before {
-        left: 20px;
+      .timeline-table {
+        font-size: 0.85rem;
       }
-
-      .timeline-dot {
-        left: 20px;
-      }
-
-      .timeline-item,
-      .timeline-item:nth-child(odd) {
-        flex-direction: row;
-        padding-left: 50px;
-      }
-
-      .timeline-content {
-        width: 100%;
+      .timeline-table th, .timeline-table td {
+        padding: 10px 14px;
       }
 
       .culture-grid {
@@ -576,50 +549,74 @@
   <div class="container">
     <h2 class="section-title fade-in">发展历程</h2>
     <div class="section-title-line"></div>
-    <p class="section-subtitle fade-in">十年深耕，砥砺前行</p>
+    <p class="section-subtitle fade-in">十余年深耕，砥砺前行</p>
 
-    <div class="timeline">
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2014</div>
-          <h3>公司成立</h3>
-          <p>广州创益信息技术有限公司在广州正式注册成立，以弱电工程为核心业务起步。</p>
-        </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2016</div>
-          <h3>业务拓展</h3>
-          <p>业务范围扩展至影音系统集成领域，完成首个大型多功能厅影音系统项目交付。</p>
-        </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2018</div>
-          <h3>资质升级</h3>
-          <p>获得电子与智能化工程专业承包资质，团队规模突破30人，年项目交付量超过50个。</p>
-        </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2020</div>
-          <h3>技术升级</h3>
-          <p>引入AI智能安防与物联网技术方案，成功落地多个智慧园区标杆项目。</p>
-        </div>
-      </div>
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-year">2023</div>
-          <h3>品牌升级</h3>
-          <p>完成品牌战略升级，确立"弱电智能化+影音集成"双轮驱动发展模式，累计服务客户超过200家。</p>
-        </div>
-      </div>
-    </div>
+    <table class="timeline-table fade-in">
+      <thead>
+        <tr>
+          <th>年份</th>
+          <th>事件</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="year-cell">2013</td>
+          <td>公司成立</td>
+        </tr>
+        <tr>
+          <td class="year-cell">2014</td>
+          <td>首个五星酒店影音工程（双月湾檀悦豪生）+ 广州四季酒店维保</td>
+        </tr>
+        <tr>
+          <td class="year-cell">2016</td>
+          <td>首个总部大厦项目（深圳绿景集团NEO大厦）</td>
+        </tr>
+        <tr>
+          <td class="year-cell">2017</td>
+          <td>获评国家高新技术企业</td>
+        </tr>
+        <tr>
+          <td class="year-cell">2017</td>
+          <td><span class="event-new">G20 峰会会议保障 ← 新增</span></td>
+        </tr>
+        <tr>
+          <td class="year-cell">2018</td>
+          <td>广州长隆大厦全物联网集成（亚洲视听杂志报道）</td>
+        </tr>
+        <tr>
+          <td class="year-cell">2019</td>
+          <td><span class="event-new">全球财富论坛会议保障 ← 新增</span></td>
+        </tr>
+        <tr>
+          <td class="year-cell">2020</td>
+          <td>跨地域拓展（陕西渭南温姆姆至尊酒店）</td>
+        </tr>
+        <tr>
+          <td class="year-cell">2021</td>
+          <td>南沙国际金融论坛永久会址项目</td>
+        </tr>
+        <tr>
+          <td class="year-cell">2022</td>
+          <td><span class="event-new">黄埔区方舱医院援建 ← 新增</span></td>
+        </tr>
+        <tr>
+          <td class="year-cell">2023</td>
+          <td>白云新储能展厅音视频集成</td>
+        </tr>
+        <tr>
+          <td class="year-cell">2023</td>
+          <td><span class="event-new">亚洲青年领袖论坛会议保障 ← 新增</span></td>
+        </tr>
+        <tr>
+          <td class="year-cell">2025</td>
+          <td>中科院高能物理研究所散裂中子源二期机电工程</td>
+        </tr>
+        <tr>
+          <td class="year-cell">2026</td>
+          <td><span class="event-new">国家最高领导人会议保障 ← 新增</span></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -678,7 +675,7 @@
           颜总拥有多项国家级行业资质认证，涵盖电气工程、弱电系统、专业影音等领域，并取得中山大学、武汉大学相关学历，具备扎实的工程理论基础与持续学习的专业精神。
         </p>
         <p>
-          多年来，颜总带领创益团队完成了广州四季酒店、广州瑰丽酒店、广州文华东方酒店等逾百个高端标杆项目，以"服务无限，价值至上"的经营理念赢得客户广泛信赖，并担任广州株洲商会监事职务，积极参与社会公益与行业建设。
+          多年来，颜总带领创益团队完成了广州四季酒店、双月湾檀悦豪生度假酒店、广州长隆大厦、海花岛国际会展中心、南沙国际金融论坛永久会址、国家储能大厦展厅、中科院高能物理研究所实验楼、中国人民解放军火箭军某旅等逾百个高端标杆项目，以"服务无限，价值至上"的经营理念赢得客户广泛信赖，并担任广东省湖南攸县商会监事长职务，积极参与社会公益与行业建设。
         </p>
         <div class="founder-tags">
           <span class="founder-tag">电气工程师</span>
@@ -687,7 +684,7 @@
           <span class="founder-tag">影音系统项目经理</span>
           <span class="founder-tag">中山大学</span>
           <span class="founder-tag">武汉大学</span>
-          <span class="founder-tag">株洲商会监事</span>
+          <span class="founder-tag">广东省湖南攸县商会监事长</span>
         </div>
       </div>
     </div>
@@ -746,9 +743,9 @@
         </div>
         <div class="cert-card fade-in">
           <div class="cert-img-wrap">
-            <img src="../images/team/yan-chamber-supervisor.jpg" alt="株洲商会监事证书" loading="lazy">
+            <img src="../images/team/yan-chamber-supervisor.jpg" alt="广东省湖南攸县商会监事长证书" loading="lazy">
           </div>
-          <div class="cert-label">株洲商会监事证书</div>
+          <div class="cert-label">广东省湖南攸县商会监事长证书</div>
         </div>
       </div>
     </div>
