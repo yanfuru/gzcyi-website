@@ -261,7 +261,16 @@ img {
 
 .footer-contact .icon {
   flex-shrink: 0;
-  color: var(--color-accent-light);
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.footer-contact .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .footer-bottom {

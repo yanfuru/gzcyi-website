@@ -36,15 +36,18 @@
     }
 
     .contact-item-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, rgba(26,60,94,0.08), rgba(44,95,138,0.12));
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      overflow: hidden;
       flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+    .contact-item-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .contact-item-text h4 {
@@ -240,7 +243,7 @@
         <p>无论您有任何疑问或项目需求，我们都将竭诚为您服务。欢迎通过以下方式与我们取得联系。</p>
 
         <div class="contact-item">
-          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-icon"><img src="../images/icons/icon-location.jpg" alt="地址"></div>
           <div class="contact-item-text">
             <h4>公司地址</h4>
             <p>广州市黄埔区科学城天泰一路2号6栋406室</p>
@@ -248,16 +251,17 @@
         </div>
 
         <div class="contact-item">
-          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-icon"><img src="../images/icons/icon-phone.jpg" alt="电话"></div>
           <div class="contact-item-text">
-            <h4>联系电话186 6476 7123</h4>
-            <p>020-3203 0561</p>
+            <h4>联系电话</h4>
+            <p>座机：020-3203 0561</p>
+            <p>手机：186 6476 7123</p>
             <p style="font-size:0.85rem;color:var(--color-gray-500);">周一至周五 9:00-18:00</p>
           </div>
         </div>
 
         <div class="contact-item">
-          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-icon"><img src="../images/icons/icon-email.jpg" alt="邮箱"></div>
           <div class="contact-item-text">
             <h4>电子邮箱</h4>
             <p>yanfuru@126.com</p>
@@ -374,9 +378,9 @@
       <div class="footer-contact">
         <h4>联系方式</h4>
         <ul>
-          <li><span class="icon">📍</span><span>广州市黄埔区</span></li>
-          <li><span class="icon">📞</span><span>020-3203 0561</span></li>
-          <li><span class="icon">📧</span><span>yanfuru@126.com</span></li>
+          <li><span class="icon"><img src="../images/icons/icon-location.jpg" alt="地址"></span><span>广州市黄埔区科学城天泰一路2号6栋406室</span></li>
+          <li><span class="icon"><img src="../images/icons/icon-phone.jpg" alt="电话"></span><span>座机：020-3203 0561<br>手机：186 6476 7123</span></li>
+          <li><span class="icon"><img src="../images/icons/icon-email.jpg" alt="邮箱"></span><span>yanfuru@126.com</span></li>
         </ul>
       </div>
     </div>
