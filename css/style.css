@@ -261,10 +261,11 @@ img {
 
 .footer-contact .icon {
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
   overflow: hidden;
+  margin-top: 1px;
 }
 .footer-contact .icon img {
   width: 100%;
