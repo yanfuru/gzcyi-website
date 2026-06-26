@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="广州创益信息技术有限公司十大服务支持 — 顾问、设计、实施、培训、检测、维保、备份、升级、租赁、技术管家全流程服务。">
   <title>服务介绍 - 广州创益信息技术有限公司</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
   <style>
     .services-page { padding: 80px 0; }
 
@@ -68,26 +67,23 @@
     }
 
     .card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
+      width: 90px;
+      height: 90px;
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.6rem;
+      margin-bottom: 12px;
+      overflow: hidden;
       flex-shrink: 0;
+      background: transparent !important;
     }
 
-    .card-icon.rental { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
-    .card-icon.implement { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
-    .card-icon.backup { background: linear-gradient(135deg, #fff3e0, #ffe0b2); }
-    .card-icon.upgrade { background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
-    .card-icon.consult { background: linear-gradient(135deg, #fce4ec, #f8bbd0); }
-    .card-icon.maintenance { background: linear-gradient(135deg, #e0f2f1, #b2dfdb); }
-    .card-icon.inspect { background: linear-gradient(135deg, #ede7f6, #d1c4e9); }
-    .card-icon.train { background: linear-gradient(135deg, #fff8e1, #ffecb3); }
-    .card-icon.design { background: linear-gradient(135deg, #fbe9e7, #ffccbc); }
-    .card-icon.steward { background: linear-gradient(135deg, #e8eaf6, #c5cae9); }
+    .card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
     .card-header h3 {
       font-size: 1.25rem;
@@ -397,7 +393,7 @@
       <!-- 01 顾问服务 -->
       <div class="service-card fade-in">
         <div class="card-header">
-          <div class="card-icon consult">💡</div>
+          <div class="card-icon consult"><img src="../images/services/service_01_consult.png" alt="顾问服务" loading="lazy"></div>
           <h3>顾问服务</h3>
         </div>
         <p>顾问服务不只是简单的咨询回答。"有何必？"顾问咨询的主要工作是为领导层和决策者提供专业领域的答疑和建议，帮助客户做出自主决策。</p>
@@ -413,7 +409,7 @@
       <!-- 02 设计服务 -->
       <div class="service-card fade-in">
         <div class="card-header">
-          <div class="card-icon design">✏️</div>
+          <div class="card-icon design"><img src="../images/services/service_02_design.png" alt="设计服务" loading="lazy"></div>
           <h3>设计服务</h3>
         </div>
         <p>我们的设计服务不只是做好设计技术层面那么简单，而是从场地条件到使用需求的全方位考量，为每个项目量身定制最优方案。</p>
@@ -429,7 +425,7 @@
       <!-- 03 实施服务 -->
       <div class="service-card fade-in">
         <div class="card-header">
-          <div class="card-icon implement">⚙️</div>
+          <div class="card-icon implement"><img src="../images/services/service_03_implement.png" alt="实施服务" loading="lazy"></div>
           <h3>实施服务</h3>
         </div>
         <p>设备不需要了怎么办？拆除安装工程——无论是线路敷设、设备搬迁，还是旧系统改造与新系统建设，我们都以专业的工程实施能力确保效果。</p>
@@ -443,7 +439,7 @@
       <!-- 04 培训服务 -->
       <div class="service-card fade-in">
         <div class="card-header">
-          <div class="card-icon train">🎓</div>
+          <div class="card-icon train"><img src="../images/services/service_04_train.png" alt="培训服务" loading="lazy"></div>
           <h3>培训服务</h3>
         </div>
         <p>设备交付不仅是教会使用，更重要的是让用户真正理解系统原理与操作逻辑。针对酒店、场馆等专业场景，定期对管理人员进行系统性培训。</p>
@@ -456,7 +452,7 @@
       <!-- 05 检验验收服务 -->
       <div class="service-card fade-in">
         <div class="card-header">
-          <div class="card-icon inspect">📋</div>
+          <div class="card-icon inspect"><img src="../images/services/service_05_inspect.png" alt="检验验收服务" loading="lazy"></div>
           <h3>检验验收服务</h3>
         </div>
         <p>"整测验收"——在工程完成后，聘请我们作为第三方进行公正客观的验收检测，出具真实可信的检测报告，让业主方真正掌握系统当时的性能及底数。</p>
@@ -470,7 +466,7 @@
       <!-- 06 维保服务 -->
       <div class="service-card fade-in">
         <div class="card-header">
-          <div class="card-icon maintenance">🔧</div>
+          <div class="card-icon maintenance"><img src="../images/services/service_06_maintenance.png" alt="维保服务" loading="lazy"></div>
           <h3>维保服务</h3>
         </div>
         <p>设备厂家都有质保，但大多数只保一到三年，且仅针对单个设备，不含系统集成。定期的维保服务能在日常中了解设备健康状况，真正做到防患于未然。</p>
@@ -484,7 +480,7 @@
       <!-- 07 冷备/备份服务 -->
       <div class="service-card fade-in">
         <div class="card-header">
-          <div class="card-icon backup">🔄</div>
+          <div class="card-icon backup"><img src="../images/services/service_07_backup.png" alt="备份服务" loading="lazy"></div>
           <h3>冷备 / 备份服务</h3>
         </div>
         <p>"冷备机"就像汽车的备用胎一样——关键时刻顶上。当主设备发生故障时，立即切换至备份设备，不影响正常业务运转。</p>
@@ -497,7 +493,7 @@
       <!-- 08 升级服务 -->
       <div class="service-card fade-in">
         <div class="card-header">
-          <div class="card-icon upgrade">⬆️</div>
+          <div class="card-icon upgrade"><img src="../images/services/service_08_upgrade.png" alt="升级服务" loading="lazy"></div>
           <h3>升级服务</h3>
         </div>
         <p>设备老化或业务扩展时，我们需要的就是更新设备和升级软件，让系统始终保持最佳运行状态。</p>
@@ -511,7 +507,7 @@
       <!-- 09 租赁服务 -->
       <div class="service-card fade-in">
         <div class="card-header">
-          <div class="card-icon rental">📦</div>
+          <div class="card-icon rental"><img src="../images/services/service_09_rental.png" alt="租赁服务" loading="lazy"></div>
           <h3>租赁服务</h3>
         </div>
         <p>需要的设备可以只租不买。我们拥有大量租赁设备资源，可为客户的临时成长期使用提供设备租赁。涵盖音响、视频、灯光、屏幕、演出等各类视听设备。</p>
@@ -524,7 +520,7 @@
       <!-- 10 技术管家服务 -->
       <div class="service-card fade-in">
         <div class="card-header">
-          <div class="card-icon steward">🤝</div>
+          <div class="card-icon steward"><img src="../images/services/service_10_steward.png" alt="技术管家服务" loading="lazy"></div>
           <h3>技术管家服务</h3>
         </div>
         <p>作规模化的随时长期地提供技术人员到客户现场工作——就是您请的"私人管家"。尤其在新开业或技术人员不足的场景下，提供专业人员驻场保障业务顺利运行。</p>
