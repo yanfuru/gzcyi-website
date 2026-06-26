@@ -189,9 +189,9 @@
     .process-steps::before {
       content: '';
       position: absolute;
-      top: 40px;
-      left: 60px;
-      right: 60px;
+      top: 60px;
+      left: 80px;
+      right: 80px;
       height: 2px;
       background: var(--color-gray-300);
     }
@@ -203,25 +203,26 @@
       flex: 1;
     }
 
-    .step-number {
-      width: 80px;
-      height: 80px;
-      background: var(--color-white);
-      border: 3px solid var(--color-primary);
+    .step-icon {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
       margin: 0 auto 16px;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--color-primary);
+      border: 3px solid var(--color-gray-200);
       transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
-
-    .process-step:hover .step-number {
-      background: var(--color-primary);
-      color: var(--color-white);
+    .step-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .process-step:hover .step-icon {
+      border-color: var(--color-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(26,60,94,0.2);
     }
 
     .process-step h4 {
@@ -619,27 +620,27 @@
 
     <div class="process-steps fade-in">
       <div class="process-step">
-        <div class="step-number">01</div>
+        <div class="step-icon"><img src="../images/services/process_01_communicate.jpg" alt="需求沟通"></div>
         <h4>需求沟通</h4>
         <p>深入了解客户需求与使用场景</p>
       </div>
       <div class="process-step">
-        <div class="step-number">02</div>
+        <div class="step-icon"><img src="../images/services/process_02_design.jpg" alt="方案设计"></div>
         <h4>方案设计</h4>
         <p>量身定制技术方案与设备清单</p>
       </div>
       <div class="process-step">
-        <div class="step-number">03</div>
+        <div class="step-icon"><img src="../images/services/process_03_contract.jpg" alt="合同签订"></div>
         <h4>合同签订</h4>
         <p>明确范围、工期与售后服务</p>
       </div>
       <div class="process-step">
-        <div class="step-number">04</div>
+        <div class="step-icon"><img src="../images/services/process_04_construct.jpg" alt="施工安装"></div>
         <h4>施工安装</h4>
         <p>专业团队施工，严控质量进度</p>
       </div>
       <div class="process-step">
-        <div class="step-number">05</div>
+        <div class="step-icon"><img src="../images/services/process_05_accept.jpg" alt="调试验收"></div>
         <h4>调试验收</h4>
         <p>系统联调测试，正式交付</p>
       </div>
