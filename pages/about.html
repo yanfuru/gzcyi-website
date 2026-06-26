@@ -540,6 +540,36 @@
       background: #fafbfc;
     }
 
+    /* 大合影展示样式 */
+    .moments-large {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      margin-top: 28px;
+    }
+
+    .moment-large-item {
+      width: 100%;
+      max-width: 700px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: #fff;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .moment-large-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .moment-large-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     @media (max-width: 768px) {
       .founder-profile {
         grid-template-columns: 1fr;
@@ -650,9 +680,7 @@
 <section class="about-page">
   <div class="container">
     <div class="about-intro">
-      <div class="about-intro-image fade-in">
-        <img src="../images/about-illustration.png" alt="广州创益信息技术有限公司" style="width:100%;height:auto;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);">
-      </div>
+
       <div class="about-intro-text fade-in">
         <h2>公司简介</h2>
         <p>
@@ -940,10 +968,22 @@
     <!-- 企业活动剪影 -->
     <div class="fade-in" style="margin-top:56px;">
       <div class="certs-title">企业活动剪影</div>
-      <div class="moments-grid" style="grid-template-columns: 1fr; max-width: 480px; margin: 24px auto 0;">
-        <div class="moment-card">
-          <img src="../images/team/%E8%B0%AD%E5%86%AC%E7%94%9F%E5%B0%86%E5%86%9B%E8%8E%85%E4%B8%B4%E5%88%9B%E7%9B%8A%E6%8C%87%E5%AF%BC%E5%90%88%E5%BD%B1.jpg" alt="谭冬生将军莅临创益指导" loading="lazy">
-          <div class="moment-label">谭冬生将军（中将）原广州军区副司令员亲临创益指导工作</div>
+      <div class="moments-large">
+        <div class="moment-large-item">
+          <img src="../images/team/%E5%88%9B%E7%9B%8A%E5%9B%A2%E9%98%9F%E5%90%88%E5%BD%B1.jpg" alt="创益团队合影" loading="lazy">
+          <div class="moment-label">创益团队合影</div>
+        </div>
+        <div class="moment-large-item">
+          <img src="../images/team/%E5%88%9B%E7%9B%8A%E5%85%AC%E5%8F%B8%E5%85%A8%E4%BD%93%E5%91%98%E5%B7%A5%E5%90%88%E5%BD%B1.jpg" alt="创益公司全体员工合影" loading="lazy">
+          <div class="moment-label">创益公司全体员工合影</div>
+        </div>
+        <div class="moment-large-item">
+          <img src="../images/team/%E5%B9%BF%E5%B7%9E%E5%88%9B%E7%9B%8A%E4%BC%81%E4%B8%9A%E5%BA%A6%E5%81%87%E6%97%85%E5%9B%A2%E5%90%88%E5%BD%B1.jpg" alt="广州创益企业度假团合影" loading="lazy">
+          <div class="moment-label">广州创益企业度假团合影</div>
+        </div>
+        <div class="moment-large-item">
+          <img src="../images/team/%E5%88%9B%E7%9B%8A%E5%85%AC%E5%8F%B8%E5%B9%B4%E4%BC%9A%E5%A4%A7%E5%90%88%E5%BD%B1.jpg" alt="创益公司年会大合影" loading="lazy">
+          <div class="moment-label">创益公司年会大合影</div>
         </div>
       </div>
     </div>
