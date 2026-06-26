@@ -51,63 +51,159 @@
       font-size: 0.98rem;
     }
 
-    /* Timeline */
+    /* Timeline - 横向滑动时间轴 */
     .timeline-section {
-      padding: 80px 0;
+      padding: 80px 0 60px;
       background: var(--color-gray-50);
+      overflow: hidden;
     }
 
-    /* Timeline - 横向表格设计 */
-    .timeline-table {
-      max-width: 900px;
+    .timeline-scroll-wrap {
+      position: relative;
+      max-width: 1100px;
       margin: 0 auto;
-      border-collapse: collapse;
-      width: 100%;
+      padding: 0 50px;
+    }
+
+    .timeline-scroll {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding: 30px 0 20px;
+      scrollbar-width: none;
+    }
+
+    .timeline-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* 时间轴横线 */
+    .timeline-scroll::before {
+      content: '';
+      position: absolute;
+      top: 68px;
+      left: 50px;
+      right: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+      border-radius: 2px;
+      z-index: 0;
+    }
+
+    .timeline-card {
+      flex: 0 0 220px;
+      position: relative;
+      padding: 0 12px;
+      z-index: 1;
+    }
+
+    /* 圆点 */
+    .timeline-dot {
+      width: 18px;
+      height: 18px;
+      background: var(--color-accent);
+      border: 3px solid var(--color-white);
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      box-shadow: 0 0 0 4px rgba(196,154,43,0.25);
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-card:nth-child(even) .timeline-dot {
+      margin-top: 60px;
+    }
+
+    /* 内容卡片 */
+    .timeline-card-body {
       background: var(--color-white);
       border-radius: var(--radius-lg);
-      overflow: hidden;
+      padding: 18px 16px;
       box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--color-accent);
+      min-height: 110px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .timeline-table thead {
-      background: linear-gradient(135deg, #1a3c5e, #2d5f8a);
+    .timeline-card:nth-child(even) .timeline-card-body {
+      margin-top: 16px;
     }
 
-    .timeline-table th {
-      padding: 16px 24px;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 600;
-      text-align: left;
+    .timeline-card:hover .timeline-card-body {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
 
-    .timeline-table td {
-      padding: 14px 24px;
-      border-bottom: 1px solid var(--color-gray-100);
-      font-size: 0.92rem;
-      line-height: 1.7;
-      vertical-align: top;
-    }
-
-    .timeline-table tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    .timeline-table tbody tr:hover {
-      background: rgba(26,60,94,0.03);
-    }
-
-    .timeline-table .year-cell {
+    .timeline-year {
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--color-accent);
-      font-size: 1.05rem;
-      white-space: nowrap;
-      width: 80px;
+      margin-bottom: 8px;
     }
 
-    .timeline-table .event-new {
+    .timeline-event {
+      font-size: 0.85rem;
+      color: var(--color-gray-600);
+      line-height: 1.6;
+    }
+
+    .timeline-event .event-highlight {
       color: #c4412b;
       font-weight: 500;
+    }
+
+    /* 左右滚动按钮 */
+    .timeline-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-white);
+      border: 1.5px solid var(--color-gray-200);
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: all 0.2s ease;
+    }
+
+    .timeline-btn:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    .timeline-btn-prev { left: 0; }
+    .timeline-btn-next { right: 0; }
+
+    .timeline-btn::after {
+      display: none;
+    }
+
+    /* 滚动提示 */
+    .timeline-hint {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--color-gray-400);
+      margin-top: 12px;
+    }
+
+    .timeline-hint span {
+      display: inline-block;
+      animation: slideHint 1.5s ease-in-out infinite;
+    }
+
+    @keyframes slideHint {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(8px); }
     }
 
     /* PPT Download */
@@ -461,11 +557,26 @@
         grid-template-columns: 1fr;
       }
 
-      .timeline-table {
-        font-size: 0.85rem;
+      .timeline-scroll-wrap {
+        padding: 0 36px;
       }
-      .timeline-table th, .timeline-table td {
-        padding: 10px 14px;
+      .timeline-card {
+        flex: 0 0 180px;
+      }
+      .timeline-card-body {
+        padding: 14px 12px;
+        min-height: 90px;
+      }
+      .timeline-year {
+        font-size: 1.05rem;
+      }
+      .timeline-event {
+        font-size: 0.8rem;
+      }
+      .timeline-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
       }
 
       .culture-grid {
@@ -551,72 +662,111 @@
     <div class="section-title-line"></div>
     <p class="section-subtitle fade-in">十余年深耕，砥砺前行</p>
 
-    <table class="timeline-table fade-in">
-      <thead>
-        <tr>
-          <th>年份</th>
-          <th>事件</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="year-cell">2013</td>
-          <td>公司成立</td>
-        </tr>
-        <tr>
-          <td class="year-cell">2014</td>
-          <td>首个五星酒店影音工程（双月湾檀悦豪生）+ 广州四季酒店维保</td>
-        </tr>
-        <tr>
-          <td class="year-cell">2016</td>
-          <td>首个总部大厦项目（深圳绿景集团NEO大厦）</td>
-        </tr>
-        <tr>
-          <td class="year-cell">2017</td>
-          <td>获评国家高新技术企业</td>
-        </tr>
-        <tr>
-          <td class="year-cell">2017</td>
-          <td><span class="event-new">G20 峰会会议保障 ← 新增</span></td>
-        </tr>
-        <tr>
-          <td class="year-cell">2018</td>
-          <td>广州长隆大厦全物联网集成（亚洲视听杂志报道）</td>
-        </tr>
-        <tr>
-          <td class="year-cell">2019</td>
-          <td><span class="event-new">全球财富论坛会议保障 ← 新增</span></td>
-        </tr>
-        <tr>
-          <td class="year-cell">2020</td>
-          <td>跨地域拓展（陕西渭南温姆姆至尊酒店）</td>
-        </tr>
-        <tr>
-          <td class="year-cell">2021</td>
-          <td>南沙国际金融论坛永久会址项目</td>
-        </tr>
-        <tr>
-          <td class="year-cell">2022</td>
-          <td><span class="event-new">黄埔区方舱医院援建 ← 新增</span></td>
-        </tr>
-        <tr>
-          <td class="year-cell">2023</td>
-          <td>白云新储能展厅音视频集成</td>
-        </tr>
-        <tr>
-          <td class="year-cell">2023</td>
-          <td><span class="event-new">亚洲青年领袖论坛会议保障 ← 新增</span></td>
-        </tr>
-        <tr>
-          <td class="year-cell">2025</td>
-          <td>中科院高能物理研究所散裂中子源二期机电工程</td>
-        </tr>
-        <tr>
-          <td class="year-cell">2026</td>
-          <td><span class="event-new">国家最高领导人会议保障 ← 新增</span></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="timeline-scroll-wrap fade-in">
+      <button class="timeline-btn timeline-btn-prev" onclick="document.querySelector('.timeline-scroll').scrollBy({left:-260,behavior:'smooth'})">&#10094;</button>
+      <div class="timeline-scroll">
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2013</div>
+            <div class="timeline-event">广州创益信息技术有限公司注册成立，立足于专业智能化系统、影音系统集成服务商</div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2014</div>
+            <div class="timeline-event">首个设计施工一体的高端五星级影音系统工程：双月湾檀悦豪生度假酒店；同年承接广州四季酒店影音系统年度维保服务</div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2016</div>
+            <div class="timeline-event">首个集团总部大厦项目：深圳绿景集团NEO大厦</div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2017</div>
+            <div class="timeline-event">获评<span class="event-highlight">国家高新技术企业</span></div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2017</div>
+            <div class="timeline-event">参加<span class="event-highlight">G20峰会会议保障</span>工作</div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2018</div>
+            <div class="timeline-event">首个实现无人值守的全物联网集成总部大厦：广州长隆大厦，获<span class="event-highlight">亚洲视听杂志报道</span></div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-event">参与<span class="event-highlight">全球财富论坛会议保障</span>工作</div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-event">跨过黄河承接陕西渭南温德姆至尊酒店影音系统设计</div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2021</div>
+            <div class="timeline-event">参与南沙国际金融论坛永久会址项目</div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-event">参与<span class="event-highlight">黄埔区方舱医院援建</span></div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-event">参与白云新储能展厅音视频集成项目</div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-event">参与<span class="event-highlight">亚洲青年领袖论坛会议保障</span>工作</div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-event">参与中科院高能物理研究所散裂中子源二期机电工程</div>
+          </div>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card-body">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-event">参与<span class="event-highlight">国家最高领导人会议保障</span>工作</div>
+          </div>
+        </div>
+      </div>
+      <button class="timeline-btn timeline-btn-next" onclick="document.querySelector('.timeline-scroll').scrollBy({left:260,behavior:'smooth'})">&#10095;</button>
+    </div>
+    <div class="timeline-hint"><span>← 左右滑动查看完整历程 →</span></div>
   </div>
 </section>
 
