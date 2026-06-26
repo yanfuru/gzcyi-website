@@ -180,37 +180,63 @@
 
     .process-steps {
       display: flex;
-      flex-wrap: wrap;
+      align-items: flex-start;
       justify-content: center;
-      gap: 24px 32px;
+      gap: 0;
       position: relative;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 40px auto 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .process-steps::before {
       content: '';
       position: absolute;
-      top: 60px;
-      left: 10%;
-      right: 10%;
+      top: 50px;
+      left: 80px;
+      right: 80px;
       height: 2px;
       background: var(--color-gray-300);
+      z-index: 0;
     }
 
     .process-step {
       text-align: center;
       position: relative;
       z-index: 1;
-      flex: 0 0 calc(33.333% - 24px);
-      min-width: 160px;
+      flex: 1;
+      min-width: 150px;
+      padding: 0 8px;
+    }
+
+    .process-arrow {
+      position: absolute;
+      top: 40px;
+      right: -12px;
+      z-index: 2;
+      color: var(--color-accent);
+      font-size: 1.3rem;
+      font-weight: bold;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .process-step:last-child .process-arrow {
+      display: none;
     }
 
     @media (max-width: 768px) {
+      .process-steps {
+        flex-wrap: wrap;
+        gap: 20px 0;
+        justify-content: center;
+      }
       .process-step {
         flex: 0 0 calc(50% - 16px);
+        min-width: 140px;
       }
       .process-steps::before { display: none; }
+      .process-arrow { display: none; }
     }
 
     @media (max-width: 480px) {
@@ -637,31 +663,37 @@
     <div class="process-steps fade-in">
       <div class="process-step">
         <div class="step-icon"><img src="../images/services/process_01_communicate.jpg" alt="需求沟通"></div>
+        <div class="process-arrow">→</div>
         <h4>需求沟通</h4>
         <p>深入了解客户需求与使用场景</p>
       </div>
       <div class="process-step">
         <div class="step-icon"><img src="../images/services/process_02_design.jpg" alt="方案设计"></div>
+        <div class="process-arrow">→</div>
         <h4>方案设计</h4>
         <p>量身定制技术方案与设备清单</p>
       </div>
       <div class="process-step">
         <div class="step-icon"><img src="../images/services/process_03_contract.jpg" alt="合同签订"></div>
+        <div class="process-arrow">→</div>
         <h4>合同签订</h4>
         <p>明确范围、工期与售后服务</p>
       </div>
       <div class="process-step">
         <div class="step-icon"><img src="../images/services/process_04_construct.jpg" alt="施工安装"></div>
+        <div class="process-arrow">→</div>
         <h4>施工安装</h4>
         <p>专业团队施工，严控质量进度</p>
       </div>
       <div class="process-step">
         <div class="step-icon"><img src="../images/services/process_05_accept.jpg" alt="调试验收"></div>
+        <div class="process-arrow">→</div>
         <h4>调试验收</h4>
         <p>系统联调测试，正式交付</p>
       </div>
       <div class="process-step">
         <div class="step-icon"><img src="../images/services/process_06_service.jpg" alt="售后维保"></div>
+        <div class="process-arrow">→</div>
         <h4>售后维保</h4>
         <p>定期巡检维护，快速响应报修，保障系统长期稳定运行</p>
       </div>
