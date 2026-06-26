@@ -346,13 +346,15 @@
     <div class="section-title-line"></div>
     <p class="section-subtitle fade-in">欢迎莅临参观指导</p>
 
-    <div class="map-container fade-in">
-      <iframe 
-        src="https://uri.amap.com/marker?position=113.483718,23.172403&name=广州创益信息技术有限公司&coordinate=gaode&callnative=0"
-        title="公司位置地图"
-        loading="lazy"
-        referrerpolicy="no-referrer">
-      </iframe>
+    <div class="map-container fade-in" style="position:relative;cursor:pointer;" onclick="window.open('https://uri.amap.com/marker?position=113.483718,23.172403&name=广州创益信息技术有限公司&coordinate=gaode&callnative=0','_blank')" title="点击打开高德地图导航">
+      <img 
+        src="../images/map-location.jpg" 
+        alt="公司位置：广州市黄埔区科学城天泰一路2号6栋406室"
+        style="width:100%;height:100%;object-fit:cover;display:block;"
+        loading="lazy">
+      <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.65);color:#fff;padding:6px 16px;border-radius:20px;font-size:0.82rem;pointer-events:none;">
+        📍 点击地图查看导航
+      </div>
     </div>
   </div>
 </section>
