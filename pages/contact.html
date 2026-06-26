@@ -149,6 +149,19 @@
       padding: 0 0 80px;
     }
 
+    .map-container {
+      width: 100%;
+      height: 420px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     .map-placeholder {
       width: 100%;
       height: 400px;
@@ -333,11 +346,13 @@
     <div class="section-title-line"></div>
     <p class="section-subtitle fade-in">欢迎莅临参观指导</p>
 
-    <div class="map-placeholder fade-in">
-      <div class="map-grid-bg"></div>
-      <span class="pin">📍</span>
-      <p>广州市黄埔区科学城</p>
-      <p style="font-size:0.82rem;margin-top:4px;opacity:0.7;">地铁7号线 科丰北路站</p>
+    <div class="map-container fade-in">
+      <iframe 
+        src="https://www.openstreetmap.org/export/embed.html?bbox=113.472%2C23.170%2C113.484%2C23.179&amp;layer=mapnik&amp;marker=23.175%2C113.4783"
+        title="公司位置地图"
+        loading="lazy"
+        referrerpolicy="no-referrer">
+      </iframe>
     </div>
   </div>
 </section>
