@@ -180,9 +180,11 @@
 
     .process-steps {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px 32px;
       position: relative;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto 0;
     }
 
@@ -190,8 +192,8 @@
       content: '';
       position: absolute;
       top: 60px;
-      left: 80px;
-      right: 80px;
+      left: 10%;
+      right: 10%;
       height: 2px;
       background: var(--color-gray-300);
     }
@@ -200,12 +202,26 @@
       text-align: center;
       position: relative;
       z-index: 1;
-      flex: 1;
+      flex: 0 0 calc(33.333% - 24px);
+      min-width: 160px;
+    }
+
+    @media (max-width: 768px) {
+      .process-step {
+        flex: 0 0 calc(50% - 16px);
+      }
+      .process-steps::before { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .process-step {
+        flex: 0 0 100%;
+      }
     }
 
     .step-icon {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       overflow: hidden;
       margin: 0 auto 16px;
@@ -643,6 +659,11 @@
         <div class="step-icon"><img src="../images/services/process_05_accept.jpg" alt="调试验收"></div>
         <h4>调试验收</h4>
         <p>系统联调测试，正式交付</p>
+      </div>
+      <div class="process-step">
+        <div class="step-icon"><img src="../images/services/process_06_service.jpg" alt="售后维保"></div>
+        <h4>售后维保</h4>
+        <p>定期巡检维护，快速响应报修，保障系统长期稳定运行</p>
       </div>
     </div>
   </div>
