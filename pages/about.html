@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="了解广州创益信息技术有限公司 - 专业的弱电智能化系统与影音系统集成服务商，公司简介、发展历程、企业文化与团队优势。">
   <title>关于我们 - 广州创益信息技术有限公司</title>
-<link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
   <style>
     .about-page { padding: 80px 0; }
 
@@ -51,153 +52,81 @@
     }
 
     /* Timeline */
-    /* ===== Horizontal Timeline ===== */
     .timeline-section {
-      padding: 80px 0 60px;
+      padding: 80px 0;
       background: var(--color-gray-50);
-      overflow: hidden;
     }
 
-    .timeline-h-scroll {
-      overflow-x: auto;
-      overflow-y: visible;
-      padding: 20px 0 40px;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: var(--color-gray-300) transparent;
-    }
-
-    .timeline-h-scroll::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .timeline-h-scroll::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .timeline-h-scroll::-webkit-scrollbar-thumb {
-      background: var(--color-gray-300);
-      border-radius: 3px;
-    }
-
-    .timeline-h {
-      display: flex;
-      align-items: flex-end;
-      min-width: max-content;
-      padding: 0 40px;
+    .timeline {
       position: relative;
-      height: 420px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    /* Horizontal connecting line */
-    .timeline-h::before {
+    .timeline::before {
       content: '';
       position: absolute;
-      left: 40px;
-      right: 40px;
-      top: 50%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--color-gray-300), var(--color-accent), var(--color-gray-300));
-      transform: translateY(-50%);
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--color-gray-300);
+      transform: translateX(-50%);
     }
 
-    .timeline-h-item {
-      position: relative;
-      width: 220px;
-      flex-shrink: 0;
+    .timeline-item {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      margin-bottom: 48px;
+      position: relative;
     }
 
-    /* Alternate above/below the line */
-    .timeline-h-item:nth-child(odd) {
-      align-self: flex-end;
-      padding-bottom: 60px;
+    .timeline-item:nth-child(odd) {
+      flex-direction: row-reverse;
     }
 
-    .timeline-h-item:nth-child(even) {
-      align-self: flex-start;
-      padding-top: 60px;
-    }
-
-    .timeline-h-dot {
+    .timeline-dot {
       position: absolute;
       left: 50%;
-      top: 50%;
-      width: 18px;
-      height: 18px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
       background: var(--color-accent);
       border: 3px solid var(--color-white);
       border-radius: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 0 4px rgba(196,154,43,0.25);
-      z-index: 2;
+      transform: translateX(-50%);
+      box-shadow: 0 0 0 4px rgba(196, 154, 43, 0.2);
+      z-index: 1;
     }
 
-    .timeline-h-card {
-      width: 200px;
+    .timeline-content {
+      width: 45%;
       background: var(--color-white);
-      padding: 20px 18px;
+      padding: 24px;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      text-align: center;
     }
 
-    .timeline-h-item:nth-child(odd) .timeline-h-card {
-      margin-bottom: 16px;
-    }
-
-    .timeline-h-item:nth-child(even) .timeline-h-card {
-      margin-top: 16px;
-    }
-
-    .timeline-h-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
-    }
-
-    .timeline-h-year {
-      font-size: 1.5rem;
-      font-weight: 800;
+    .timeline-year {
+      font-size: 1.4rem;
+      font-weight: 700;
       color: var(--color-accent);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
-    .timeline-h-card h3 {
-      font-size: 0.95rem;
+    .timeline-content h3 {
+      font-size: 1.05rem;
       color: var(--color-primary);
       margin-bottom: 8px;
-      font-weight: 600;
     }
 
-    .timeline-h-card p {
-      font-size: 0.82rem;
+    .timeline-content p {
+      font-size: 0.9rem;
       color: var(--color-gray-500);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    /* Scroll hint */
-    .scroll-hint {
-      text-align: center;
-      padding: 8px 0 0;
-      font-size: 0.82rem;
-      color: var(--color-gray-400);
-      display: none;
-    }
-
-    .scroll-hint span {
-      display: inline-block;
-      animation: scrollBounce 1.5s ease infinite;
-    }
-
-    @keyframes scrollBounce {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(8px); }
-    }
-
-    /* PPT Download */    /* PPT Download */
+    /* PPT Download */
     .ppt-download {
       margin-top: 28px;
       display: flex;
@@ -401,7 +330,7 @@
       height: 220px;
       border-radius: 50%;
       object-fit: cover;
-      object-position: center 25%;
+      object-position: center top;
       border: 4px solid var(--color-accent);
       box-shadow: var(--shadow-md);
     }
@@ -493,81 +422,38 @@
       border-top: 1px solid var(--color-gray-100);
     }
 
-    /* Company Moments - Redesigned for full photo display */
+    /* Company Moments */
     .moments-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
     }
 
     .moment-card {
       border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow-md);
-      background: #fff;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      cursor: pointer;
-      max-width: 420px;
-      width: calc(50% - 12px);
-      min-width: 280px;
-    }
-
-    .moment-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-sm);
     }
 
     .moment-card img {
       width: 100%;
-      height: auto;
+      aspect-ratio: 16/10;
+      object-fit: cover;
       display: block;
-      transition: transform 0.5s ease;
+      transition: transform 0.4s ease;
     }
 
     .moment-card:hover img {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
     .moment-label {
       text-align: center;
-      font-size: 0.88rem;
-      color: var(--color-gray-700);
-      padding: 14px 12px 12px;
-      line-height: 1.5;
-      font-weight: 500;
-      background: #fafbfc;
-    }
-
-    /* 大合影展示样式 */
-    .moments-large {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 32px;
-      margin-top: 28px;
-    }
-
-    .moment-large-item {
-      width: 100%;
-      max-width: 700px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      background: #fff;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .moment-large-item:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .moment-large-item img {
-      width: 100%;
-      height: auto;
-      display: block;
+      font-size: 0.82rem;
+      color: var(--color-gray-600);
+      padding: 10px 8px 6px;
+      line-height: 1.4;
     }
 
     @media (max-width: 768px) {
@@ -582,12 +468,7 @@
         grid-template-columns: 1fr 1fr;
       }
       .moments-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .moment-card {
-        width: 100%;
-        max-width: 420px;
+        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -596,40 +477,22 @@
         grid-template-columns: 1fr;
       }
 
-      .timeline-h-scroll {
-        padding: 10px 0 20px;
+      .timeline::before {
+        left: 20px;
       }
 
-      .timeline-h {
-        height: auto;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-        min-width: unset;
-        padding: 0 16px;
+      .timeline-dot {
+        left: 20px;
       }
 
-      .timeline-h::before {
-        display: none;
+      .timeline-item,
+      .timeline-item:nth-child(odd) {
+        flex-direction: row;
+        padding-left: 50px;
       }
 
-      .timeline-h-item {
-        width: calc(50% - 16px);
-        align-self: stretch !important;
-        padding: 0 !important;
-      }
-
-      .timeline-h-card {
+      .timeline-content {
         width: 100%;
-        margin: 0 !important;
-      }
-
-      .timeline-h-dot {
-        display: none;
-      }
-
-      .scroll-hint {
-        display: none !important;
       }
 
       .culture-grid {
@@ -680,7 +543,9 @@
 <section class="about-page">
   <div class="container">
     <div class="about-intro">
-
+      <div class="about-intro-image fade-in">
+        <img src="../images/about-illustration.png" alt="广州创益信息技术有限公司" style="width:100%;height:auto;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);">
+      </div>
       <div class="about-intro-text fade-in">
         <h2>公司简介</h2>
         <p>
@@ -711,129 +576,52 @@
   <div class="container">
     <h2 class="section-title fade-in">发展历程</h2>
     <div class="section-title-line"></div>
-    <p class="section-subtitle fade-in">立足专业智能化系统、影音系统集成服务商</p>
+    <p class="section-subtitle fade-in">十年深耕，砥砺前行</p>
 
-    <div class="timeline-h-scroll" id="timelineHScroll">
-      <div class="timeline-h">
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2013</div>
-            <h3>公司成立</h3>
-            <p>广州创益信息技术有限公司正式注册成立，立足于专业智能化系统、影音系统集成服务。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2014</div>
+          <h3>公司成立</h3>
+          <p>广州创益信息技术有限公司在广州正式注册成立，以弱电工程为核心业务起步。</p>
         </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2014</div>
-            <h3>首个五星酒店影音工程</h3>
-            <p>承接第一个设计施工一体的高端五星级影音系统集成工程——双月湾檀悦豪生度假酒店；同年承接广州四季酒店影音系统年度维保服务。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2016</div>
+          <h3>业务拓展</h3>
+          <p>业务范围扩展至影音系统集成领域，完成首个大型多功能厅影音系统项目交付。</p>
         </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2016</div>
-            <h3>首个总部大厦项目</h3>
-            <p>承接第一个集团总部大厦项目——深圳绿景集团NEO大厦智能化系统集成。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2018</div>
+          <h3>资质升级</h3>
+          <p>获得电子与智能化工程专业承包资质，团队规模突破30人，年项目交付量超过50个。</p>
         </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2017</div>
-            <h3>国家高新技术企业</h3>
-            <p>被评选为国家高新技术企业，技术实力获得国家级认可。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2020</div>
+          <h3>技术升级</h3>
+          <p>引入AI智能安防与物联网技术方案，成功落地多个智慧园区标杆项目。</p>
         </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2017</div>
-            <h3>G20峰会会议保障</h3>
-            <p>参加G20峰会会议保障工作，为国际级会议提供专业音视频技术服务。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
-        </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2018</div>
-            <h3>全物联网集成标杆项目</h3>
-            <p>承接第一个实现无人值守的全物联网集成总部大厦项目——广州长隆大厦，并被亚洲视听杂志报道。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
-        </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2019</div>
-            <h3>全球财富论坛会议保障</h3>
-            <p>参与全球财富论坛会议保障工作，为国际级会议论坛提供音视频系统保障服务。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
-        </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2020</div>
-            <h3>跨地域业务拓展</h3>
-            <p>跨过黄河，承接陕西渭南温德姆至尊酒店影音系统设计与集成。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
-        </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2021</div>
-            <h3>地标项目参与</h3>
-            <p>参与南沙国际金融论坛永久会址项目，为国际级会议中心提供专业影音系统集成服务。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
-        </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2022</div>
-            <h3>黄埔区方舱医院援建</h3>
-            <p>参与黄埔区方舱医院援建工作，在特殊时期履行企业社会责任。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
-        </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2023</div>
-            <h3>展厅音视频集成</h3>
-            <p>参与白云新储能展厅音视频集成项目，为新能源企业提供专业视听解决方案。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
-        </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2023</div>
-            <h3>亚洲青年领袖论坛会议保障</h3>
-            <p>参与亚洲青年领袖论坛会议保障工作，为国际级论坛提供音视频系统保障服务。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
-        </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2025</div>
-            <h3>科研级项目参与</h3>
-            <p>参与中科院高能物理研究所散裂中子源二期机电工程，为国家级大科学装置提供智能化系统集成服务。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
-        </div>
-        <div class="timeline-h-item fade-in">
-          <div class="timeline-h-card">
-            <div class="timeline-h-year">2026</div>
-            <h3>国家最高领导人会议保障</h3>
-            <p>参与国家最高领导人会议保障工作，以专业可靠的音视频技术服务保障重大国事活动。</p>
-          </div>
-          <div class="timeline-h-dot"></div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">2023</div>
+          <h3>品牌升级</h3>
+          <p>完成品牌战略升级，确立"弱电智能化+影音集成"双轮驱动发展模式，累计服务客户超过200家。</p>
         </div>
       </div>
     </div>
-    <div class="scroll-hint"><span>← 左右滑动查看更多 →</span></div>
   </div>
 </section>
-
-<!-- Culture -->
 
 <!-- Culture -->
 <section class="culture-section">
@@ -877,7 +665,7 @@
     <!-- 个人简介 -->
     <div class="founder-profile fade-in">
       <div class="founder-photo-wrap">
-        <img src="../images/team/yan-avatar.jpg" alt="颜福如">
+        <img src="../images/team/yan-sysu-grad.jpg" alt="颜福如">
         <div class="founder-name-badge">颜福如</div>
         <div class="founder-title">总经理 / 创始人</div>
       </div>
@@ -890,7 +678,7 @@
           颜总拥有多项国家级行业资质认证，涵盖电气工程、弱电系统、专业影音等领域，并取得中山大学、武汉大学相关学历，具备扎实的工程理论基础与持续学习的专业精神。
         </p>
         <p>
-          多年来，颜总带领创益团队完成了广州四季酒店、双月湾檀悦豪生度假酒店、广州长隆大厦、海花岛国际会展中心、南沙国际金融论坛永久会址、国家储能大厦展厅、中科院高能物理研究所实验楼、中国人民解放军火箭军某旅等逾百个高端标杆项目，以"服务无限，价值至上"的经营理念赢得客户广泛信赖，并担任广东省湖南攸县商会监事长职务，积极参与社会公益与行业建设。
+          多年来，颜总带领创益团队完成了广州四季酒店、广州瑰丽酒店、广州文华东方酒店等逾百个高端标杆项目，以"服务无限，价值至上"的经营理念赢得客户广泛信赖，并担任广州株洲商会监事职务，积极参与社会公益与行业建设。
         </p>
         <div class="founder-tags">
           <span class="founder-tag">电气工程师</span>
@@ -899,7 +687,7 @@
           <span class="founder-tag">影音系统项目经理</span>
           <span class="founder-tag">中山大学</span>
           <span class="founder-tag">武汉大学</span>
-          <span class="founder-tag">广东省湖南攸县商会监事长</span>
+          <span class="founder-tag">株洲商会监事</span>
         </div>
       </div>
     </div>
@@ -958,9 +746,9 @@
         </div>
         <div class="cert-card fade-in">
           <div class="cert-img-wrap">
-            <img src="../images/team/yan-chamber-supervisor.jpg" alt="广东省湖南攸县商会监事长证书" loading="lazy">
+            <img src="../images/team/yan-chamber-supervisor.jpg" alt="株洲商会监事证书" loading="lazy">
           </div>
-          <div class="cert-label">广东省湖南攸县商会监事长证书</div>
+          <div class="cert-label">株洲商会监事证书</div>
         </div>
       </div>
     </div>
@@ -968,22 +756,10 @@
     <!-- 企业活动剪影 -->
     <div class="fade-in" style="margin-top:56px;">
       <div class="certs-title">企业活动剪影</div>
-      <div class="moments-large">
-        <div class="moment-large-item">
-          <img src="../images/team/%E5%88%9B%E7%9B%8A%E5%9B%A2%E9%98%9F%E5%90%88%E5%BD%B1.jpg" alt="创益团队合影" loading="lazy">
-          <div class="moment-label">创益团队合影</div>
-        </div>
-        <div class="moment-large-item">
-          <img src="../images/team/%E5%88%9B%E7%9B%8A%E5%85%AC%E5%8F%B8%E5%85%A8%E4%BD%93%E5%91%98%E5%B7%A5%E5%90%88%E5%BD%B1.jpg" alt="创益公司全体员工合影" loading="lazy">
-          <div class="moment-label">创益公司全体员工合影</div>
-        </div>
-        <div class="moment-large-item">
-          <img src="../images/team/%E5%B9%BF%E5%B7%9E%E5%88%9B%E7%9B%8A%E4%BC%81%E4%B8%9A%E5%BA%A6%E5%81%87%E6%97%85%E5%9B%A2%E5%90%88%E5%BD%B1.jpg" alt="广州创益企业度假团合影" loading="lazy">
-          <div class="moment-label">广州创益企业度假团合影</div>
-        </div>
-        <div class="moment-large-item">
-          <img src="../images/team/%E5%88%9B%E7%9B%8A%E5%85%AC%E5%8F%B8%E5%B9%B4%E4%BC%9A%E5%A4%A7%E5%90%88%E5%BD%B1.jpg" alt="创益公司年会大合影" loading="lazy">
-          <div class="moment-label">创益公司年会大合影</div>
+      <div class="moments-grid" style="grid-template-columns: 1fr; max-width: 480px; margin: 24px auto 0;">
+        <div class="moment-card">
+          <img src="../images/team/%E8%B0%AD%E5%86%AC%E7%94%9F%E5%B0%86%E5%86%9B%E8%8E%85%E4%B8%B4%E5%88%9B%E7%9B%8A%E6%8C%87%E5%AF%BC%E5%90%88%E5%BD%B1.jpg" alt="谭冬生将军莅临创益指导" loading="lazy">
+          <div class="moment-label">谭冬生将军（中将）原广州军区副司令员亲临创益指导工作</div>
         </div>
       </div>
     </div>
