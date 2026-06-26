@@ -288,46 +288,46 @@
         <h3>在线留言</h3>
         <p class="form-subtitle">请填写以下信息，我们将在24小时内与您联系</p>
 
-        <form id="contactForm" onsubmit="handleSubmit(event)">
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label><span class="required">*</span> 您的姓名</label>
-              <input type="text" placeholder="请输入您的姓名" required>
+              <input type="text" name="姓名" placeholder="请输入您的姓名" required>
             </div>
             <div class="form-group">
               <label><span class="required">*</span> 联系电话</label>
-              <input type="tel" placeholder="请输入您的手机号码" required>
+              <input type="tel" name="电话" placeholder="请输入您的手机号码" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label>电子邮箱</label>
-              <input type="email" placeholder="请输入您的邮箱地址">
+              <input type="email" name="邮箱" placeholder="请输入您的邮箱地址">
             </div>
             <div class="form-group">
               <label>公司名称</label>
-              <input type="text" placeholder="请输入您的公司名称">
+              <input type="text" name="公司" placeholder="请输入您的公司名称">
             </div>
           </div>
 
           <div class="form-group">
             <label>服务需求</label>
-            <select>
+            <select name="服务需求">
               <option value="">请选择您感兴趣的服务</option>
-              <option value="cabling">综合布线系统</option>
-              <option value="surveillance">视频监控系统</option>
-              <option value="broadcast">公共广播系统</option>
-              <option value="conference">智能会议系统</option>
-              <option value="datacenter">机房建设工程</option>
-              <option value="av">影音系统集成</option>
-              <option value="other">其他 / 综合咨询</option>
+              <option value="综合布线系统">综合布线系统</option>
+              <option value="视频监控系统">视频监控系统</option>
+              <option value="公共广播系统">公共广播系统</option>
+              <option value="智能会议系统">智能会议系统</option>
+              <option value="机房建设工程">机房建设工程</option>
+              <option value="影音系统集成">影音系统集成</option>
+              <option value="其他/综合咨询">其他 / 综合咨询</option>
             </select>
           </div>
 
           <div class="form-group">
             <label><span class="required">*</span> 留言内容</label>
-            <textarea placeholder="请描述您的项目需求、规模、预算等关键信息，以便我们更好地为您服务..." required></textarea>
+            <textarea name="留言" placeholder="请描述您的项目需求、规模、预算等关键信息，以便我们更好地为您服务..." required></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary form-submit">提交留言</button>
@@ -408,25 +408,47 @@
 <button class="back-to-top" aria-label="回到顶部">↑</button>
 
 <script>
-function handleSubmit(event) {
+// Formspree 表单处理 - 使用 AJAX 方式提交以获得更好的用户体验
+var contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', function(event) {
   event.preventDefault();
-  var btn = event.target.querySelector('button[type="submit"]');
+  var btn = contactForm.querySelector('button[type="submit"]');
   var originalText = btn.textContent;
   btn.textContent = '提交中...';
   btn.disabled = true;
 
-  // 模拟提交
-  setTimeout(function() {
-    btn.textContent = '✓ 提交成功！';
-    btn.style.background = '#27ae60';
+  var formData = new FormData(contactForm);
+
+  fetch(contactForm.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function(response) {
+    if (response.ok) {
+      btn.textContent = '✓ 提交成功！';
+      btn.style.background = '#27ae60';
+      contactForm.reset();
+      setTimeout(function() {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    } else {
+      throw new Error('提交失败');
+    }
+  })
+  .catch(function(error) {
+    btn.textContent = '提交失败，请重试';
+    btn.style.background = '#e74c3c';
     setTimeout(function() {
       btn.textContent = originalText;
       btn.style.background = '';
       btn.disabled = false;
-      event.target.reset();
-    }, 2000);
-  }, 800);
-}
+    }, 3000);
+  });
+});
 </script>
 <script src="../js/main.js"></script>
 </body>
