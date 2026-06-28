@@ -276,6 +276,43 @@
       padding: 80px 0;
     }
 
+    /* Calligraphy Motto Banner */
+    .motto-banner {
+      margin: 40px auto 48px;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .motto-frame {
+      position: relative;
+      background: #fff;
+      border: 1px solid #e8e0d4;
+      border-radius: 6px;
+      padding: 24px 32px 20px;
+      box-shadow: 0 2px 16px rgba(26,60,94,0.06), inset 0 0 0 1px rgba(255,255,255,0.7);
+    }
+
+    .motto-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+
+    .motto-caption {
+      margin-top: 14px;
+      font-size: 0.88rem;
+      color: var(--color-gray-500);
+      letter-spacing: 0.08em;
+    }
+
+    .motto-caption em {
+      font-style: normal;
+      color: var(--color-primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
     .culture-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -542,6 +579,12 @@
     }
 
     @media (max-width: 768px) {
+      .motto-banner {
+        margin: 28px auto 32px;
+      }
+      .motto-frame {
+        padding: 16px 16px 12px;
+      }
       .founder-profile {
         grid-template-columns: 1fr;
       }
@@ -772,6 +815,14 @@
     <h2 class="section-title fade-in">企业文化</h2>
     <div class="section-title-line"></div>
     <p class="section-subtitle fade-in">核心价值观驱动，凝聚团队力量</p>
+
+    <!-- 创始人亲笔题字 -->
+    <div class="motto-banner fade-in">
+      <div class="motto-frame">
+        <img src="../images/culture/motto.jpg" alt="精益求精 — 颜福如亲笔题字" loading="lazy">
+      </div>
+      <div class="motto-caption"><em>精益求精</em> —— 创始人颜福如先生亲笔题字 · 企业座右铭</div>
+    </div>
 
     <div class="culture-grid">
       <div class="culture-card fade-in">
