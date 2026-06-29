@@ -281,6 +281,33 @@ img {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.footer-links-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footer-links-bar span {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-links-bar a {
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links-bar a:hover {
+  color: var(--color-accent);
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;
