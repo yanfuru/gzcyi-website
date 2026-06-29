@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="联系广州创益信息技术有限公司 - 地址、电话、邮箱、在线留言，期待您的垂询与合作。">
+  <meta name="description" content="联系广州创益信息技术有限公司 - 地址、电话、邮箱、微信二维码、名片二维码，期待您的垂询与合作。">
   <title>联系我们 - 广州创益信息技术有限公司</title>
 <link rel="stylesheet" href="../css/style.css">
   <style>
@@ -61,87 +61,92 @@
       color: var(--color-gray-700);
     }
 
-    /* Form */
-    .contact-form-wrapper {
+    /* QR Code Display */
+    .qr-wrapper {
       background: var(--color-white);
       border-radius: var(--radius-lg);
       padding: 40px;
       box-shadow: var(--shadow-md);
+      text-align: center;
     }
 
-    .contact-form-wrapper h3 {
+    .qr-wrapper h3 {
       font-size: 1.3rem;
       color: var(--color-primary);
       margin-bottom: 8px;
     }
 
-    .contact-form-wrapper .form-subtitle {
+    .qr-wrapper .qr-subtitle {
       font-size: 0.9rem;
       color: var(--color-gray-500);
-      margin-bottom: 28px;
+      margin-bottom: 36px;
     }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--color-gray-700);
-      margin-bottom: 6px;
-    }
-
-    .form-group label .required {
-      color: #e74c3c;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--color-gray-300);
-      border-radius: var(--radius);
-      font-size: 0.95rem;
-      font-family: var(--font-body);
-      color: var(--color-gray-900);
-      transition: var(--transition);
-      background: var(--color-gray-50);
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--color-primary-light);
-      background: var(--color-white);
-      box-shadow: 0 0 0 3px rgba(26,60,94,0.08);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-row {
+    .qr-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 32px;
     }
 
-    .form-submit {
+    .qr-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 28px 20px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #f8fafc, #eef2f6);
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+    .qr-card:hover {
+      border-color: rgba(26,60,94,0.1);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+    }
+
+    .qr-card-img {
+      width: 200px;
+      height: 200px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      background: #fff;
+      padding: 8px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-card-img img {
       width: 100%;
-      padding: 14px;
-      font-size: 1rem;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 4px;
     }
 
-    .form-note {
-      text-align: center;
-      font-size: 0.82rem;
+    .qr-card-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+    .qr-card-hint {
+      font-size: 0.78rem;
       color: var(--color-gray-500);
-      margin-top: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .qr-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .qr-wrapper {
+        padding: 28px 20px;
+      }
+      .qr-card-img {
+        width: 180px;
+        height: 180px;
+      }
     }
 
     /* Map */
@@ -203,14 +208,6 @@
     @media (max-width: 768px) {
       .contact-grid {
         grid-template-columns: 1fr;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-form-wrapper {
-        padding: 24px;
       }
     }
   </style>
@@ -283,57 +280,27 @@
 
       </div>
 
-      <!-- Contact Form -->
-      <div class="contact-form-wrapper fade-in">
-        <h3>在线留言</h3>
-        <p class="form-subtitle">请填写以下信息，我们将在24小时内与您联系</p>
+      <!-- QR Codes -->
+      <div class="qr-wrapper fade-in">
+        <h3>在线咨询</h3>
+        <p class="qr-subtitle">微信扫一扫，即时沟通</p>
 
-        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label><span class="required">*</span> 您的姓名</label>
-              <input type="text" name="姓名" placeholder="请输入您的姓名" required>
+        <div class="qr-cards">
+          <div class="qr-card">
+            <div class="qr-card-img">
+              <img src="../images/qr-wechat.jpg" alt="微信二维码" loading="lazy">
             </div>
-            <div class="form-group">
-              <label><span class="required">*</span> 联系电话</label>
-              <input type="tel" name="电话" placeholder="请输入您的手机号码" required>
+            <div class="qr-card-label">微信咨询</div>
+            <div class="qr-card-hint">扫码添加微信好友</div>
+          </div>
+          <div class="qr-card">
+            <div class="qr-card-img">
+              <img src="../images/qr-card.jpg" alt="名片二维码" loading="lazy">
             </div>
+            <div class="qr-card-label">电子名片</div>
+            <div class="qr-card-hint">扫码保存联系方式</div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label>电子邮箱</label>
-              <input type="email" name="邮箱" placeholder="请输入您的邮箱地址">
-            </div>
-            <div class="form-group">
-              <label>公司名称</label>
-              <input type="text" name="公司" placeholder="请输入您的公司名称">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>服务需求</label>
-            <select name="服务需求">
-              <option value="">请选择您感兴趣的服务</option>
-              <option value="综合布线系统">综合布线系统</option>
-              <option value="视频监控系统">视频监控系统</option>
-              <option value="公共广播系统">公共广播系统</option>
-              <option value="智能会议系统">智能会议系统</option>
-              <option value="机房建设工程">机房建设工程</option>
-              <option value="影音系统集成">影音系统集成</option>
-              <option value="其他/综合咨询">其他 / 综合咨询</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label><span class="required">*</span> 留言内容</label>
-            <textarea name="留言" placeholder="请描述您的项目需求、规模、预算等关键信息，以便我们更好地为您服务..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary form-submit">提交留言</button>
-
-          <p class="form-note">提交即表示您同意我们通过您提供的联系方式与您沟通</p>
-        </form>
+        </div>
       </div>
     </div>
   </div>
@@ -409,49 +376,6 @@
 
 <button class="back-to-top" aria-label="回到顶部">↑</button>
 
-<script>
-// Formspree 表单处理 - 使用 AJAX 方式提交以获得更好的用户体验
-var contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', function(event) {
-  event.preventDefault();
-  var btn = contactForm.querySelector('button[type="submit"]');
-  var originalText = btn.textContent;
-  btn.textContent = '提交中...';
-  btn.disabled = true;
-
-  var formData = new FormData(contactForm);
-
-  fetch(contactForm.action, {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(function(response) {
-    if (response.ok) {
-      btn.textContent = '✓ 提交成功！';
-      btn.style.background = '#27ae60';
-      contactForm.reset();
-      setTimeout(function() {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3000);
-    } else {
-      throw new Error('提交失败');
-    }
-  })
-  .catch(function(error) {
-    btn.textContent = '提交失败，请重试';
-    btn.style.background = '#e74c3c';
-    setTimeout(function() {
-      btn.textContent = originalText;
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 3000);
-  });
-});
-</script>
 <script src="../js/main.js"></script>
 </body>
 </html>
