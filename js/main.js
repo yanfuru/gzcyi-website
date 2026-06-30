@@ -2,6 +2,69 @@
    广州创益信息技术有限公司 - 全局脚本
    ============================================ */
 
+/* ========== 图片保护 / 反爬措施 ========== */
+(function() {
+  'use strict';
+
+  // 1. 禁止图片右键菜单（对包含证书、资质、案例的敏感目录图片）
+  document.addEventListener('contextmenu', function(e) {
+    var target = e.target;
+    if (target.tagName === 'IMG') {
+      var src = target.src || target.getAttribute('data-src') || '';
+      if (src.indexOf('certificates') !== -1 ||
+          src.indexOf('honors') !== -1 ||
+          src.indexOf('copyrights') !== -1 ||
+          src.indexOf('team') !== -1 ||
+          src.indexOf('craft') !== -1) {
+        e.preventDefault();
+        return false;
+      }
+    }
+  });
+
+  // 2. 禁止拖拽保存图片
+  document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // 3. 禁止 F12 / Ctrl+Shift+I / Ctrl+U
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.keyCode === 123) {
+      e.preventDefault();
+      return false;
+    }
+    // Ctrl+Shift+I / Cmd+Shift+I / Cmd+Opt+I
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) {
+      e.preventDefault();
+      return false;
+    }
+    // Ctrl+U / Cmd+U
+    if ((e.ctrlKey || e.metaKey) && e.keyCode === 85) {
+      e.preventDefault();
+      return false;
+    }
+    // Ctrl+S / Cmd+S
+    if ((e.ctrlKey || e.metaKey) && e.keyCode === 83) {
+      e.preventDefault();
+      return false;
+    }
+    // Ctrl+Shift+C
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.keyCode === 67) {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // 4. 控制台安全警告
+  console.log('%c⚠️ 安全警告', 'font-size:20px;color:red;font-weight:bold;');
+  console.log('%c请勿在此处粘贴任何代码。如果您不理解此操作的风险，请立即关闭此窗口。', 'font-size:14px;');
+  console.log('%c广州创益信息技术有限公司 © ' + new Date().getFullYear(), 'font-size:12px;color:#666;');
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
   // 移动端菜单切换
   const toggle = document.querySelector('.mobile-toggle');
