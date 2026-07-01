@@ -133,42 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(el);
   });
 
-  // 统计数字动画
-  const statNumbers = document.querySelectorAll('.stat-number[data-count]');
-  const statObserver = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.getAttribute('data-count'), 10);
-          const duration = 2000;
-          const startTime = performance.now();
-
-          function updateNumber(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(target * eased);
-            el.textContent = current.toLocaleString();
-
-            if (progress < 1) {
-              requestAnimationFrame(updateNumber);
-            } else {
-              el.textContent = target.toLocaleString();
-            }
-          }
-
-          requestAnimationFrame(updateNumber);
-          statObserver.unobserve(el);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  statNumbers.forEach(function (el) {
-    statObserver.observe(el);
-  });
 
   // 导航高亮
   const currentPath = window.location.pathname;
