@@ -335,6 +335,27 @@
       line-height: 1.7;
     }
 
+    /* Demo video in services section */
+    .demo-video-wrap {
+      margin: 4px auto 40px;
+      max-width: 920px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: #000;
+    }
+    .demo-video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .demo-video-caption {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-gray-500);
+      margin-top: 14px;
+    }
+
     /* ===== Cases Section ===== */
     .cases-section {
       padding: 100px 0;
@@ -706,6 +727,14 @@ function loadVideo() {
     <h2 class="section-title fade-in">业务范围</h2>
     <div class="section-title-line"></div>
     <p class="section-subtitle fade-in">覆盖弱电智能化与影音集成全场景，提供端到端专业服务</p>
+
+    <div class="demo-video-wrap fade-in">
+      <video class="demo-video" autoplay loop muted playsinline preload="metadata" controls>
+        <source src="videos/smart-park-demo.mp4" type="video/mp4">
+        您的浏览器不支持视频播放，请升级浏览器。
+      </video>
+      <p class="demo-video-caption">智慧园区管理平台 · 系统演示</p>
+    </div>
 
     <div class="services-grid" style="grid-template-columns: repeat(4, 1fr);">
       <div class="service-card fade-in">
